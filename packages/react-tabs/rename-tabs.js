@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 function getFilesRecursive(root) {
   const files = [];
@@ -14,8 +15,16 @@ function getFilesRecursive(root) {
   return files;
 }
 
-function refactor(filePath) {
+function refactor(origPath) {
+  const origName = path.basename(origPath);
+  const origText = fs.readFileSync(origPath).toString();
+
+  const newPath = origPath.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
+
+  execSync(`git mv -f "${origPath}" "${newPath}"`);
+
   const replacements = [
+    ['ms-Pivot', 'ms-Temp1'], // Temp string so style names don't get altered
     ['Pivot', 'Tabs'],
     ['pivot links/tabs', 'tab headers'],
     ['pivot header/link', 'tab header'],
@@ -52,23 +61,17 @@ function refactor(filePath) {
     ['getLinkItems', 'getHeaderItems'],
     ['renderLinkCollection', 'renderHeaderCollection'],
     ['renders link Tabs correctly', 'renders headers as links correctly'],
+    (origName === 'Pivot.base.tsx' || origName === 'Pivot.scss') && ['links', 'headers'],
+    origName.endsWith('.Example.tsx') && ['Tabs #', 'Item #'],
+    ['ms-Temp1', 'ms-Pivot'], // Undo temp replacement
   ];
 
-  const baseName = path.basename(filePath);
+  const newText = replacements
+    .filter(entry => entry) // remove falsey
+    .map(([find, replace, { wholeWord = true } = {}]) => [wholeWord ? `\\b${find}\\b` : find, replace])
+    .reduce((text, [find, replace]) => text.replace(new RegExp(find, 'g'), replace), origText);
 
-  if (baseName === 'Pivot.base.tsx' || baseName === 'Pivot.scss') {
-    replacements.push(['links', 'headers']);
-  }
-
-  if (baseName.endsWith('.Example.tsx')) {
-    replacements.push(['Tabs #', 'Item #']);
-  }
-
-  const replace = (text, [find, replacement, { wholeWord = true } = {}]) => {
-    return text.replace(new RegExp(wholeWord ? `\\b${find}\\b` : find, 'g'), replacement);
-  };
-
-  return replacements.reduce(replace, fs.readFileSync(filePath).toString());
+  fs.writeFileSync(newPath, newText);
 }
 
 function main() {
@@ -76,15 +79,13 @@ function main() {
     fs.mkdirSync('./src/components/Tabs');
   }
 
-  fs.writeFileSync('./src/Tabs.ts', refactor('./src/Pivot.ts'));
+  refactor('./src/Pivot.ts');
 
   for (const file of getFilesRecursive('./src/components/Pivot')) {
     const newName = file.fullName.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
 
     if (file.isFile()) {
-      fs.writeFileSync(newName, refactor(file.fullName));
-
-      console.log(newName);
+      refactor(file.fullName);
     } else if (!fs.existsSync(newName)) {
       fs.mkdirSync(newName);
     }
