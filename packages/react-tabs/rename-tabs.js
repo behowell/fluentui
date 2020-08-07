@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const FS = require('fs');
+const Path = require('path');
+const Process = require('process');
+const ChildProcess = require('child_process');
 
 function getFilesRecursive(root) {
   const files = [];
-  fs.readdirSync(root, { withFileTypes: true }).forEach(file => {
-    const fullName = path.join(root, file.name);
+  FS.readdirSync(root, { withFileTypes: true }).forEach(file => {
+    const fullName = Path.join(root, file.name);
     files.push(Object.assign(file, { fullName }));
     if (file.isDirectory()) {
       files.push(...getFilesRecursive(fullName));
@@ -15,14 +16,32 @@ function getFilesRecursive(root) {
   return files;
 }
 
-function refactor(origPath) {
-  const origName = path.basename(origPath);
-  const origText = fs.readFileSync(origPath).toString();
+function moveOrCopy(moveCopyCallback) {
+  if (!FS.existsSync('./src/components/Tabs')) {
+    FS.mkdirSync('./src/components/Tabs');
+  }
 
-  const newPath = origPath.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
+  for (const file of getFilesRecursive('./src/components/Pivot')) {
+    const newName = file.fullName.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
 
-  execSync(`git mv -f "${origPath}" "${newPath}"`);
+    if (file.isDirectory() && !FS.existsSync(newName)) {
+      FS.mkdirSync(newName);
+    } else if (file.isFile()) {
+      moveCopyCallback(file.fullName, newName);
+    }
+  }
+}
 
+function move() {
+  moveOrCopy((src, target) => ChildProcess.execSync(`git mv -f "${src}" "${target}"`));
+}
+
+function copy() {
+  moveOrCopy((src, target) => FS.copyFileSync(src, target));
+}
+
+function refactorFile(filePath) {
+  const fileName = Path.basename(filePath);
   const replacements = [
     ['ms-Pivot', 'ms-Temp1'], // Temp string so style names don't get altered
     ['Pivot', 'Tabs'],
@@ -61,35 +80,69 @@ function refactor(origPath) {
     ['getLinkItems', 'getHeaderItems'],
     ['renderLinkCollection', 'renderHeaderCollection'],
     ['renders link Tabs correctly', 'renders headers as links correctly'],
-    (origName === 'Pivot.base.tsx' || origName === 'Pivot.scss') && ['links', 'headers'],
-    origName.endsWith('.Example.tsx') && ['Tabs #', 'Item #'],
+    (fileName.endsWith('.base.tsx') || fileName.endsWith('.scss')) && ['links', 'headers'],
+    fileName.endsWith('.Example.tsx') && ['Tabs #', 'Item #'],
     ['ms-Temp1', 'ms-Pivot'], // Undo temp replacement
-  ];
+  ].filter(entry => entry); // remove false entries;
 
-  const newText = replacements
-    .filter(entry => entry) // remove falsey
-    .map(([find, replace, { wholeWord = true } = {}]) => [wholeWord ? `\\b${find}\\b` : find, replace])
-    .reduce((text, [find, replace]) => text.replace(new RegExp(find, 'g'), replace), origText);
-
-  fs.writeFileSync(newPath, newText);
+  FS.writeFileSync(
+    filePath,
+    replacements.reduce(
+      (text, [find, replace, { wholeWord = true } = {}]) =>
+        text.replace(new RegExp(wholeWord ? `\\b${find}\\b` : find, 'g'), replace),
+      FS.readFileSync(filePath).toString(),
+    ),
+  );
 }
 
-function main() {
-  if (!fs.existsSync('./src/components/Tabs')) {
-    fs.mkdirSync('./src/components/Tabs');
-  }
-
-  refactor('./src/Pivot.ts');
-
-  for (const file of getFilesRecursive('./src/components/Pivot')) {
-    const newName = file.fullName.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
-
+function refactor() {
+  refactorFile('./src/Tabs.ts');
+  for (const file of getFilesRecursive('./src/components/Tabs')) {
     if (file.isFile()) {
-      refactor(file.fullName);
-    } else if (!fs.existsSync(newName)) {
-      fs.mkdirSync(newName);
+      refactorFile(file.fullName);
     }
   }
 }
 
-main();
+function reset() {
+  if (FS.existsSync('./src/components/Tabs')) {
+    const pivot = './src/Pivot.ts ./src/components/Pivot/**';
+    const tabs = './src/Tabs.ts ./src/components/Tabs/**';
+
+    ChildProcess.execSync(`git reset -- ${pivot} ${tabs}`);
+    ChildProcess.execSync(`git clean -x -f -- ${pivot} ${tabs}`);
+    ChildProcess.execSync(`git checkout -- ${pivot}`);
+  }
+}
+
+function main(args) {
+  for (const command of args) {
+    switch (command) {
+      case 'move':
+        console.log('move...');
+        move();
+        break;
+      case 'copy':
+        console.log('copy...');
+        copy();
+        break;
+      case 'refactor':
+        console.log('refactor...');
+        refactor();
+        break;
+      case 'reset':
+        console.log('reset...');
+        reset();
+        break;
+      default:
+        console.error(`Unknown command '${command}'`);
+        return;
+    }
+  }
+}
+
+if (Process.argv.length <= 2) {
+  console.error('Must specify command');
+} else {
+  main(Process.argv.slice(2));
+}
