@@ -121,8 +121,8 @@ export const AllSizes = () => (
       <AvatarExampleList display="image" square exampleIndex={avatarSizeValues.length} />
     </StoryExample>
     <StoryExample title="Initials">
-      <AvatarExampleList display="label" />
-      <AvatarExampleList display="label" square exampleIndex={avatarSizeValues.length} />
+      <AvatarExampleList display="label" color="auto" />
+      <AvatarExampleList display="label" color="auto" square exampleIndex={avatarSizeValues.length} />
     </StoryExample>
     <StoryExample title="Icon">
       <AvatarExampleList display="icon" />

@@ -43,6 +43,14 @@ export interface AvatarProps extends ComponentProps, React.HTMLAttributes<HTMLEl
   size?: AvatarSizeValue;
 
   /**
+   * Optionally give the avatar a color. If set to "auto", the color will be
+   * assigned based on a hash of the name prop, from a set of predefined colors.
+   *
+   * @defaultvalue gray
+   */
+  color?: AvatarColorValue;
+
+  /**
    * If a non-standard size is needed, use customSize instead of size.
    *
    * The dimensions of the avatar will be the given customSize, and the icon
@@ -72,6 +80,8 @@ export interface AvatarProps extends ComponentProps, React.HTMLAttributes<HTMLEl
 export const avatarSizeValues = [20, 24, 28, 32, 36, 40, 48, 56, 64, 72, 96, 120, 128] as const;
 export type AvatarSizeValue = typeof avatarSizeValues[number]; // 20 | 24 | 28 | ... | 128
 // !! Important: when adding new AvatarSizeValues, add corresponding "._size" classes in Avatar.scss
+
+export type AvatarColorValue = 'auto' | 'gray';
 
 /** Default Avatar size if not specified */
 export const defaultAvatarSize: AvatarSizeValue = 32;
