@@ -201,10 +201,10 @@ $default-inactiveScale: 0.875;
   // &._size_28,
   // &._size_32,
   // &._size_36,
-  // &._size_40 {
+  // &._size_40,
+  // &._size_48 {
   --avatar-activeRingWidth: #{$stroke-thick};
   // }
-  &._size_48,
   &._size_56,
   &._size_64 {
     --avatar-activeRingWidth: #{$stroke-thicker};
