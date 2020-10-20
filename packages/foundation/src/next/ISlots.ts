@@ -1,4 +1,5 @@
-import { IStyleSet } from '@uifabric/styling';
+import * as React from 'react';
+import { IStyleSet } from '@fluentui/style-utilities';
 import { ISlottableProps, ValidProps } from '../ISlots';
 import { IComponentOptions } from './IComponent';
 

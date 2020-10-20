@@ -1,8 +1,9 @@
-import { createTheme, ITheme } from 'office-ui-fabric-react';
+import { createTheme, Theme } from '@fluentui/react';
 import { CommonSemanticColors, HighContrastLightSemanticColors } from './AzureColors';
 import { IExtendedSemanticColors } from './IExtendedSemanticColors';
 import { FontSizes } from './AzureType';
 import * as StyleConstants from './Constants';
+import { AzureStyleSettings } from './AzureStyleSettings';
 
 const highContrastLightExtendedSemanticColors: Partial<IExtendedSemanticColors> = {
   bodyBackground: HighContrastLightSemanticColors.background,
@@ -30,6 +31,7 @@ const highContrastLightExtendedSemanticColors: Partial<IExtendedSemanticColors> 
   checkBoxCheck: HighContrastLightSemanticColors.checkBox.rest.check,
   checkBoxCheckedFocus: HighContrastLightSemanticColors.checkBox.rest.focus,
   checkBoxCheckHover: HighContrastLightSemanticColors.checkBox.rest.hover,
+  checkBoxCheckedDisabledBackground: HighContrastLightSemanticColors.checkBox.disabled.background,
   checkBoxDisabled: HighContrastLightSemanticColors.checkBox.disabled.border,
   checkBoxIndeterminateBackground: HighContrastLightSemanticColors.checkBox.rest.check,
   checkBoxIndeterminateDefaultChecked: HighContrastLightSemanticColors.checkBox.checked.default,
@@ -94,20 +96,29 @@ const highContrastLightExtendedSemanticColors: Partial<IExtendedSemanticColors> 
   iconButtonFill: HighContrastLightSemanticColors.text.icon,
   iconButtonFillHovered: HighContrastLightSemanticColors.primaryButton.hover.text,
   labelText: HighContrastLightSemanticColors.text.label,
-  statusErrorBackground: HighContrastLightSemanticColors.statusBar.error,
+  statusDefaultBackground: HighContrastLightSemanticColors.statusBar.background.default,
+  statusDefaultBorder: HighContrastLightSemanticColors.statusBar.border.default,
+  statusErrorBackground: HighContrastLightSemanticColors.statusBar.background.error,
+  statusErrorBorder: HighContrastLightSemanticColors.statusBar.border.error,
   statusErrorText: HighContrastLightSemanticColors.text.body,
-  statusErrorIcon: CommonSemanticColors.icons.error,
-  statusInformationBackground: HighContrastLightSemanticColors.statusBar.information,
+  statusErrorIcon: HighContrastLightSemanticColors.statusBar.icon.error,
+  statusInformationBackground: HighContrastLightSemanticColors.statusBar.background.information,
   statusInformationText: HighContrastLightSemanticColors.text.body,
-  statusInformationIcon: CommonSemanticColors.icons.information,
-  statusSuccessBackground: HighContrastLightSemanticColors.statusBar.okay,
+  statusInformationIcon: HighContrastLightSemanticColors.statusBar.icon.default,
+  statusLink: HighContrastLightSemanticColors.statusBar.link,
+  statusSuccessBackground: HighContrastLightSemanticColors.statusBar.background.okay,
+  statusSuccessBorder: HighContrastLightSemanticColors.statusBar.border.okay,
   statusSuccessText: HighContrastLightSemanticColors.text.body,
-  statusSuccessIcon: CommonSemanticColors.icons.okay,
-  statusWarningBackground: HighContrastLightSemanticColors.statusBar.warning,
+  statusSuccessIcon: HighContrastLightSemanticColors.statusBar.icon.okay,
+  statusWarningBackground: HighContrastLightSemanticColors.statusBar.background.warning,
+  statusWarningBorder: HighContrastLightSemanticColors.statusBar.border.warning,
   statusWarningText: HighContrastLightSemanticColors.text.body,
-  statusWarningIcon: CommonSemanticColors.icons.warning,
+  statusWarningIcon: HighContrastLightSemanticColors.statusBar.icon.warning,
+  teachingBubbleBackground: HighContrastLightSemanticColors.teachingBubble.rest.background,
+  teachingBubblePrimaryButtonHover: HighContrastLightSemanticColors.teachingBubble.hover.primaryButtonBackground,
+  teachingBubbleSecondaryBackground: HighContrastLightSemanticColors.teachingBubble.rest.secondaryBackround,
+  teachingBubbleText: HighContrastLightSemanticColors.teachingBubble.rest.text,
   textFieldBorderDisabled: HighContrastLightSemanticColors.text.disabled,
-  textFieldBackgroundDisabled: HighContrastLightSemanticColors.disabledButton.background,
 
   // temporary work around for high contrast themes
   choiceGroupContainerBorder: '1px',
@@ -116,7 +127,7 @@ const highContrastLightExtendedSemanticColors: Partial<IExtendedSemanticColors> 
   linkBorderStyle: 'dashed',
 };
 
-export const AzureThemeHighContrastLight: ITheme = createTheme({
+export const AzureThemeHighContrastLight: Theme = createTheme({
   fonts: {
     medium: {
       fontFamily: StyleConstants.fontFamily,
@@ -136,3 +147,5 @@ export const AzureThemeHighContrastLight: ITheme = createTheme({
   },
   semanticColors: highContrastLightExtendedSemanticColors,
 });
+
+AzureThemeHighContrastLight.components = AzureStyleSettings(AzureThemeHighContrastLight);

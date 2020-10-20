@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { classNamesFunction, css, KeyCodes, getRTL, initializeComponentRef } from '@uifabric/utilities';
-import { IProcessedStyleSet } from '@uifabric/styling';
+import { IProcessedStyleSet } from '@fluentui/style-utilities';
 import { IWeeklyDayPickerProps, IWeeklyDayPickerStyleProps, IWeeklyDayPickerStyles } from './WeeklyDayPicker.types';
 import {
   DateRangeType,
@@ -20,7 +20,7 @@ import {
   addMonths,
   compareDates,
 } from '../../utilities/dateMath/DateMath';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Icon } from '@fluentui/react-internal/lib/Icon';
 
 const getClassNames = classNamesFunction<IWeeklyDayPickerStyleProps, IWeeklyDayPickerStyles>();
 
@@ -166,6 +166,7 @@ export class WeeklyDayPickerBase extends React.Component<IWeeklyDayPickerProps, 
       className,
       showFullMonth,
       weeksToShow,
+      ...calendarDayGridProps
     } = this.props;
 
     const classNames = getClassNames(styles, {
@@ -201,6 +202,7 @@ export class WeeklyDayPickerBase extends React.Component<IWeeklyDayPickerProps, 
           today={today}
           lightenDaysOutsideNavigatedMonth={showFullMonth}
           animationDirection={this.state.animationDirection}
+          {...calendarDayGridProps}
         />
         {this._renderNextWeekNavigationButton(classNames)}
       </div>

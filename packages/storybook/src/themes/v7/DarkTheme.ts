@@ -1,7 +1,4 @@
-import { DarkCustomizations } from '@uifabric/theme-samples';
+import { DarkCustomizations } from '@fluentui/theme-samples';
 import { Theme } from '@fluentui/react-theme-provider';
 
-export const DarkTheme: Theme = {
-  tokens: DarkCustomizations.settings.theme,
-  stylesheets: [],
-};
+export const DarkTheme: Theme = DarkCustomizations.settings.theme;

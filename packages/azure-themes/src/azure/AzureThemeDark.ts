@@ -1,8 +1,9 @@
-import { createTheme, ITheme } from 'office-ui-fabric-react';
+import { createTheme, Theme } from '@fluentui/react';
 import { CommonSemanticColors, DarkSemanticColors } from './AzureColors';
 import { IExtendedSemanticColors } from './IExtendedSemanticColors';
 import { FontSizes } from './AzureType';
 import * as StyleConstants from './Constants';
+import { AzureStyleSettings } from './AzureStyleSettings';
 
 const darkExtendedSemanticColors: Partial<IExtendedSemanticColors> = {
   bodyBackground: DarkSemanticColors.background,
@@ -30,6 +31,7 @@ const darkExtendedSemanticColors: Partial<IExtendedSemanticColors> = {
   checkBoxCheck: DarkSemanticColors.checkBox.rest.check,
   checkBoxCheckedFocus: DarkSemanticColors.checkBox.rest.focus,
   checkBoxCheckHover: DarkSemanticColors.checkBox.rest.hover,
+  checkBoxCheckedDisabledBackground: DarkSemanticColors.checkBox.disabled.background,
   checkBoxDisabled: DarkSemanticColors.checkBox.disabled.border,
   checkBoxIndeterminateBackground: DarkSemanticColors.checkBox.rest.check,
   choiceGroupUncheckedDotHover: DarkSemanticColors.choiceGroup.circle.hover,
@@ -94,18 +96,27 @@ const darkExtendedSemanticColors: Partial<IExtendedSemanticColors> = {
   iconButtonFill: DarkSemanticColors.primaryButton.rest.background,
   iconButtonFillHovered: DarkSemanticColors.primaryButton.hover.background,
   labelText: DarkSemanticColors.text.label,
-  statusErrorBackground: DarkSemanticColors.statusBar.error,
-  statusErrorText: DarkSemanticColors.text.body,
-  statusErrorIcon: CommonSemanticColors.icons.error,
-  statusInformationBackground: DarkSemanticColors.statusBar.information,
+  statusDefaultBackground: DarkSemanticColors.statusBar.background.default,
+  statusDefaultBorder: DarkSemanticColors.statusBar.border.default,
+  statusErrorBackground: DarkSemanticColors.statusBar.background.error,
+  statusErrorBorder: DarkSemanticColors.statusBar.border.error,
+  statusErrorIcon: DarkSemanticColors.statusBar.icon.error,
+  statusInformationBackground: DarkSemanticColors.statusBar.background.information,
   statusInformationText: DarkSemanticColors.text.body,
-  statusInformationIcon: CommonSemanticColors.icons.information,
-  statusSuccessBackground: DarkSemanticColors.statusBar.okay,
+  statusInformationIcon: DarkSemanticColors.statusBar.icon.default,
+  statusSuccessBackground: DarkSemanticColors.statusBar.background.okay,
+  statusSuccessBorder: DarkSemanticColors.statusBar.border.okay,
+  statusLink: DarkSemanticColors.statusBar.link,
   statusSuccessText: DarkSemanticColors.text.body,
-  statusSuccessIcon: CommonSemanticColors.icons.okay,
-  statusWarningBackground: DarkSemanticColors.statusBar.warning,
+  statusSuccessIcon: DarkSemanticColors.statusBar.icon.okay,
+  statusWarningBackground: DarkSemanticColors.statusBar.background.warning,
+  statusWarningBorder: DarkSemanticColors.statusBar.border.warning,
   statusWarningText: DarkSemanticColors.text.body,
-  statusWarningIcon: CommonSemanticColors.icons.warning,
+  statusWarningIcon: DarkSemanticColors.statusBar.icon.warning,
+  teachingBubbleBackground: DarkSemanticColors.teachingBubble.rest.background,
+  teachingBubblePrimaryButtonHover: DarkSemanticColors.teachingBubble.hover.primaryButtonBackground,
+  teachingBubbleSecondaryBackground: DarkSemanticColors.teachingBubble.rest.secondaryBackround,
+  teachingBubbleText: DarkSemanticColors.teachingBubble.rest.text,
   textFieldBorderDisabled: DarkSemanticColors.primaryButton.disabled.border,
 
   // temporary work around for high contrast themes
@@ -115,11 +126,11 @@ const darkExtendedSemanticColors: Partial<IExtendedSemanticColors> = {
   linkBorderStyle: 'dashed',
 };
 
-export const AzureThemeDark: ITheme = createTheme({
+export const AzureThemeDark: Theme = createTheme({
   fonts: {
     medium: {
       fontFamily: StyleConstants.fontFamily,
-      fontSize: FontSizes.size12,
+      fontSize: FontSizes.size13,
     },
   },
   palette: {
@@ -135,3 +146,5 @@ export const AzureThemeDark: ITheme = createTheme({
   },
   semanticColors: darkExtendedSemanticColors,
 });
+
+AzureThemeDark.components = AzureStyleSettings(AzureThemeDark);

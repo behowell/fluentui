@@ -8,18 +8,16 @@ import { DateRangeType } from '@fluentui/date-time-utilities';
 import { DayOfWeek } from '@fluentui/date-time-utilities';
 import { FirstWeekOfYear } from '@fluentui/date-time-utilities';
 import { IBaseProps } from '@uifabric/utilities';
-import { ICalendarStrings as ICalendarStrings_2 } from '@uifabric/date-time';
-import { ICalloutProps } from 'office-ui-fabric-react/lib/Callout';
+import { ICalloutProps } from '@fluentui/react-internal/lib/Callout';
 import { IComponentAs } from '@uifabric/utilities';
 import { IDateGridStrings } from '@fluentui/date-time-utilities';
 import { IDayGridOptions } from '@fluentui/date-time-utilities';
-import { IProcessedStyleSet } from '@uifabric/styling';
+import { IProcessedStyleSet } from '@fluentui/style-utilities';
 import { IRefObject } from '@uifabric/utilities';
-import { IStyle } from '@uifabric/styling';
+import { IStyle } from '@fluentui/style-utilities';
 import { IStyleFunctionOrObject } from '@uifabric/utilities';
-import { ITextFieldProps } from 'office-ui-fabric-react/lib/TextField';
-import { ITheme } from '@uifabric/styling';
-import { IWeeklyDayPickerStrings as IWeeklyDayPickerStrings_2 } from '@uifabric/date-time';
+import { ITextFieldProps } from '@fluentui/react-internal/lib/TextField';
+import { ITheme } from '@fluentui/style-utilities';
 import * as React from 'react';
 
 // @public (undocumented)
@@ -32,38 +30,20 @@ export enum AnimationDirection {
 export const Calendar: import("react").FunctionComponent<import("./Calendar.types").ICalendarProps & import("react").RefAttributes<HTMLDivElement>>;
 
 // @public
-export const DatePicker: import("react").FunctionComponent<import("./DatePicker.types").IDatePickerProps>;
+export const DatePicker: import("react").FunctionComponent<import("./DatePicker.types").IDatePickerProps & import("react").RefAttributes<HTMLDivElement>>;
 
 // @public (undocumented)
-export class DatePickerBase extends React.Component<IDatePickerProps, IDatePickerState> implements IDatePicker {
-    constructor(props: IDatePickerProps);
-    // (undocumented)
-    componentDidUpdate(prevProps: IDatePickerProps, prevState: IDatePickerState): void;
-    // (undocumented)
-    componentWillUnmount(): void;
-    // (undocumented)
-    static defaultProps: IDatePickerProps;
-    // (undocumented)
-    focus(): void;
-    // (undocumented)
-    render(): JSX.Element;
-    // (undocumented)
-    reset(): void;
-    // (undocumented)
-    showDatePickerPopup(): void;
-    // (undocumented)
-    UNSAFE_componentWillReceiveProps(nextProps: IDatePickerProps): void;
-    }
+export const DatePickerBase: React.ForwardRefExoticComponent<IDatePickerProps & React.RefAttributes<HTMLDivElement>>;
 
 export { DateRangeType }
 
 export { DayOfWeek }
 
 // @public (undocumented)
-export const defaultDayPickerStrings: ICalendarStrings_2;
+export const defaultDayPickerStrings: ICalendarStrings;
 
 // @public (undocumented)
-export const defaultWeeklyDayPickerStrings: IWeeklyDayPickerStrings_2;
+export const defaultWeeklyDayPickerStrings: IWeeklyDayPickerStrings;
 
 export { FirstWeekOfYear }
 
@@ -297,18 +277,6 @@ export interface IDatePickerProps extends IBaseProps<IDatePicker>, React.HTMLAtt
 }
 
 // @public (undocumented)
-export interface IDatePickerState {
-    // (undocumented)
-    errorMessage?: string;
-    // (undocumented)
-    formattedDate?: string;
-    // (undocumented)
-    isDatePickerShown?: boolean;
-    // (undocumented)
-    selectedDate?: Date;
-}
-
-// @public (undocumented)
 export interface IDatePickerStrings extends ICalendarStrings {
     invalidInputErrorMessage?: string;
     isOutOfBoundsErrorMessage?: string;
@@ -336,6 +304,8 @@ export interface IDatePickerStyles {
     root: IStyle;
     // (undocumented)
     textField: IStyle;
+    // (undocumented)
+    wrapper?: IStyle;
 }
 
 // @public (undocumented)
@@ -345,7 +315,7 @@ export interface IWeeklyDayPicker {
 }
 
 // @public (undocumented)
-export interface IWeeklyDayPickerProps extends IBaseProps<IWeeklyDayPicker> {
+export interface IWeeklyDayPickerProps extends IBaseProps<IWeeklyDayPicker>, Partial<ICalendarDayGridProps> {
     animationDirection?: AnimationDirection;
     className?: string;
     componentRef?: IRefObject<IWeeklyDayPicker>;
