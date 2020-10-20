@@ -42,51 +42,63 @@ function copy() {
   moveOrCopy(fs.copyFileSync);
 }
 
+const allReplacements = [
+  ['Pivot', 'Tabs'],
+  ['pivot links/tabs', 'tabs'],
+  ['pivot header/link', 'tab'],
+  ['pivot link', 'tab'],
+  ['PivotLinkCollection', 'TabPanelCollection'],
+  ['PivotLink', 'Tab', { wholeWord: false }],
+  ['pivotLink', 'tab', { wholeWord: false }],
+  ['IPivotProps', 'TabsProps'],
+  ['IPivotStyleProps', 'TabsStyleProps'],
+  ['IPivotStyles', 'TabsStyles'],
+  ['pivot item', 'tab item'],
+  ['pivot items', 'tab items'],
+  ['IPivotItemProps', 'TabPanelProps'],
+  ['pivotItemProps', 'tabPanelProps'],
+  ['PivotItem', 'TabPanel', { wholeWord: false }],
+  ['IPivot', 'TabsComponent'],
+  ['pivotId', 'baseId'],
+  ['PivotBase', 'TabsBase'],
+  ['Pivots', 'Tabs'],
+  ['Pivot([A-Za-z]+Example(Code)?)', 'Tabs$1'],
+  ['pivotRef', 'tabsRef'],
+  ['pivot tab', 'tab'],
+  ['PivotPageProps', 'TabsPageProps'],
+  ['Default selected key for the pivot', 'Default selected TabPanel key'],
+  ['pivot', 'Tabs'],
+  ['Pivot', 'Tabs', { wholeWord: false }],
+  ['Link( ?([Ss]ize|[Ff]ormat))', 'Tab$1', { wholeWord: false }],
+  ['link( ?([Ss]ize|[Ff]ormat))', 'tab$1', { wholeWord: false }],
+  ['Tabs? Links', 'tabs', { wholeWord: false }],
+  ['Links', 'Tabs'],
+  ['link(Collection|Content|InMenu|IsSelected)', 'tab$1'],
+  ['onRenderItemLink', 'onRenderTab'],
+  ['renderLinkContent', 'renderTabContent'],
+  ['LinkClick', 'TabClick', { wholeWord: false }],
+  ['getLinkItems', 'getTabPanels'],
+  ['renderLinkCollection', 'renderTabCollection'],
+  ['renders link Tabs correctly', 'renders tabs as links correctly'],
+  ['// eslint-disable-next-line \\@typescript-eslint/naming-convention\\n', '', { wholeWord: false }],
+  ['links', 'tabs', { extensions: ['.base.tsx', '.scss'] }],
+  ['Tabs #', 'Panel #', { extensions: ['.Example.tsx'] }],
+];
+
+const neverReplace = ['ms-Pivot', 'ms-Pivot-linkContent', 'ms-Pivot-linkInMenu'];
+
 function refactorFile(filePath) {
   const fileName = path.basename(filePath);
-  const replacements = [
-    ['ms-Pivot', 'ms~~Temp1'], // Temp string so style names don't get altered (undone at end)
-    ['Pivot', 'Tabs'],
-    ['pivot links/tabs', 'tabs'],
-    ['pivot header/link', 'tab'],
-    ['pivot link', 'tab'],
-    ['PivotLinkCollection', 'TabPanelCollection'],
-    ['PivotLink', 'Tab', { wholeWord: false }],
-    ['pivotLink', 'tab', { wholeWord: false }],
-    ['IPivotProps', 'TabsProps'],
-    ['IPivotStyleProps', 'TabsStyleProps'],
-    ['IPivotStyles', 'TabsStyles'],
-    ['pivot item', 'tab item'],
-    ['pivot items', 'tab items'],
-    ['IPivotItemProps', 'TabPanelProps'],
-    ['pivotItemProps', 'tabPanelProps'],
-    ['PivotItem', 'TabPanel', { wholeWord: false }],
-    ['IPivot', 'TabsComponent'],
-    ['pivotId', 'baseId'],
-    ['PivotBase', 'TabsBase'],
-    ['Pivots', 'Tabs'],
-    ['Pivot([A-Za-z]+Example(Code)?)', 'Tabs$1'],
-    ['pivotRef', 'tabsRef'],
-    ['pivot tab', 'tab'],
-    ['PivotPageProps', 'TabsPageProps'],
-    ['Default selected key for the pivot', 'Default selected TabPanel key'],
-    ['pivot', 'Tabs'],
-    ['Pivot', 'Tabs', { wholeWord: false }],
-    ['Link( ?([Ss]ize|[Ff]ormat))', 'Tab$1', { wholeWord: false }],
-    ['link( ?([Ss]ize|[Ff]ormat))', 'tab$1', { wholeWord: false }],
-    ['Tabs? Links', 'tabs', { wholeWord: false }],
-    ['Links', 'Tabs'],
-    ['link(Collection|Content|InMenu|IsSelected)', 'tab$1'],
-    ['onRenderItemLink', 'onRenderTab'],
-    ['renderLinkContent', 'renderTabContent'],
-    ['LinkClick', 'TabClick', { wholeWord: false }],
-    ['getLinkItems', 'getTabPanels'],
-    ['renderLinkCollection', 'renderTabCollection'],
-    ['renders link Tabs correctly', 'renders tabs as links correctly'],
-    (fileName.endsWith('.base.tsx') || fileName.endsWith('.scss')) && ['links', 'tabs'],
-    fileName.endsWith('.Example.tsx') && ['Tabs #', 'Panel #'],
-    ['ms~~Temp1', 'ms-Pivot'], // Undo temp replacement
-  ].filter(entry => entry); // remove false entries;
+  const replacements = allReplacements.filter(([_1, _2, { extensions = [] } = {}]) =>
+    extensions.every(ext => fileName.endsWith(ext)),
+  );
+
+  // Add temporary replacements for the "never replace" items, and then undo those replacements at the end
+  neverReplace.forEach((str, i) => {
+    const temp = str.split('').join('~') + i;
+    replacements.unshift([str, temp]);
+    replacements.push([temp, str]);
+  });
 
   let fileText = fs.readFileSync(filePath).toString();
 
@@ -128,8 +140,32 @@ function reset() {
   child_process.execSync(`git checkout -- ${pivot}`);
 }
 
+function print() {
+  console.log('| Special strings: never replace |');
+  console.log('| -------- |');
+  neverReplace.forEach(str => {
+    console.log('| `' + str + '` |');
+  });
+  console.log();
+
+  console.log('| Find | Replace | Options |');
+  console.log('| -------- | -------- | -------- |');
+  allReplacements.forEach(([find, replace, { wholeWord, extensions } = {}]) => {
+    const extra = [];
+    if (wholeWord !== undefined) {
+      extra.push(wholeWord ? 'whole word only' : 'partial word match');
+    }
+
+    if (extensions !== undefined) {
+      extra.push('only in ' + extensions.map(ext => '`*' + ext + '`').join(' and '));
+    }
+
+    console.log('| `' + find + '` | `' + replace + '` | ' + extra.join('<br> ') + ' |');
+  });
+}
+
 function main(args) {
-  const commands = { move, copy, refactor, inplace, reset };
+  const commands = { move, copy, refactor, inplace, reset, print };
 
   args.forEach(arg => {
     if (!commands[arg]) {
