@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { KeyCodes, css, getRTLSafeKeyCode } from '@uifabric/utilities';
+import { KeyCodes, css, getRTLSafeKeyCode } from '@fluentui/utilities';
 import {
   addDays,
   addWeeks,
   compareDates,
   findAvailableDate,
   IAvailableDateOptions,
+  DateRangeType,
 } from '@fluentui/date-time-utilities';
-import { DateRangeType } from '../Calendar/Calendar.types';
 import { IDayInfo } from './CalendarDayGrid.base';
 import { ICalendarGridRowProps } from './CalendarGridRow';
 
