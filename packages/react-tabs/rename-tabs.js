@@ -142,24 +142,24 @@ function importsFile(filePath) {
   fs.writeFileSync(filePath, fileText);
 }
 
-function processFiles(fnFile, tabsOrPivot) {
-  fnFile('./src/index.ts');
-  fnFile('./src/' + tabsOrPivot + '.ts');
-  fnFile('../react/src/' + tabsOrPivot + '.ts');
-  fnFile('../react-next/src/' + tabsOrPivot + '.ts');
+function processFiles(processFile, tabsOrPivot) {
+  processFile('./src/index.ts');
+  processFile('./src/' + tabsOrPivot + '.ts');
+  processFile('../react/src/' + tabsOrPivot + '.ts');
+  processFile('../react-next/src/' + tabsOrPivot + '.ts');
   for (const file of getFilesRecursive('./src/components/' + tabsOrPivot)) {
     if (file.isFile()) {
-      fnFile(file.fullName);
+      processFile(file.fullName);
     }
   }
   for (const file of getFilesRecursive('./src/next')) {
     if (file.isFile()) {
-      fnFile(file.fullName);
+      processFile(file.fullName);
     }
   }
   for (const file of getFilesRecursive('../react-examples/src/react-tabs')) {
     if (file.isFile()) {
-      fnFile(file.fullName);
+      processFile(file.fullName);
     }
   }
 }
@@ -181,7 +181,7 @@ function importsInplace() {
 }
 
 function reset() {
-  const pivot = './src/** ../react-next/src/Pivot.ts';
+  const pivot = './src/** ./etc/** ../react-examples/src/react-tabs/** ../react-next/src/Pivot.ts';
   const tabs = fs.existsSync('../react-next/src/Tabs.ts') ? '../react-next/src/Tabs.ts' : '';
 
   child_process.execSync(`git reset -- ${pivot} ${tabs}`);
