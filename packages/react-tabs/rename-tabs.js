@@ -104,10 +104,17 @@ const replacements = [
   ['renders link Tabs correctly', 'renders tabs as links correctly'],
   ['// eslint-disable-next-line \\@typescript-eslint/naming-convention\\n', '', { wholeWord: false }],
   ['links', 'tabs', { extensions: ['.base.tsx', '.scss'] }],
+  ['link', 'tab'],
   ['Tabs #', 'Panel #', { extensions: ['.Example.tsx'] }],
 ];
 
-const neverReplace = ['ms-Pivot', 'ms-Pivot-linkContent', 'ms-Pivot-linkInMenu'];
+const neverReplace = [
+  'ms-Pivot',
+  'ms-Pivot-link',
+  'ms-Pivot-linkContent',
+  'ms-Pivot-linkInMenu',
+  'semanticColors.link',
+];
 
 // Add temporary replacements for the "never replace" items, and then undo those replacements at the end
 neverReplace.forEach((str, i) => {
@@ -181,7 +188,9 @@ function importsInplace() {
 }
 
 function reset() {
-  const pivot = './src/** ./etc/** ../react-examples/src/react-tabs/** ../react-next/src/Pivot.ts';
+  const pivot =
+    './src/** ./etc/** ../react-examples/src/react-tabs/**' +
+    (fs.existsSync('../react-next/src/Pivot.ts') ? '../react-next/src/Pivot.ts' : '');
   const tabs = fs.existsSync('../react-next/src/Tabs.ts') ? '../react-next/src/Tabs.ts' : '';
 
   child_process.execSync(`git reset -- ${pivot} ${tabs}`);
