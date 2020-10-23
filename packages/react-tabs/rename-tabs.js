@@ -49,11 +49,8 @@ function copy() {
   moveOrCopy(fs.copyFileSync);
 }
 
-const TabPanel = 'TabPanel';
-const tabPanel = 'tabPanel';
-
-const importReplacements = [
-  ['PivotItem', TabPanel],
+const fileNameReplacements = [
+  ['PivotItem', 'TabPanel'],
   ['Pivot', 'Tabs'],
 ];
 
@@ -62,7 +59,7 @@ const replacements = [
   ['pivot links/tabs', 'tabs'],
   ['pivot header/link', 'tab'],
   ['pivot link', 'tab'],
-  ['PivotLinkCollection', `${TabPanel}Collection`],
+  ['PivotLinkCollection', `TabPanelCollection`],
   ['PivotLink', 'Tab', { wholeWord: false }],
   ['pivotLink', 'tab', { wholeWord: false }],
   ['IPivotProps', 'TabsProps'],
@@ -70,9 +67,9 @@ const replacements = [
   ['IPivotStyles', 'TabsStyles'],
   ['pivot item', 'tab item'],
   ['pivot items', 'tab items'],
-  ['IPivotItemProps', `${TabPanel}Props`],
-  ['pivotItemProps', `${tabPanel}Props`],
-  ['PivotItem', TabPanel, { wholeWord: false }],
+  ['IPivotItemProps', `TabPanelProps`],
+  ['pivotItemProps', `tabPanelProps`],
+  ['PivotItem', 'TabPanel', { wholeWord: false }],
   ['IPivot', 'TabsImperativeHandle'],
   ['pivotId', 'baseId'],
   ['PivotBase', 'TabsBase'],
@@ -81,7 +78,7 @@ const replacements = [
   ['pivotRef', 'tabsRef'],
   ['pivot tab', 'tab'],
   ['PivotPageProps', 'TabsPageProps'],
-  ['Default selected key for the pivot', `Default selected ${TabPanel} key`],
+  ['Default selected key for the pivot', `Default selected TabPanel key`],
   ['pivot', 'Tabs'],
   ['Pivot', 'Tabs', { wholeWord: false }],
   ['Link( ?([Ss]ize|[Ff]ormat))', 'Tab$1', { wholeWord: false }],
@@ -92,7 +89,7 @@ const replacements = [
   ['onRenderItemLink', 'onRenderTab'],
   ['renderLinkContent', 'renderTabContent'],
   ['LinkClick', 'TabClick', { wholeWord: false }],
-  ['getLinkItems', `get${TabPanel}s`],
+  ['getLinkItems', `getTabPanels`],
   ['renderLinkCollection', 'renderTabCollection'],
   ['renders link Tabs correctly', 'renders tabs as links correctly'],
   ['// eslint-disable-next-line \\@typescript-eslint/naming-convention\\n', '', { wholeWord: false }],
@@ -127,7 +124,7 @@ function refactorFile(filePath) {
 function importsFile(filePath) {
   let fileText = fs.readFileSync(filePath).toString();
 
-  fileText = importReplacements.reduce(
+  fileText = fileNameReplacements.reduce(
     (text, [find, replace]) => text.replace(new RegExp(`(from '.*)${find}(.*';)`, 'g'), `$1${replace}$2`),
     fileText,
   );
