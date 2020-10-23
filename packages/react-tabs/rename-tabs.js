@@ -188,14 +188,13 @@ function importsInplace() {
 }
 
 function reset() {
-  const pivot =
-    './src/** ./etc/** ../react-examples/src/react-tabs/**' +
-    (fs.existsSync('../react-next/src/Pivot.ts') ? '../react-next/src/Pivot.ts' : '');
+  const common = './src/** ./etc/** ../react-examples/src/react-tabs/**';
+  const pivot = fs.existsSync('../react-next/src/Pivot.ts') ? '../react-next/src/Pivot.ts' : '';
   const tabs = fs.existsSync('../react-next/src/Tabs.ts') ? '../react-next/src/Tabs.ts' : '';
 
-  child_process.execSync(`git reset -- ${pivot} ${tabs}`);
-  child_process.execSync(`git clean -x -f -- ${pivot} ${tabs}`);
-  child_process.execSync(`git checkout -- ${pivot}`);
+  child_process.execSync(`git reset -- ${common} ${pivot} ${tabs}`);
+  child_process.execSync(`git clean -x -f -- ${common} ${pivot} ${tabs}`);
+  child_process.execSync(`git checkout -- ${common} ${tabs}`);
 }
 
 function print() {
