@@ -24,10 +24,20 @@ function moveOrCopy(moveCopyCallback) {
     fs.mkdirSync('./src/components/Tabs');
   }
 
-  moveCopyCallback('./src/Pivot.ts', './src/Tabs.ts');
-  moveCopyCallback('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
+  const moveCopyIfExists = (src, dest) => {
+    if (fs.existsSync(src)) {
+      moveCopyCallback(src, dest);
+    }
+  };
 
-  for (const file of [...getFilesRecursive('./src/components/Pivot'), ...getFilesRecursive('./src/next')]) {
+  moveCopyIfExists('./src/Pivot.ts', './src/Tabs.ts');
+  moveCopyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
+  moveCopyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
+
+  const dirs = ['./src/components/Pivot', './src/next', '../react-examples/src/react-tabs'];
+  const files = dirs.map(getFilesRecursive).reduce((result, entry) => result.concat(entry), []);
+
+  for (const file of files) {
     const newName = file.fullName.replace(/PivotItem/g, 'TabPanel').replace(/Pivot/g, 'Tabs');
     if (newName === file.fullName) {
       continue;
@@ -125,7 +135,7 @@ function importsFile(filePath) {
   let fileText = fs.readFileSync(filePath).toString();
 
   fileText = fileNameReplacements.reduce(
-    (text, [find, replace]) => text.replace(new RegExp(`(from '.*)${find}(.*';)`, 'g'), `$1${replace}$2`),
+    (text, [find, replace]) => text.replace(new RegExp(`(from '.*)\\b${find}\\b(.*';)`, 'g'), `$1${replace}$2`),
     fileText,
   );
 
@@ -135,6 +145,7 @@ function importsFile(filePath) {
 function processFiles(fnFile, tabsOrPivot) {
   fnFile('./src/index.ts');
   fnFile('./src/' + tabsOrPivot + '.ts');
+  fnFile('../react/src/' + tabsOrPivot + '.ts');
   fnFile('../react-next/src/' + tabsOrPivot + '.ts');
   for (const file of getFilesRecursive('./src/components/' + tabsOrPivot)) {
     if (file.isFile()) {
@@ -142,6 +153,21 @@ function processFiles(fnFile, tabsOrPivot) {
     }
   }
   for (const file of getFilesRecursive('./src/next')) {
+    if (file.isFile()) {
+      fnFile(file.fullName);
+    }
+  }
+  for (const file of getFilesRecursive('../react-examples/src')) {
+    if (file.isFile()) {
+      fnFile(file.fullName);
+    }
+  }
+  for (const file of getFilesRecursive('../azure-themes/src')) {
+    if (file.isFile()) {
+      fnFile(file.fullName);
+    }
+  }
+  for (const file of getFilesRecursive('../react-docsite-components/src')) {
     if (file.isFile()) {
       fnFile(file.fullName);
     }
@@ -174,16 +200,9 @@ function reset() {
 }
 
 function print() {
-  console.log('| Special strings: never replace |');
-  console.log('| -------- |');
-  neverReplace.forEach(str => {
-    console.log('| `' + str + '` |');
-  });
-  console.log();
-
   console.log('| Find | Replace | Options |');
   console.log('| -------- | -------- | -------- |');
-  allReplacements.forEach(([find, replace, { wholeWord, extensions } = {}]) => {
+  replacements.forEach(([find, replace, { wholeWord, extensions } = {}]) => {
     const extra = [];
     if (wholeWord !== undefined) {
       extra.push(wholeWord ? 'whole word only' : 'partial word match');
@@ -194,6 +213,14 @@ function print() {
     }
 
     console.log('| `' + find + '` | `' + replace + '` | ' + extra.join('<br> ') + ' |');
+  });
+
+  console.log();
+
+  console.log('| Special strings: never replace |');
+  console.log('| -------- |');
+  neverReplace.forEach(str => {
+    console.log('| `' + str + '` |');
   });
 }
 
