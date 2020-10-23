@@ -157,17 +157,7 @@ function processFiles(fnFile, tabsOrPivot) {
       fnFile(file.fullName);
     }
   }
-  for (const file of getFilesRecursive('../react-examples/src')) {
-    if (file.isFile()) {
-      fnFile(file.fullName);
-    }
-  }
-  for (const file of getFilesRecursive('../azure-themes/src')) {
-    if (file.isFile()) {
-      fnFile(file.fullName);
-    }
-  }
-  for (const file of getFilesRecursive('../react-docsite-components/src')) {
+  for (const file of getFilesRecursive('../react-examples/src/react-tabs')) {
     if (file.isFile()) {
       fnFile(file.fullName);
     }
