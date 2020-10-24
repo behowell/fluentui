@@ -19,6 +19,23 @@ function getFilesRecursive(root) {
   return files;
 }
 
+function getTargetDirs(tabsOrPivot) {
+  return [
+    './src/components/' + tabsOrPivot,
+    './src/next',
+    './etc',
+    '../react-examples/src/react-tabs',
+    '../../apps/public-docsite/src/pages/Controls',
+    '../../apps/public-docsite-resources/src/components/pages',
+  ];
+}
+
+function getTargetFiles(tabsOrPivot) {
+  return getTargetDirs(tabsOrPivot)
+    .map(getFilesRecursive)
+    .reduce((result, entry) => result.concat(entry), []);
+}
+
 function moveOrCopy(moveCopyCallback) {
   if (!fs.existsSync('./src/components/Tabs')) {
     fs.mkdirSync('./src/components/Tabs');
@@ -34,8 +51,7 @@ function moveOrCopy(moveCopyCallback) {
   moveCopyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
   moveCopyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
 
-  const dirs = ['./src/components/Pivot', './src/next', '../react-examples/src/react-tabs'];
-  const files = dirs.map(getFilesRecursive).reduce((result, entry) => result.concat(entry), []);
+  const files = getTargetFiles('Pivot');
 
   for (const file of files) {
     const newName = file.fullName.replace(/PivotItem/g, 'TabPanel').replace(/Pivot/g, 'Tabs');
@@ -57,6 +73,10 @@ function move() {
 
 function copy() {
   moveOrCopy(fs.copyFileSync);
+}
+
+function debugMove() {
+  moveOrCopy((src, target) => console.log(src + ' => ' + target));
 }
 
 const fileNameReplacements = [
@@ -87,8 +107,9 @@ const replacements = [
   ['Pivot([A-Za-z]+Example(Code)?)', 'Tabs$1'],
   ['pivotRef', 'tabsRef'],
   ['pivot tab', 'tab'],
+  ['PivotPage', 'TabsPage'],
   ['PivotPageProps', 'TabsPageProps'],
-  ['Default selected key for the pivot', `Default selected TabPanel key`],
+  ['Default selected key for the pivot', 'Default selected TabPanel key'],
   ['pivot', 'Tabs'],
   ['Pivot', 'Tabs', { wholeWord: false }],
   ['Link( ?([Ss]ize|[Ff]ormat))', 'Tab$1', { wholeWord: false }],
@@ -154,17 +175,8 @@ function processFiles(processFile, tabsOrPivot) {
   processFile('./src/' + tabsOrPivot + '.ts');
   processFile('../react/src/' + tabsOrPivot + '.ts');
   processFile('../react-next/src/' + tabsOrPivot + '.ts');
-  for (const file of getFilesRecursive('./src/components/' + tabsOrPivot)) {
-    if (file.isFile()) {
-      processFile(file.fullName);
-    }
-  }
-  for (const file of getFilesRecursive('./src/next')) {
-    if (file.isFile()) {
-      processFile(file.fullName);
-    }
-  }
-  for (const file of getFilesRecursive('../react-examples/src/react-tabs')) {
+
+  for (const file of getTargetFiles(tabsOrPivot)) {
     if (file.isFile()) {
       processFile(file.fullName);
     }
@@ -188,13 +200,17 @@ function importsInplace() {
 }
 
 function reset() {
-  const common = './src/** ./etc/** ../react-examples/src/react-tabs/**';
-  const pivot = fs.existsSync('../react-next/src/Pivot.ts') ? '../react-next/src/Pivot.ts' : '';
-  const tabs = fs.existsSync('../react-next/src/Tabs.ts') ? '../react-next/src/Tabs.ts' : '';
+  const dirs = ['./src/components/Pivot', ...getTargetDirs('Tabs')];
+  const getDirs = () => {
+    return dirs
+      .filter(fs.existsSync)
+      .map(dir => dir + '/**')
+      .join(' ');
+  };
 
-  child_process.execSync(`git reset -- ${common} ${pivot} ${tabs}`);
-  child_process.execSync(`git clean -x -f -- ${common} ${pivot} ${tabs}`);
-  child_process.execSync(`git checkout -- ${common} ${tabs}`);
+  child_process.execSync(`git reset -- ${getDirs()}`);
+  child_process.execSync(`git clean -x -f -- ${getDirs()}`);
+  child_process.execSync(`git checkout -- ${getDirs()}`);
 }
 
 function print() {
@@ -223,7 +239,7 @@ function print() {
 }
 
 function main(args) {
-  const commands = { move, copy, refactor, imports, inplace, importsInplace, reset, print };
+  const commands = { debugMove, move, copy, refactor, imports, inplace, importsInplace, reset, print };
 
   args.forEach(arg => {
     if (!commands[arg]) {
