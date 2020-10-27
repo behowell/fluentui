@@ -92,20 +92,15 @@ const replacements = [
   ['pivot links/tabs', 'tabs'],
   ['pivot header/link', 'tab'],
   ['pivot link', 'tab'],
+  ['pivot item link', 'tab'],
   ['PivotLinkCollection', `TabPanelCollection`],
   ['PivotLink', 'Tab', { wholeWord: false }],
   ['pivotLink', 'tab', { wholeWord: false }],
   ['IPivotProps', 'TabsProps'],
   ['IPivotStyleProps', 'TabsStyleProps'],
   ['IPivotStyles', 'TabsStyles'],
-  // <<<<<
-  ['pivot item', 'tab item'],
-  ['pivot items', 'tab items'],
-  // >>>>>
-  // ['pivot item link', 'tab'],
-  // ['pivot item', 'tab panel'],
-  // ['pivot items', 'tab panels'],
-  // =====
+  ['pivot item', 'tab panel'],
+  ['pivot items', 'tab panels'],
   ['IPivotItemProps', `TabPanelProps`],
   ['pivotItemProps', `tabPanelProps`],
   ['PivotItem', 'TabPanel', { wholeWord: false }],
