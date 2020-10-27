@@ -25,8 +25,7 @@ function getTargetDirs(tabsOrPivot) {
     './src/next',
     './etc',
     '../react-examples/src/react-tabs',
-    '../../apps/public-docsite/src/pages/Controls',
-    '../../apps/public-docsite-resources/src/components/pages',
+    `../../apps/public-docsite/src/pages/Controls/${tabsOrPivot}Page`,
   ];
 }
 
@@ -47,9 +46,13 @@ function moveOrCopy(moveCopyCallback) {
     }
   };
 
-  moveCopyIfExists('./src/Pivot.ts', './src/Tabs.ts');
-  moveCopyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
-  moveCopyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
+  // moveCopyIfExists('./src/Pivot.ts', './src/Tabs.ts');
+  // moveCopyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
+  // moveCopyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
+  moveCopyIfExists(
+    `../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx`,
+    `../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx`,
+  );
 
   const files = getTargetFiles('Pivot');
 
@@ -95,8 +98,14 @@ const replacements = [
   ['IPivotProps', 'TabsProps'],
   ['IPivotStyleProps', 'TabsStyleProps'],
   ['IPivotStyles', 'TabsStyles'],
+  // <<<<<
   ['pivot item', 'tab item'],
   ['pivot items', 'tab items'],
+  // >>>>>
+  // ['pivot item link', 'tab'],
+  // ['pivot item', 'tab panel'],
+  // ['pivot items', 'tab panels'],
+  // =====
   ['IPivotItemProps', `TabPanelProps`],
   ['pivotItemProps', `tabPanelProps`],
   ['PivotItem', 'TabPanel', { wholeWord: false }],
@@ -171,10 +180,11 @@ function importsFile(filePath) {
 }
 
 function processFiles(processFile, tabsOrPivot) {
-  processFile('./src/index.ts');
-  processFile('./src/' + tabsOrPivot + '.ts');
-  processFile('../react/src/' + tabsOrPivot + '.ts');
-  processFile('../react-next/src/' + tabsOrPivot + '.ts');
+  // processFile('./src/index.ts');
+  // processFile('./src/' + tabsOrPivot + '.ts');
+  // processFile('../react/src/' + tabsOrPivot + '.ts');
+  // processFile('../react-next/src/' + tabsOrPivot + '.ts');
+  processFile(`../../apps/public-docsite-resources/src/components/pages/${tabsOrPivot}Page.tsx`);
 
   for (const file of getTargetFiles(tabsOrPivot)) {
     if (file.isFile()) {
@@ -200,17 +210,17 @@ function importsInplace() {
 }
 
 function reset() {
+  const files = [
+    '../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx',
+    '../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx',
+  ];
   const dirs = ['./src/components/Pivot', ...getTargetDirs('Tabs')];
-  const getDirs = () => {
-    return dirs
-      .filter(fs.existsSync)
-      .map(dir => dir + '/**')
-      .join(' ');
-  };
+  const getTargets = () =>
+    [...dirs.filter(fs.existsSync).map(d => d + '/**'), ...files.filter(fs.existsSync)].join(' ');
 
-  child_process.execSync(`git reset -- ${getDirs()}`);
-  child_process.execSync(`git clean -x -f -- ${getDirs()}`);
-  child_process.execSync(`git checkout -- ${getDirs()}`);
+  child_process.execSync(`git reset -- ${getTargets()}`);
+  child_process.execSync(`git clean -x -f -- ${getTargets()}`);
+  child_process.execSync(`git checkout -- ${getTargets()}`);
 }
 
 function print() {
