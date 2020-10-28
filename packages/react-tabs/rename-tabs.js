@@ -93,6 +93,7 @@ const replacements = [
   ['pivot header/link', 'tab'],
   ['pivot link', 'tab'],
   ['pivot item link', 'tab'],
+  ['item link', 'tab'],
   ['PivotLinkCollection', `TabPanelCollection`],
   ['PivotLink', 'Tab', { wholeWord: false }],
   ['pivotLink', 'tab', { wholeWord: false }],
