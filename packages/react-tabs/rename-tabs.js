@@ -35,35 +35,35 @@ function getTargetFiles(tabsOrPivot) {
     .reduce((result, entry) => result.concat(entry), []);
 }
 
-function moveOrCopy(moveCopyCallback) {
+function moveOrCopy(moveCopyCallback, copyCallback = fs.copyFileSync, mkdirCallback = fs.mkdirSync) {
   if (!fs.existsSync('./src/components/Tabs')) {
     fs.mkdirSync('./src/components/Tabs');
   }
 
-  const moveCopyIfExists = (src, dest) => {
-    if (fs.existsSync(src)) {
-      moveCopyCallback(src, dest);
-    }
-  };
+  const copyIfExists = (src, dest) => fs.existsSync(src) && copyCallback(src, dest);
 
-  // moveCopyIfExists('./src/Pivot.ts', './src/Tabs.ts');
-  // moveCopyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
-  // moveCopyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
-  moveCopyIfExists(
-    `../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx`,
-    `../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx`,
+  copyIfExists('./src/Pivot.ts', './src/Tabs.ts');
+  copyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
+  copyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
+  copyIfExists(
+    '../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx',
+    '../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx',
+  );
+  copyIfExists(
+    '../../apps/public-docsite/src/pages/Controls/PivotPage',
+    '../../apps/public-docsite/src/pages/Controls/TabsPage',
   );
 
   const files = getTargetFiles('Pivot');
 
   for (const file of files) {
-    const newName = file.fullName.replace(/PivotItem/g, 'TabPanel').replace(/Pivot/g, 'Tabs');
+    const newName = file.fullName.replace(/PivotItem/g, 'TabItem').replace(/Pivot/g, 'Tabs');
     if (newName === file.fullName) {
       continue;
     }
 
     if (file.isDirectory() && !fs.existsSync(newName)) {
-      fs.mkdirSync(newName);
+      mkdirCallback(newName);
     } else if (file.isFile()) {
       moveCopyCallback(file.fullName, newName);
     }
@@ -79,11 +79,15 @@ function copy() {
 }
 
 function debugMove() {
-  moveOrCopy((src, target) => console.log(src + ' => ' + target));
+  moveOrCopy(
+    (src, target) => console.log('MOVE: ' + src + ' => ' + target),
+    (src, target) => console.log('COPY: ' + src + ' => ' + target),
+    dir => console.log('MKDIR: ' + dir),
+  );
 }
 
 const fileNameReplacements = [
-  ['PivotItem', 'TabPanel'],
+  ['PivotItem', 'TabItem'],
   ['Pivot', 'Tabs'],
 ];
 
@@ -93,17 +97,18 @@ const replacements = [
   ['pivot header/link', 'tab'],
   ['pivot link', 'tab'],
   ['pivot item link', 'tab'],
-  ['PivotLinkCollection', `TabPanelCollection`],
+  ['item link', 'tab'],
+  ['PivotLinkCollection', 'TabItemCollection'],
   ['PivotLink', 'Tab', { wholeWord: false }],
   ['pivotLink', 'tab', { wholeWord: false }],
   ['IPivotProps', 'TabsProps'],
   ['IPivotStyleProps', 'TabsStyleProps'],
   ['IPivotStyles', 'TabsStyles'],
-  ['pivot item', 'tab panel'],
-  ['pivot items', 'tab panels'],
-  ['IPivotItemProps', `TabPanelProps`],
-  ['pivotItemProps', `tabPanelProps`],
-  ['PivotItem', 'TabPanel', { wholeWord: false }],
+  ['pivot item', 'tab item'],
+  ['pivot items', 'tab items'],
+  ['IPivotItemProps', 'TabItemProps'],
+  ['pivotItemProps', 'tabItemProps'],
+  ['PivotItem', 'TabItem', { wholeWord: false }],
   ['IPivot', 'TabsImperativeHandle'],
   ['pivotId', 'baseId'],
   ['PivotBase', 'TabsBase'],
@@ -113,7 +118,7 @@ const replacements = [
   ['pivot tab', 'tab'],
   ['PivotPage', 'TabsPage'],
   ['PivotPageProps', 'TabsPageProps'],
-  ['Default selected key for the pivot', 'Default selected TabPanel key'],
+  ['Default selected key for the pivot', 'Default selected TabItem key'],
   ['pivot', 'Tabs'],
   ['Pivot', 'Tabs', { wholeWord: false }],
   ['Link( ?([Ss]ize|[Ff]ormat))', 'Tab$1', { wholeWord: false }],
@@ -124,13 +129,13 @@ const replacements = [
   ['onRenderItemLink', 'onRenderTab'],
   ['renderLinkContent', 'renderTabContent'],
   ['LinkClick', 'TabClick', { wholeWord: false }],
-  ['getLinkItems', `getTabPanels`],
+  ['getLinkItems', 'getTabItems'],
   ['renderLinkCollection', 'renderTabCollection'],
   ['renders link Tabs correctly', 'renders tabs as links correctly'],
   ['// eslint-disable-next-line \\@typescript-eslint/naming-convention\\n', '', { wholeWord: false }],
   ['links', 'tabs', { extensions: ['.base.tsx', '.scss'] }],
   ['link', 'tab'],
-  ['Tabs #', 'Panel #', { extensions: ['.Example.tsx'] }],
+  ['Tabs #', 'Item #', { extensions: ['.Example.tsx'] }],
 ];
 
 const neverReplace = [
@@ -176,9 +181,11 @@ function importsFile(filePath) {
 
 function processFiles(processFile, tabsOrPivot) {
   // processFile('./src/index.ts');
-  // processFile('./src/' + tabsOrPivot + '.ts');
-  // processFile('../react/src/' + tabsOrPivot + '.ts');
-  // processFile('../react-next/src/' + tabsOrPivot + '.ts');
+  if (tabsOrPivot === 'Tabs') {
+    processFile('./src/' + tabsOrPivot + '.ts');
+    processFile('../react/src/' + tabsOrPivot + '.ts');
+    processFile('../react-next/src/' + tabsOrPivot + '.ts');
+  }
   processFile(`../../apps/public-docsite-resources/src/components/pages/${tabsOrPivot}Page.tsx`);
 
   for (const file of getTargetFiles(tabsOrPivot)) {
