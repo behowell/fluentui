@@ -226,20 +226,24 @@ function reset() {
 }
 
 function print() {
+  const code = str => (str ? '`' + str + '`' : '');
+
   console.log('| Find | Replace | Options |');
   console.log('| -------- | -------- | -------- |');
-  replacements.forEach(([find, replace, { wholeWord, extensions } = {}]) => {
-    const extra = [];
-    if (wholeWord !== undefined) {
-      extra.push(wholeWord ? 'whole word only' : 'partial word match');
-    }
+  replacements
+    .slice(neverReplace.length, -neverReplace.length)
+    .forEach(([find, replace, { wholeWord, extensions } = {}]) => {
+      const extra = [];
+      if (wholeWord !== undefined) {
+        extra.push(wholeWord ? 'whole word only' : 'partial word match');
+      }
 
-    if (extensions !== undefined) {
-      extra.push('only in ' + extensions.map(ext => '`*' + ext + '`').join(' and '));
-    }
+      if (extensions !== undefined) {
+        extra.push('only in ' + extensions.map(code).join(' and '));
+      }
 
-    console.log('| `' + find + '` | `' + replace + '` | ' + extra.join('<br> ') + ' |');
-  });
+      console.log(`| ${code(find)} | ${code(replace)} | ${extra.join('<br> ')} |`);
+    });
 
   console.log();
 
