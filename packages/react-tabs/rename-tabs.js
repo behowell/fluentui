@@ -19,40 +19,62 @@ function getFilesRecursive(root) {
   return files;
 }
 
+let targetDirs = [];
+let targetFiles = [];
+
 function getTargetDirs(tabsOrPivot) {
+  if (targetDirs.length > 0) {
+    return targetDirs;
+  }
+  if (targetFiles.length > 0) {
+    return [];
+  }
+
   return [
     './src/components/' + tabsOrPivot,
     './src/next',
     './etc',
     '../react-examples/src/react-tabs',
-    `../../apps/public-docsite/src/pages/Controls/${tabsOrPivot}Page`,
+    // `../../apps/public-docsite/src/pages/Controls/${tabsOrPivot}Page`,
   ];
 }
 
-function getTargetFiles(tabsOrPivot) {
-  return getTargetDirs(tabsOrPivot)
+// function DirentWrapper(name) {
+//   return {
+//     name,
+//     isFile: () => fs.isFileSync(name),
+//     isDirectory: () => fs.isDirectorySync(name),
+//   };
+// }
+
+function getTargetFiles(tabsOrPivot, { includeRootFiles = true } = {}) {
+  const targets = getTargetDirs(tabsOrPivot)
     .map(getFilesRecursive)
     .reduce((result, entry) => result.concat(entry), []);
+
+  if (targetFiles.length > 0) {
+    targets.push(...targetFiles.map(file => Object.assign(fs.statSync(file), { fullName: file })));
+    return targets;
+  }
+
+  if (targetDirs.length === 0) {
+    const pushIfExists = file => fs.existsSync(file) && targets.push(file);
+
+    if (includeRootFiles) {
+      pushIfExists('./src/' + tabsOrPivot + '.ts');
+      pushIfExists('../react/src/' + tabsOrPivot + '.ts');
+      pushIfExists('../react-next/src/' + tabsOrPivot + '.ts');
+    }
+    // pushIfExists(`../../apps/public-docsite-resources/src/components/pages/${tabsOrPivot}Page.tsx`);
+  }
+
+  return targets;
 }
 
 function moveOrCopy(moveCopyCallback, copyCallback = fs.copyFileSync, mkdirCallback = fs.mkdirSync) {
   if (!fs.existsSync('./src/components/Tabs')) {
     fs.mkdirSync('./src/components/Tabs');
   }
-
-  const copyIfExists = (src, dest) => fs.existsSync(src) && copyCallback(src, dest);
-
-  copyIfExists('./src/Pivot.ts', './src/Tabs.ts');
-  copyIfExists('../react/src/Pivot.ts', '../react/src/Tabs.ts');
-  copyIfExists('../react-next/src/Pivot.ts', '../react-next/src/Tabs.ts');
-  copyIfExists(
-    '../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx',
-    '../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx',
-  );
-  copyIfExists(
-    '../../apps/public-docsite/src/pages/Controls/PivotPage',
-    '../../apps/public-docsite/src/pages/Controls/TabsPage',
-  );
 
   const files = getTargetFiles('Pivot');
 
@@ -65,6 +87,9 @@ function moveOrCopy(moveCopyCallback, copyCallback = fs.copyFileSync, mkdirCallb
     if (file.isDirectory() && !fs.existsSync(newName)) {
       mkdirCallback(newName);
     } else if (file.isFile()) {
+      if (!fs.existsSync(path.dirname(newName))) {
+        mkdirCallback(path.dirname(newName));
+      }
       moveCopyCallback(file.fullName, newName);
     }
   }
@@ -98,7 +123,10 @@ const replacements = [
   ['pivot link', 'tab'],
   ['pivot item link', 'tab'],
   ['item link', 'tab'],
-  ['PivotLinkCollection', `TabPanelCollection`],
+  ['ms-Pivot-link', 'ms-Tabs-tab'],
+  ['ms-Pivot-linkContent', 'ms-Tabs-tabContent'],
+  ['ms-Pivot-linkInMenu', 'ms-Tabs-tabInMenu'],
+  ['PivotLinkCollection', 'TabItemCollection'],
   ['PivotLink', 'Tab', { wholeWord: false }],
   ['pivotLink', 'tab', { wholeWord: false }],
   ['IPivotProps', 'TabsProps'],
@@ -138,13 +166,7 @@ const replacements = [
   ['Tabs #', 'Item #', { extensions: ['.Example.tsx'] }],
 ];
 
-const neverReplace = [
-  'ms-Pivot',
-  'ms-Pivot-link',
-  'ms-Pivot-linkContent',
-  'ms-Pivot-linkInMenu',
-  'semanticColors.link',
-];
+const neverReplace = ['semanticColors.link'];
 
 // Add temporary replacements for the "never replace" items, and then undo those replacements at the end
 neverReplace.forEach((str, i) => {
@@ -180,15 +202,7 @@ function importsFile(filePath) {
 }
 
 function processFiles(processFile, tabsOrPivot) {
-  // processFile('./src/index.ts');
-  if (tabsOrPivot === 'Tabs') {
-    processFile('./src/' + tabsOrPivot + '.ts');
-    processFile('../react/src/' + tabsOrPivot + '.ts');
-    processFile('../react-next/src/' + tabsOrPivot + '.ts');
-  }
-  processFile(`../../apps/public-docsite-resources/src/components/pages/${tabsOrPivot}Page.tsx`);
-
-  for (const file of getTargetFiles(tabsOrPivot)) {
+  for (const file of getTargetFiles(tabsOrPivot, { includeRootFiles: tabsOrPivot === 'Tabs' })) {
     if (file.isFile()) {
       processFile(file.fullName);
     }
@@ -212,13 +226,9 @@ function importsInplace() {
 }
 
 function reset() {
-  const files = [
-    '../../apps/public-docsite-resources/src/components/pages/PivotPage.tsx',
-    '../../apps/public-docsite-resources/src/components/pages/TabsPage.tsx',
-  ];
-  const dirs = ['./src/components/Pivot', ...getTargetDirs('Tabs')];
+  const dirs = [...new Set([...getTargetDirs('Pivot'), ...getTargetDirs('Tabs')])];
   const getTargets = () =>
-    [...dirs.filter(fs.existsSync).map(d => d + '/**'), ...files.filter(fs.existsSync)].join(' ');
+    [...dirs.filter(fs.existsSync).map(d => d + '/**'), ...targetFiles.filter(fs.existsSync)].join(' ');
 
   child_process.execSync(`git reset -- ${getTargets()}`);
   child_process.execSync(`git clean -x -f -- ${getTargets()}`);
@@ -258,6 +268,15 @@ function main(args) {
   const commands = { debugMove, move, copy, refactor, imports, inplace, importsInplace, reset, print };
 
   args.forEach(arg => {
+    if (arg.startsWith('-dir=')) {
+      targetDirs.push(arg.substring('-dir='.length));
+      return;
+    }
+    if (arg.startsWith('-file=')) {
+      targetFiles.push(arg.substring('-file='.length));
+      return;
+    }
+
     if (!commands[arg]) {
       throw `Unknown command ${arg}`;
     }
