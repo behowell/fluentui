@@ -151,6 +151,16 @@ export interface IVerticalBarChartDataPoint {
    * This is an optional prop, If haven't given data will take
    */
   yAxisCalloutData?: string;
+
+  /**
+   * data to render the line along with bars
+   */
+  lineData?: ILineDataInVerticalBarChart;
+}
+
+export interface ILineDataInVerticalBarChart {
+  y: IVerticalBarChartDataPoint['y'];
+  yAxisCalloutData?: string | undefined;
 }
 
 export interface ILineChartDataPoint {
@@ -371,4 +381,21 @@ export interface IHeatMapChartData {
    * This  number will be used to get the color for the legend
    */
   value: number;
+}
+
+export interface ICustomizedCalloutDataPoint {
+  legend: string;
+  y: number;
+  color: string;
+  xAxisCalloutData?: string;
+  yAxisCalloutData?: string | { [id: string]: number };
+}
+
+/**
+ * Used for custom callout data interface. As Area chart callout data will be prepared from given props.data,
+ * Those required data passing to onRenderCalloutPerDataPoint and onRenderCalloutPerStack.
+ */
+export interface ICustomizedCalloutData {
+  x: number | string | Date;
+  values: ICustomizedCalloutDataPoint[];
 }
