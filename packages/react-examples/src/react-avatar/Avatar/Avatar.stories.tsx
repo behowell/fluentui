@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Avatar, AvatarProps, avatarSizeValues } from '@fluentui/react-avatar';
+import { Avatar, AvatarProps, avatarSizeValues, avatarColorCount, AvatarSizeValue } from '@fluentui/react-avatar';
 import {
   ContactIcon,
   GroupIcon,
@@ -42,6 +42,7 @@ const examples = {
     { state: 'error', icon: { as: SkypeMinusIcon } },
     { state: 'info', icon: { as: SkypeArrowIcon } },
   ],
+  colorIndex: Array.from({ length: avatarColorCount }, (_, i) => i),
 } as const;
 
 export const Basic = () => (
@@ -98,9 +99,6 @@ export const AllSizes = () => (
     <StoryExample title="Initials">
       <AvatarExampleList names={examples.name} />
     </StoryExample>
-    <StoryExample title="Initials, brand color">
-      <AvatarExampleList names={examples.name} colorVariant="brand" />
-    </StoryExample>
     <StoryExample title="Initials, square">
       <AvatarExampleList names={examples.name} square exampleIndex={1} />
     </StoryExample>
@@ -110,8 +108,28 @@ export const AllSizes = () => (
     <StoryExample title="Icon, square">
       <AvatarExampleList icons={examples.icon} square exampleIndex={1} />
     </StoryExample>
-    <StoryExample title="Icon, brand color">
-      <AvatarExampleList icons={examples.icon} colorVariant="brand" exampleIndex={1} />
+  </>
+);
+
+export const Colors = () => (
+  <>
+    <StoryExample title="Neutral">
+      <Avatar colorVariant="neutral" />
+      <Avatar name={examples.name[11]} colorVariant="neutral" />
+    </StoryExample>
+    <StoryExample title="Brand">
+      <Avatar colorVariant="brand" />
+      <Avatar name={examples.name[22]} colorVariant="brand" />
+    </StoryExample>
+    <StoryExample title="Colorful (automatic based on name)">
+      {examples.name.map(name => (
+        <Avatar key={name} name={name} colorVariant="colorful" />
+      ))}
+    </StoryExample>
+    <StoryExample title="Colorful (colorIndex specified)">
+      {examples.colorIndex.map(i => (
+        <Avatar key={i} colorVariant="colorful" colorIndex={i} />
+      ))}
     </StoryExample>
   </>
 );
@@ -220,6 +238,7 @@ export const AvatarPlayground = () => {
     useValueSelector('image', [nameAndImage.image, nextNameAndImage, prevNameAndImage], true, getFilenameFromUrl),
     useValueSelector('icon', useValueSelectorState(examples.icon), false, iconToString),
     useValueSelector('colorVariant', useValueSelectorState(examples.colorVariant)),
+    useValueSelector('colorIndex', useValueSelectorState(examples.colorIndex)),
     useValueSelector('active', useValueSelectorState(['active', 'inactive'] as const)),
     useValueSelector('activeDisplay', useValueSelectorState(examples.activeDisplay)),
   ];
@@ -269,6 +288,32 @@ const AvatarExampleList: React.FC<AvatarProps & {
           size={size}
           name={names && names[(i + offset) % names.length]}
           image={images && images[(i + offset) % images.length]}
+          icon={icons && icons[(i + offset) % icons.length]}
+          badge={examples.badge[(i + offset) % examples.badge.length]}
+          {...restOfProps}
+        />
+      ))}
+    </Stack>
+  );
+};
+const AvatarColorList: React.FC<AvatarProps & {
+  sizes?: readonly AvatarSizeValue[];
+  names?: readonly string[];
+  icons?: readonly JSX.Element[];
+  exampleIndex?: number;
+}> = props => {
+  const { sizes, names, icons, exampleIndex = 0, ...restOfProps } = props;
+  const offset = exampleIndex * examples.size.length;
+
+  return (
+    <Stack wrap horizontal tokens={{ childrenGap: 24 }}>
+      {Array(avatarColorCount).map((_, i) => (
+        <Avatar
+          key={i}
+          colorVariant="colorful"
+          colorIndex={i}
+          size={sizes && sizes[(i + offset) % sizes.length]}
+          name={names && names[(i + offset) % names.length]}
           icon={icons && icons[(i + offset) % icons.length]}
           badge={examples.badge[(i + offset) % examples.badge.length]}
           {...restOfProps}

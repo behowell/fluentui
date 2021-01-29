@@ -67,10 +67,20 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLElement> {
    * The color when displaying either an icon or initials.
    * * neutral (default): gray
    * * brand: color from the brand palette
+   * * colorful: picks a color from a set of pre-defined colors, based on a hash of the name prop.
+   *     If another method is needed to assign colors to avatars, use the colorIndex prop.
    *
    * @defaultvalue neutral
    */
-  colorVariant?: 'neutral' | 'brand';
+  colorVariant?: 'neutral' | 'brand' | 'colorful';
+
+  /**
+   * When colorVariant="colorful", specifies which color in the list of avatar colors to use.
+   * If colorIndex is out of bounds of the colors list, it will wrap around.
+   *
+   * @defaultvalue calculated based on a hash of the name prop.
+   */
+  colorIndex?: number;
 
   /** Style tokens */
   tokens?: AvatarTokenSet;
@@ -89,6 +99,9 @@ export type AvatarSizeValue = typeof avatarSizeValues[number]; // 20 | 24 | 28 |
 
 /** Default Avatar size if not specified */
 export const defaultAvatarSize: AvatarSizeValue = 32;
+
+/** Number of colors available when colorVariant="colorful" */
+export const avatarColorCount: number = 30;
 
 /**
  * Style tokens for the Avatar

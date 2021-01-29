@@ -311,3 +311,126 @@ $default-inactiveScale: 0.875;
   --avatar-color: #{$color-default-neutralForegroundInverted};
   --avatar-background: #{$color-default-brand};
 }
+
+._colorVariant_colorful {
+  &._colorIndex_0 {
+    --avatar-color: #420610;
+    --avatar-background: #d69ba5;
+  }
+  &._colorIndex_1 {
+    --avatar-color: #6e0911;
+    --avatar-background: #edacb1;
+  }
+  &._colorIndex_2 {
+    --avatar-color: #751d20;
+    --avatar-background: #f1bbbd;
+  }
+  &._colorIndex_3 {
+    --avatar-color: #712d09;
+    --avatar-background: #efc4ad;
+  }
+  &._colorIndex_4 {
+    --avatar-color: #8f4f00;
+    --avatar-background: #ffddb3;
+  }
+  &._colorIndex_5 {
+    --avatar-color: #835c00;
+    --avatar-background: #f9e2ae;
+  }
+  &._colorIndex_6 {
+    --avatar-color: #6d5700;
+    --avatar-background: #eddea6;
+  }
+  &._colorIndex_7 {
+    --avatar-color: #563f06;
+    --avatar-background: #e0cfa2;
+  }
+  &._colorIndex_8 {
+    --avatar-color: #50301a;
+    --avatar-background: #ddc3b0;
+  }
+  &._colorIndex_9 {
+    --avatar-color: #294903;
+    --avatar-background: #bdda9b;
+  }
+  &._colorIndex_10 {
+    --avatar-color: #00723b;
+    --avatar-background: #a8f0cd;
+  }
+  &._colorIndex_11 {
+    --avatar-color: #004377;
+    --avatar-background: #a9d3f2;
+  }
+  &._colorIndex_12 {
+    --avatar-color: #002b4f;
+    --avatar-background: #9abfdd;
+  }
+  &._colorIndex_13 {
+    --avatar-color: #2c3c85;
+    --avatar-background: #c7d1fa;
+  }
+  &._colorIndex_14 {
+    --avatar-color: #001665;
+    --avatar-background: #a3b2e9;
+  }
+  &._colorIndex_15 {
+    --avatar-color: #403582;
+    --avatar-background: #d2ccf8;
+  }
+  &._colorIndex_16 {
+    --avatar-color: #341a51;
+    --avatar-background: #c6b1de;
+  }
+  &._colorIndex_17 {
+    --avatar-color: #063c06;
+    --avatar-background: #9ad39a;
+  }
+  &._colorIndex_18 {
+    --avatar-color: #00656d;
+    --avatar-background: #a6e8ed;
+  }
+  &._colorIndex_19 {
+    --avatar-color: #4d0d56;
+    --avatar-background: #daa7e0;
+  }
+  &._colorIndex_20 {
+    --avatar-color: #63276d;
+    --avatar-background: #e7bfed;
+  }
+  &._colorIndex_21 {
+    --avatar-color: #02494c;
+    --avatar-background: #9bd9db;
+  }
+  &._colorIndex_22 {
+    --avatar-color: #00333f;
+    --avatar-background: #95c8d4;
+  }
+  &._colorIndex_23 {
+    --avatar-color: #7f215d;
+    --avatar-background: #f7c0e3;
+  }
+  &._colorIndex_24 {
+    --avatar-color: #6b0042;
+    --avatar-background: #eca5d1;
+  }
+  &._colorIndex_25 {
+    --avatar-color: #43002c;
+    --avatar-background: #d696c0;
+  }
+  &._colorIndex_26 {
+    --avatar-color: #454241;
+    --avatar-background: #d7d5d4;
+  }
+  &._colorIndex_27 {
+    --avatar-color: #333231;
+    --avatar-background: #cecccb;
+  }
+  &._colorIndex_28 {
+    --avatar-color: #3a4346;
+    --avatar-background: #cdd5d8;
+  }
+  &._colorIndex_29 {
+    --avatar-color: #1f2427;
+    --avatar-background: #bcc3c7;
+  }
+}
