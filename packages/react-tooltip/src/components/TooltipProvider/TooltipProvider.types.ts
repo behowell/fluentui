@@ -1,11 +1,20 @@
 import * as React from 'react';
-import { ComponentProps } from '@fluentui/react-utilities';
+import { ComponentProps, ShorthandProps } from '@fluentui/react-utilities';
+import { TooltipProps } from '../Tooltip';
+
+/**
+ * Interface to be implemented by the TooltipManager
+ */
+export interface TooltipManagerApi {
+  show: (target: HTMLElement, tooltip: ShorthandProps<TooltipProps>) => void;
+  hide: (target: HTMLElement) => void;
+}
 
 /**
  * {@docCategory TooltipProvider }
  */
 export interface TooltipProviderProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
-  // TODO Add props and slots here
+  // TooltipProvider has no additional props
 }
 
 /**

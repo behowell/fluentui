@@ -12,8 +12,8 @@ export const renderTooltipManager = (state: TooltipManagerState) => {
 
   return (
     <slots.root {...slotProps.root}>
-      {/* TODO Add additional slots in the appropritate place */}
       {state.children}
+      <slots.tooltip {...slotProps.tooltip} />
     </slots.root>
   );
 };

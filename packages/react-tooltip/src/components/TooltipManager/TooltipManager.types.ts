@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { ComponentProps } from '@fluentui/react-utilities';
+import { ComponentProps, ObjectShorthandProps } from '@fluentui/react-utilities';
+import { TooltipProps } from '../Tooltip';
 
 /**
  * {@docCategory TooltipManager }
@@ -16,4 +17,9 @@ export interface TooltipManagerState extends TooltipManagerProps {
    * Ref to the root slot
    */
   ref: React.MutableRefObject<HTMLElement>;
+
+  /**
+   * The Tooltip being rendered, if any
+   */
+  tooltip?: ObjectShorthandProps<TooltipProps>;
 }

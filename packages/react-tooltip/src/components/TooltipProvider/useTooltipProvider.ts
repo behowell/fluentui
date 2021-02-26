@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { TooltipProviderProps, TooltipProviderState } from './TooltipProvider.types';
+import { TooltipManagerApi, TooltipProviderProps, TooltipProviderState } from './TooltipProvider.types';
 
 export const tooltipProviderShorthandProps: (keyof TooltipProviderProps)[] = [];
 
@@ -33,3 +33,10 @@ export const useTooltipProvider = (
 
   return state;
 };
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const internal__TooltipProviderContext = React.createContext<
+  React.MutableRefObject<TooltipManagerApi | undefined>
+>({ current: undefined });
+
+export const useTooltipManagerRef = () => React.useContext(internal__TooltipProviderContext);

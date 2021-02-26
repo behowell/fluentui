@@ -251,6 +251,12 @@ export type ShadowLevelTokens = {
   shadow16: string;
   shadow28: string;
   shadow64: string;
+  shadowFilter2: string;
+  shadowFilter4: string;
+  shadowFilter8: string;
+  shadowFilter16: string;
+  shadowFilter28: string;
+  shadowFilter64: string;
 };
 
 export type GhostColorTokens = {

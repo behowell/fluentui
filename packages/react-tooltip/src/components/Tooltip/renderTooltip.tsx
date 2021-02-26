@@ -12,7 +12,7 @@ export const renderTooltip = (state: TooltipState) => {
 
   return (
     <slots.root {...slotProps.root}>
-      {/* TODO Add additional slots in the appropritate place */}
+      <slots.arrow {...slotProps.arrow} />
       {state.children}
     </slots.root>
   );
