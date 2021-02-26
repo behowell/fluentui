@@ -4,6 +4,81 @@
 
 ```ts
 
+import { ComponentProps } from '@fluentui/react-utilities';
+import * as React from 'react';
+
+// @public
+export const renderTooltip: (state: TooltipState) => JSX.Element;
+
+// @public
+export const renderTooltipManager: (state: TooltipManagerState) => JSX.Element;
+
+// @public
+export const renderTooltipProvider: (state: TooltipProviderState) => JSX.Element;
+
+// @public (undocumented)
+export const Tooltip: React.ForwardRefExoticComponent<TooltipProps & React.RefAttributes<HTMLElement>>;
+
+// @public (undocumented)
+export const TooltipManager: React.ForwardRefExoticComponent<TooltipManagerProps & React.RefAttributes<HTMLElement>>;
+
+// @public (undocumented)
+export interface TooltipManagerProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+}
+
+// @public (undocumented)
+export const tooltipManagerShorthandProps: (keyof TooltipManagerProps)[];
+
+// @public (undocumented)
+export interface TooltipManagerState extends TooltipManagerProps {
+    ref: React.MutableRefObject<HTMLElement>;
+}
+
+// @public (undocumented)
+export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+}
+
+// @public (undocumented)
+export const TooltipProvider: React.ForwardRefExoticComponent<TooltipProviderProps & React.RefAttributes<HTMLElement>>;
+
+// @public (undocumented)
+export interface TooltipProviderProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+}
+
+// @public (undocumented)
+export const tooltipProviderShorthandProps: (keyof TooltipProviderProps)[];
+
+// @public (undocumented)
+export interface TooltipProviderState extends TooltipProviderProps {
+    ref: React.MutableRefObject<HTMLElement>;
+}
+
+// @public (undocumented)
+export const tooltipShorthandProps: (keyof TooltipProps)[];
+
+// @public (undocumented)
+export interface TooltipState extends TooltipProps {
+    ref: React.MutableRefObject<HTMLElement>;
+}
+
+// @public
+export const useTooltip: (props: TooltipProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipProps | undefined) => TooltipState;
+
+// @public
+export const useTooltipManager: (props: TooltipManagerProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipManagerProps | undefined) => TooltipManagerState;
+
+// @public
+export const useTooltipManagerStyles: (state: TooltipManagerState) => TooltipManagerState;
+
+// @public
+export const useTooltipProvider: (props: TooltipProviderProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipProviderProps | undefined) => TooltipProviderState;
+
+// @public
+export const useTooltipProviderStyles: (state: TooltipProviderState) => TooltipProviderState;
+
+// @public
+export const useTooltipStyles: (state: TooltipState) => TooltipState;
+
 
 // (No @packageDocumentation comment for this package)
 
