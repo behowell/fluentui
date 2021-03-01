@@ -61,8 +61,8 @@ export const useTooltipManager = (
       },
 
       hide: (_: HTMLElement) => {
-        setCurrentTooltip(undefined);
-        currentTargetRef.current = null;
+        // setCurrentTooltip(undefined);
+        // currentTargetRef.current = null;
       },
     };
 

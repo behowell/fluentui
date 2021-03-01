@@ -1,2 +1,2 @@
-export * from './useTooltipProp';
+export * from './useTooltipSlot';
 export * from './useTooltipRef';

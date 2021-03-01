@@ -8,29 +8,37 @@ import * as PopperJs from '@popperjs/core';
 export const useTooltipPlacement = (state: TooltipState): TooltipState => {
   const { ref, targetRef, arrowRef, placement } = state;
 
-  React.useEffect(() => {
-    if (!targetRef || !targetRef.current || !ref.current) {
+  const [root, setRoot] = React.useState<HTMLElement | null>(ref.current);
+  const [target, setTarget] = React.useState<HTMLElement | null>(targetRef?.current || null);
+  const [arrow, setArrow] = React.useState<HTMLElement | null>(arrowRef.current);
+
+  if (root !== ref.current || target !== targetRef?.current || arrow !== arrowRef.current) {
+    setRoot(ref.current);
+    setTarget(targetRef?.current || null);
+    setArrow(arrowRef.current);
+  }
+
+  React.useLayoutEffect(() => {
+    if (root !== ref.current || target !== targetRef?.current || arrow !== arrowRef.current) {
+      setRoot(ref.current);
+      setTarget(targetRef?.current || null);
+      setArrow(arrowRef.current);
       return;
     }
 
-    // REVIEW what happens if these refs change?
-    const popper = PopperJs.createPopper(targetRef.current, ref.current, {
+    if (!target || !root) {
+      return;
+    }
+
+    const popper = PopperJs.createPopper(target, root, {
       placement,
-      modifiers: [
-        {
-          name: 'arrow',
-          enabled: !!arrowRef.current,
-          options: {
-            element: arrowRef.current,
-          },
-        },
-      ],
+      modifiers: [{ name: 'arrow', enabled: !!arrow, options: { element: arrow } }],
     });
 
     return () => {
       popper.destroy();
     };
-  }, [ref, targetRef, arrowRef, placement]);
+  }, [target, root, arrow, ref, targetRef, arrowRef, placement]);
 
   return state;
 };

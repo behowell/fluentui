@@ -1,9 +1,13 @@
-import { useTooltipManagerRef } from '../components/TooltipProvider';
+import { TooltipSlotProps, useTooltipManagerRef } from '../components/TooltipProvider';
 import { useRefEffect } from '@fluentui/react-hooks';
-import { TooltipProps } from '../Tooltip';
 import { ShorthandProps } from '@fluentui/react-utilities';
 
-export const useTooltipRef = (tooltip: ShorthandProps<TooltipProps>) => {
+/**
+ * Create a ref that, when attached to an element, shows the tooltip on hover or focus.
+ *
+ * @param tooltip The tooltip to display on hover or focus. Can be a string, JSX element tree, or TooltipSlotProps.
+ */
+export function useTooltipRef(tooltip: ShorthandProps<TooltipSlotProps>) {
   const managerRef = useTooltipManagerRef();
 
   return useRefEffect<HTMLElement>(target => {
@@ -22,4 +26,4 @@ export const useTooltipRef = (tooltip: ShorthandProps<TooltipProps>) => {
       target.removeEventListener('pointerleave', onLeave);
     };
   });
-};
+}

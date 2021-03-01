@@ -1,25 +1,47 @@
 import * as React from 'react';
 import { ComponentProps, ShorthandProps } from '@fluentui/react-utilities';
-import { TooltipProps } from '../Tooltip';
+
+export interface TooltipSlotProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+  /**
+   * How to position the tooltip relative to the target element. This is a "best effort" placement,
+   * but the tooltip may be flipped to the other side if there is not enough room.
+   *
+   * @defaultvalue bottom
+   */
+  placement?: TooltipPlacement;
+
+  /**
+   * Subtle color variant
+   */
+  subtle?: boolean;
+}
+
+export type TooltipPlacement =
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end';
 
 /**
  * Interface to be implemented by the TooltipManager
  */
 export interface TooltipManagerApi {
-  show: (target: HTMLElement, tooltip: ShorthandProps<TooltipProps>) => void;
+  show: (target: HTMLElement, tooltip: ShorthandProps<TooltipSlotProps>) => void;
   hide: (target: HTMLElement) => void;
 }
 
-/**
- * {@docCategory TooltipProvider }
- */
 export interface TooltipProviderProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
   // TooltipProvider has no additional props
 }
 
-/**
- * {@docCategory TooltipProvider }
- */
 export interface TooltipProviderState extends TooltipProviderProps {
   /**
    * Ref to the root slot

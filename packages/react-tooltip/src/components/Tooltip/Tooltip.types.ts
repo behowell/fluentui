@@ -1,6 +1,33 @@
 import * as React from 'react';
 import { ComponentProps, ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
 
+/** {@docCategory Tooltip} */
+export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+  /**
+   * How to position the tooltip relative to the target element. This is a "best effort" placement,
+   * but the tooltip may be flipped to the other side if there is not enough room.
+   *
+   * @defaultvalue bottom
+   */
+  placement?: TooltipPlacement;
+
+  /**
+   * Subtle color variant
+   */
+  subtle?: boolean;
+
+  /**
+   * The element that this Tooltip should point to.
+   */
+  targetRef?: React.RefObject<HTMLElement | null>;
+
+  /**
+   * The arrow that points to the target element.
+   */
+  arrow?: ShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
+}
+
+/** {@docCategory Tooltip} */
 export type TooltipPlacement =
   | 'top'
   | 'top-start'
@@ -14,33 +41,6 @@ export type TooltipPlacement =
   | 'left'
   | 'left-start'
   | 'left-end';
-
-/**
- * {@docCategory Tooltip }
- */
-export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
-  /**
-   * The element that this Tooltip should point to.
-   */
-  targetRef?: React.RefObject<HTMLElement | null>;
-
-  /**
-   * How to position the tooltip relative to the target element
-   *
-   * @defaultvalue bottom
-   */
-  placement?: TooltipPlacement;
-
-  /**
-   * The arrow ("beak") that points to the target element
-   */
-  arrow?: ShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
-
-  /**
-   * Subtle color variant
-   */
-  subtle?: boolean;
-}
 
 type PropsToState<T, ShorthandPropNames extends keyof T> = Omit<T, ShorthandPropNames> &
   {
