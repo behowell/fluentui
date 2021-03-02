@@ -65,7 +65,7 @@ const useArrowStyles = makeStyles<TooltipState>([
 
 /**
  * Apply styling to the Tooltip slots based on the state
- * {@docCategory Tooltip }
+ * {@docCategory Tooltip}
  */
 export const useTooltipStyles = (state: TooltipState): TooltipState => {
   state.className = ax(useRootStyles(state), state.className);

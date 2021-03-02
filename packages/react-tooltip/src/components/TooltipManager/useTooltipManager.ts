@@ -3,6 +3,7 @@ import { makeMergeProps, resolveShorthandProps, ShorthandProps, useMergedRefs } 
 import { TooltipManagerProps, TooltipManagerState } from './TooltipManager.types';
 import { useTooltipManagerRef } from '../../TooltipProvider';
 import { Tooltip, TooltipProps } from '../../Tooltip';
+import { usePopper } from 'react-popper';
 
 export const tooltipManagerShorthandProps: (keyof TooltipManagerState)[] = ['tooltip'];
 
@@ -29,7 +30,38 @@ export const useTooltipManager = (
 ): TooltipManagerState => {
   // Use state to keep track of the current Tooltip being shown (if any), and the element it's attached to
   const [currentTooltip, setCurrentTooltip] = React.useState<ShorthandProps<TooltipProps>>();
+  const [currentTooltipDefaultProps, setCurrentTooltipDefaultProps] = React.useState<TooltipProps>();
   const currentTargetRef = React.useRef<HTMLElement | null>(null);
+
+  // Register this instance of TooltipManager with the TooltipManagerRef from TooltipProvider
+  const tooltipManagerApiRef = useTooltipManagerRef();
+  React.useLayoutEffect(() => {
+    if (tooltipManagerApiRef.current !== undefined) {
+      // Another TooltipManager has already registered; don't overwrite it
+      // REVIEW should this be an error?
+      return;
+    }
+
+    tooltipManagerApiRef.current = {
+      showTooltip: (target: HTMLElement, tooltip: ShorthandProps<TooltipProps>, defaultTooltipProps?: TooltipProps) => {
+        setCurrentTooltip(tooltip);
+        setCurrentTooltipDefaultProps(defaultTooltipProps);
+        currentTargetRef.current = target;
+      },
+
+      hideTooltip: (target: HTMLElement) => {
+        if (currentTargetRef.current === target) {
+          // setCurrentTooltip(undefined);
+          // setCurrentTooltipDefaultProps(undefined);
+          // currentTargetRef.current = null;
+        }
+      },
+    };
+
+    return () => {
+      tooltipManagerApiRef.current = undefined;
+    };
+  }, [tooltipManagerApiRef]);
 
   // Create the state object
   const state = mergeProps(
@@ -41,35 +73,15 @@ export const useTooltipManager = (
       ref: useMergedRefs(ref, React.useRef(null)),
     },
     defaultProps,
+    {
+      tooltip: currentTooltipDefaultProps,
+    },
     props,
     resolveShorthandProps({ tooltip: currentTooltip }, tooltipManagerShorthandProps),
   );
 
-  // Register this instance of TooltipManager with the TooltipManagerRef from TooltipProvider
-  const managerRef = useTooltipManagerRef();
-  React.useLayoutEffect(() => {
-    if (managerRef.current !== undefined) {
-      // Another TooltipManager has already registered; don't overwrite it
-      // REVIEW should this be an error?
-      return;
-    }
-
-    managerRef.current = {
-      show: (target: HTMLElement, tooltip: ShorthandProps<TooltipProps>) => {
-        setCurrentTooltip(tooltip);
-        currentTargetRef.current = target;
-      },
-
-      hide: (_: HTMLElement) => {
-        // setCurrentTooltip(undefined);
-        // currentTargetRef.current = null;
-      },
-    };
-
-    return () => {
-      managerRef.current = undefined;
-    };
-  }, [managerRef]);
+  // TODO
+  usePopper;
 
   return state;
 };

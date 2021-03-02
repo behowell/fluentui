@@ -16,7 +16,7 @@ const mergeProps = makeMergeProps<TooltipState>({ deepMerge: tooltipShorthandPro
  * @param ref - reference to root HTMLElement of Tooltip
  * @param defaultProps - (optional) default prop values provided by the implementing type
  *
- * {@docCategory Tooltip }
+ * {@docCategory Tooltip}
  */
 export const useTooltip = (
   props: TooltipProps,

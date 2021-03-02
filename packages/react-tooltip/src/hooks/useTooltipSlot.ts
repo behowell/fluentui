@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ObjectShorthandProps, resolveShorthandProps, ShorthandProps, useId } from '@fluentui/react-utilities';
+import { ShorthandProps, useId } from '@fluentui/react-utilities';
 import { TooltipSlotProps } from '../TooltipProvider';
 import { useTooltipManagerRef } from '../components/TooltipProvider';
 
@@ -11,7 +11,7 @@ import { useTooltipManagerRef } from '../components/TooltipProvider';
  */
 export interface WithTooltipSlot {
   /**
-   * The tooltip to display on hover or focus. Can be a string, JSX element tree, or TooltipSlotProps.
+   * The tooltip content to display on hover or focus. Can be a string, JSX element tree, or TooltipSlotProps.
    */
   tooltip?: ShorthandProps<TooltipSlotProps>;
 }
@@ -21,40 +21,37 @@ export interface WithTooltipSlot {
  */
 export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTooltipSlot) {
   const managerRef = useTooltipManagerRef();
-  const generatedTooltipId = useId('tooltip');
+  const generatedId = useId('tooltip');
 
   if (state.tooltip) {
-    // To set the tooltip's id, we need to first resolve the shorthand prop.
-    state.tooltip = resolveShorthandProps({ tooltip: state.tooltip }, ['tooltip']).tooltip as ObjectShorthandProps<
-      TooltipSlotProps
-    >;
+    const tooltip = state.tooltip;
 
-    const { tooltip, onFocus, onBlur, onPointerEnter, onPointerLeave } = state;
+    // The tooltip needs an ID for aria-describedby. If it does not already have one, use a generated ID
+    const id = (tooltip as TooltipSlotProps).id || generatedId;
+    state['aria-describedby'] = id;
 
-    // Supply the tooltip with a generated ID if it doesn't have one assigned
-    if (!tooltip.id) {
-      tooltip.id = generatedTooltipId;
-    }
-    state['aria-describedby'] = tooltip.id;
-
-    state.onFocus = ev => {
-      managerRef.current?.show(ev.currentTarget, tooltip);
-      onFocus?.(ev);
+    // Create event listeners to show or hide the tooltip.
+    // These wrap the existing event handlers and ensure that they are still called.
+    const showTooltip = <E extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: E) => void) => {
+      return (ev: E) => {
+        wrappedHandler?.(ev);
+        if (!ev.isDefaultPrevented()) {
+          managerRef.current?.showTooltip(ev.currentTarget, tooltip, { id });
+        }
+      };
     };
 
-    state.onPointerEnter = ev => {
-      managerRef.current?.show(ev.currentTarget, tooltip);
-      onPointerEnter?.(ev);
+    const hideTooltip = <E extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: E) => void) => {
+      return (ev: E) => {
+        wrappedHandler?.(ev);
+        managerRef.current?.hideTooltip(ev.currentTarget);
+      };
     };
 
-    state.onBlur = ev => {
-      managerRef.current?.hide(ev.currentTarget);
-      onBlur?.(ev);
-    };
+    state.onFocus = showTooltip(state.onFocus);
+    state.onPointerEnter = showTooltip(state.onPointerEnter);
 
-    state.onPointerLeave = ev => {
-      managerRef.current?.hide(ev.currentTarget);
-      onPointerLeave?.(ev);
-    };
+    state.onBlur = hideTooltip(state.onBlur);
+    state.onPointerLeave = hideTooltip(state.onPointerLeave);
   }
 }

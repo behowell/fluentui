@@ -6,7 +6,7 @@ import { useTooltipStyles } from './useTooltipStyles';
 import { useTooltipPlacement } from './useTooltipPlacement';
 
 /**
- * {@docCategory Tooltip }
+ * {@docCategory Tooltip}
  */
 export const Tooltip = React.forwardRef<HTMLElement, TooltipProps>((props, ref) => {
   const state = useTooltip(props, ref);

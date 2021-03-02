@@ -34,8 +34,12 @@ export type TooltipPlacement =
  * Interface to be implemented by the TooltipManager
  */
 export interface TooltipManagerApi {
-  show: (target: HTMLElement, tooltip: ShorthandProps<TooltipSlotProps>) => void;
-  hide: (target: HTMLElement) => void;
+  showTooltip: (
+    target: HTMLElement,
+    tooltip: ShorthandProps<TooltipSlotProps>,
+    defaultProps?: TooltipSlotProps,
+  ) => void;
+  hideTooltip: (target: HTMLElement) => void;
 }
 
 export interface TooltipProviderProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {

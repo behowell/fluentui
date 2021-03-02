@@ -5,7 +5,7 @@ import { tooltipShorthandProps } from './useTooltip';
 
 /**
  * Render the final JSX of Tooltip
- * {@docCategory Tooltip }
+ * {@docCategory Tooltip}
  */
 export const renderTooltip = (state: TooltipState) => {
   const { slots, slotProps } = getSlots(state, tooltipShorthandProps);

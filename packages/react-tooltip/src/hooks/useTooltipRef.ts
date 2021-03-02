@@ -11,8 +11,8 @@ export function useTooltipRef(tooltip: ShorthandProps<TooltipSlotProps>) {
   const managerRef = useTooltipManagerRef();
 
   return useRefEffect<HTMLElement>(target => {
-    const onEnter = () => managerRef.current?.show(target, tooltip);
-    const onLeave = () => managerRef.current?.hide(target);
+    const onEnter = () => managerRef.current?.showTooltip(target, tooltip);
+    const onLeave = () => managerRef.current?.hideTooltip(target);
 
     target.addEventListener('focus', onEnter);
     target.addEventListener('blur', onLeave);
