@@ -3,13 +3,14 @@ import { makeMergeProps, resolveShorthandProps, ShorthandProps, useMergedRefs } 
 import { TooltipManagerProps, TooltipManagerState } from './TooltipManager.types';
 import { useTooltipManagerRef } from '../../TooltipProvider';
 import { Tooltip, TooltipProps } from '../../Tooltip';
-import { usePopper } from 'react-popper';
+import { TooltipManagerApi } from '../TooltipProvider/index';
 
 export const tooltipManagerShorthandProps: (keyof TooltipManagerState)[] = ['tooltip'];
 
 const mergeProps = makeMergeProps<TooltipManagerState>({ deepMerge: tooltipManagerShorthandProps });
 
-const nullRender = () => null;
+const TOOLTIP_SHOW_DELAY_MS = 500;
+const TOOLTIP_HIDE_DELAY_MS = 300;
 
 /**
  * Create the state required to render TooltipManager.
@@ -21,7 +22,7 @@ const nullRender = () => null;
  * @param ref - reference to root HTMLElement of TooltipManager
  * @param defaultProps - (optional) default prop values provided by the implementing type
  *
- * {@docCategory TooltipManager }
+ * {@docCategory TooltipManager}
  */
 export const useTooltipManager = (
   props: TooltipManagerProps,
@@ -29,9 +30,72 @@ export const useTooltipManager = (
   defaultProps?: TooltipManagerProps,
 ): TooltipManagerState => {
   // Use state to keep track of the current Tooltip being shown (if any), and the element it's attached to
-  const [currentTooltip, setCurrentTooltip] = React.useState<ShorthandProps<TooltipProps>>();
-  const [currentTooltipDefaultProps, setCurrentTooltipDefaultProps] = React.useState<TooltipProps>();
-  const currentTargetRef = React.useRef<HTMLElement | null>(null);
+  type TooltipInfo = {
+    target: HTMLElement;
+    tooltipProps: ShorthandProps<TooltipProps>;
+    extraTooltipProps?: TooltipProps;
+  };
+  const [visibleTooltip, setVisibleTooltip] = React.useState<TooltipInfo>();
+
+  const visibleTooltipRef = React.useRef<TooltipInfo>();
+  visibleTooltipRef.current = visibleTooltip;
+
+  const mouseTargetRef = React.useRef<HTMLElement>();
+
+  const tooltipElementRef = React.useRef<HTMLElement>();
+
+  const delayTimeoutId = React.useRef<number>();
+
+  const tooltipManagerApi: TooltipManagerApi = React.useMemo(
+    () => ({
+      showTooltip: (
+        target: HTMLElement,
+        tooltipProps: ShorthandProps<TooltipProps>,
+        extraTooltipProps?: TooltipProps,
+      ) => {
+        mouseTargetRef.current = target;
+
+        window.clearTimeout(delayTimeoutId.current);
+        delayTimeoutId.current = undefined;
+
+        if (visibleTooltipRef.current) {
+          setVisibleTooltip({ target, tooltipProps, extraTooltipProps });
+        } else {
+          delayTimeoutId.current = window.setTimeout(() => {
+            if (mouseTargetRef.current === target) {
+              setVisibleTooltip({ target, tooltipProps, extraTooltipProps });
+            }
+          }, TOOLTIP_SHOW_DELAY_MS);
+        }
+      },
+
+      hideTooltip: (target: HTMLElement) => {
+        if (mouseTargetRef.current === target) {
+          mouseTargetRef.current = undefined;
+        }
+
+        if (
+          mouseTargetRef.current !== visibleTooltipRef.current?.target &&
+          mouseTargetRef.current !== tooltipElementRef.current
+        ) {
+          window.clearTimeout(delayTimeoutId.current);
+          delayTimeoutId.current = undefined;
+
+          if (visibleTooltipRef.current) {
+            delayTimeoutId.current = window.setTimeout(() => {
+              if (
+                mouseTargetRef.current !== visibleTooltipRef.current?.target &&
+                mouseTargetRef.current !== tooltipElementRef.current
+              ) {
+                setVisibleTooltip(undefined);
+              }
+            }, TOOLTIP_HIDE_DELAY_MS);
+          }
+        }
+      },
+    }),
+    [],
+  );
 
   // Register this instance of TooltipManager with the TooltipManagerRef from TooltipProvider
   const tooltipManagerApiRef = useTooltipManagerRef();
@@ -42,46 +106,37 @@ export const useTooltipManager = (
       return;
     }
 
-    tooltipManagerApiRef.current = {
-      showTooltip: (target: HTMLElement, tooltip: ShorthandProps<TooltipProps>, defaultTooltipProps?: TooltipProps) => {
-        setCurrentTooltip(tooltip);
-        setCurrentTooltipDefaultProps(defaultTooltipProps);
-        currentTargetRef.current = target;
-      },
-
-      hideTooltip: (target: HTMLElement) => {
-        if (currentTargetRef.current === target) {
-          // setCurrentTooltip(undefined);
-          // setCurrentTooltipDefaultProps(undefined);
-          // currentTargetRef.current = null;
-        }
-      },
-    };
+    tooltipManagerApiRef.current = tooltipManagerApi;
 
     return () => {
       tooltipManagerApiRef.current = undefined;
+
+      window.clearTimeout(delayTimeoutId.current);
+      delayTimeoutId.current = undefined;
     };
-  }, [tooltipManagerApiRef]);
+  }, [tooltipManagerApi, tooltipManagerApiRef]);
 
   // Create the state object
   const state = mergeProps(
     {
-      tooltip: {
-        as: currentTooltip ? Tooltip : nullRender,
-        targetRef: currentTargetRef,
-      },
       ref: useMergedRefs(ref, React.useRef(null)),
+      tooltip: visibleTooltip && {
+        as: Tooltip,
+        ref: tooltipElementRef,
+        target: visibleTooltip?.target,
+        onPointerEnter: () => {
+          mouseTargetRef.current = tooltipElementRef.current;
+        },
+        onPointerLeave: () => {
+          tooltipManagerApi.hideTooltip(tooltipElementRef.current!);
+        },
+        ...visibleTooltip.extraTooltipProps,
+      },
     },
     defaultProps,
-    {
-      tooltip: currentTooltipDefaultProps,
-    },
     props,
-    resolveShorthandProps({ tooltip: currentTooltip }, tooltipManagerShorthandProps),
+    resolveShorthandProps({ tooltip: visibleTooltip?.tooltipProps }, tooltipManagerShorthandProps),
   );
-
-  // TODO
-  usePopper;
 
   return state;
 };

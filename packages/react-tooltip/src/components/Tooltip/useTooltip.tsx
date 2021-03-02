@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { TooltipProps, TooltipPropsWithDefaults, TooltipState } from './Tooltip.types';
+import { TooltipProps, TooltipState } from './Tooltip.types';
 
 export const tooltipShorthandProps: (keyof TooltipProps)[] = ['arrow'];
 
-const mergeProps = makeMergeProps<TooltipState>({ deepMerge: tooltipShorthandProps });
+export const mergeProps = makeMergeProps<TooltipState>({ deepMerge: tooltipShorthandProps });
 
 /**
  * Create the state required to render Tooltip.
@@ -23,21 +23,19 @@ export const useTooltip = (
   ref: React.Ref<HTMLElement>,
   defaultProps?: TooltipProps,
 ): TooltipState => {
-  const arrowRef = React.useRef<HTMLElement | null>(null);
-
-  const baseDefaultProps: TooltipPropsWithDefaults = {
-    as: 'div',
-    arrow: {
+  const state = mergeProps(
+    {
       as: 'div',
-      children: '',
-      ref: useMergedRefs((props.arrow as React.RefAttributes<HTMLElement>)?.ref, arrowRef),
+      placement: 'bottom',
+      ref: useMergedRefs(ref, React.useRef<HTMLElement>(null)),
+      arrow: {
+        as: 'div',
+        children: '',
+      },
     },
-    arrowRef: arrowRef,
-    placement: 'bottom',
-    ref: useMergedRefs(ref, React.useRef(null)),
-  };
-
-  const state = mergeProps(baseDefaultProps, defaultProps, resolveShorthandProps(props, tooltipShorthandProps));
+    defaultProps,
+    resolveShorthandProps(props, tooltipShorthandProps),
+  );
 
   return state;
 };

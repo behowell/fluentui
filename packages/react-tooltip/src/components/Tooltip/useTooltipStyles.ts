@@ -9,7 +9,6 @@ const useRootStyles = makeStyles<TooltipState>([
     null,
     theme => ({
       position: 'absolute',
-      margin: '6px',
       padding: '5px 12px 7px 12px',
       maxWidth: '240px',
       fontFamily: theme.global.type.fontFamilies.base,

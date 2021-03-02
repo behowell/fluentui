@@ -1,44 +1,39 @@
 import * as React from 'react';
+import { useMergedRefs } from '@fluentui/react-utilities';
+import { usePopper } from 'react-popper';
 import { TooltipState } from './Tooltip.types';
-import * as PopperJs from '@popperjs/core';
+import { mergeProps } from './useTooltip';
 
 /**
  * Positions the tooltip relative to its targetElement
  */
 export const useTooltipPlacement = (state: TooltipState): TooltipState => {
-  const { ref, targetRef, arrowRef, placement } = state;
+  const [rootElement, setRootElement] = React.useState<HTMLElement | null>(null);
+  const [arrowElement, setArrowElement] = React.useState<HTMLElement | null>(null);
 
-  const [root, setRoot] = React.useState<HTMLElement | null>(ref.current);
-  const [target, setTarget] = React.useState<HTMLElement | null>(targetRef?.current || null);
-  const [arrow, setArrow] = React.useState<HTMLElement | null>(arrowRef.current);
+  const popper = usePopper(state.target, rootElement, {
+    placement: state.placement,
+    modifiers: [
+      {
+        name: 'arrow',
+        options: {
+          element: arrowElement,
+          padding: rootElement ? parseInt(window.getComputedStyle(rootElement).borderRadius, 10) : 0,
+        },
+      },
+      { name: 'offset', options: { offset: [0, 4.25] } },
+    ],
+  });
 
-  if (root !== ref.current || target !== targetRef?.current || arrow !== arrowRef.current) {
-    setRoot(ref.current);
-    setTarget(targetRef?.current || null);
-    setArrow(arrowRef.current);
-  }
-
-  React.useLayoutEffect(() => {
-    if (root !== ref.current || target !== targetRef?.current || arrow !== arrowRef.current) {
-      setRoot(ref.current);
-      setTarget(targetRef?.current || null);
-      setArrow(arrowRef.current);
-      return;
-    }
-
-    if (!target || !root) {
-      return;
-    }
-
-    const popper = PopperJs.createPopper(target, root, {
-      placement,
-      modifiers: [{ name: 'arrow', enabled: !!arrow, options: { element: arrow } }],
-    });
-
-    return () => {
-      popper.destroy();
-    };
-  }, [target, root, arrow, ref, targetRef, arrowRef, placement]);
+  mergeProps(state, {
+    style: popper.styles.popper,
+    placement: popper.attributes.popper?.['data-popper-placement'],
+    ref: useMergedRefs(setRootElement, state.ref),
+    arrow: {
+      style: popper.styles.arrow,
+      ref: useMergedRefs(setArrowElement, state.arrow.ref),
+    },
+  });
 
   return state;
 };
