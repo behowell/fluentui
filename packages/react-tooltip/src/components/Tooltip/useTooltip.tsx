@@ -24,6 +24,8 @@ export const useTooltip = (
   const state = mergeProps(
     {
       as: 'div',
+      role: 'tooltip',
+      'aria-hidden': 'true',
       placement: 'bottom',
       ref: useMergedRefs(ref, React.useRef<HTMLElement>(null)),
       arrow: {
@@ -34,6 +36,10 @@ export const useTooltip = (
     defaultProps,
     resolveShorthandProps(props, tooltipShorthandProps),
   );
+
+  if (state.noArrow) {
+    state.arrow.children = undefined;
+  }
 
   return state;
 };

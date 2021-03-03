@@ -40,18 +40,27 @@ export const renderTooltipProvider: (state: import("@fluentui/react-utilities").
 // @public (undocumented)
 export type ShowTooltipOptions = {
     id?: string;
+    showDelay?: number;
+    hideDelay?: number;
 };
 
 // @public (undocumented)
 export const Tooltip: React.ForwardRefExoticComponent<TooltipProps & React.RefAttributes<HTMLElement>>;
 
 // @public (undocumented)
+export const TOOLTIP_HIDE_DELAY_MS = 250;
+
+// @public (undocumented)
+export const TOOLTIP_SHOW_DELAY_MS = 500;
+
+// @public (undocumented)
 export const TooltipManager: React.ForwardRefExoticComponent<TooltipManagerProps & React.RefAttributes<HTMLElement>>;
 
 // @public
 export interface TooltipManagerApi {
-    onEnter: (triggerElement: HTMLElement, tooltip: ShorthandProps<TooltipProps>, options?: ShowTooltipOptions) => void;
-    onLeave: (triggerElement: HTMLElement) => void;
+    hideAll: () => void;
+    hideTooltip: (triggerElement: HTMLElement) => void;
+    showTooltip: (triggerElement: HTMLElement, tooltip: ShorthandProps<TooltipProps>, options?: ShowTooltipOptions) => void;
 }
 
 // @public (undocumented)
@@ -72,6 +81,7 @@ export type TooltipPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bot
 
 // @public (undocumented)
 export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+    noArrow?: boolean;
     placement?: TooltipPlacement;
     subtle?: boolean;
     targetElement?: HTMLElement | null;
@@ -128,7 +138,7 @@ export const useTooltipProvider: (props: TooltipProviderProps, ref: React.Ref<HT
 export const useTooltipProviderStyles: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>) => import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>;
 
 // @public
-export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>): import("@fluentui/react-hooks").RefCallback<HTMLElement>;
+export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>, showOptions?: ShowTooltipOptions): import("@fluentui/react-hooks").RefCallback<HTMLElement>;
 
 // @public
 export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTooltipSlot): void;

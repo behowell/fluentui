@@ -43,56 +43,61 @@ export const useTooltipManager = (
 
   const delayTimeoutId = React.useRef<number>();
 
-  const tooltipManagerApi: TooltipManagerApi = React.useMemo(
-    () => ({
-      onEnter: (
-        triggerElement: HTMLElement,
-        tooltipProps: ShorthandProps<TooltipProps>,
-        options?: ShowTooltipOptions,
-      ) => {
-        mouseTargetRef.current = triggerElement;
+  const tooltipManagerApi: TooltipManagerApi = React.useMemo(() => {
+    const showTooltip = (
+      triggerElement: HTMLElement,
+      tooltipProps: ShorthandProps<TooltipProps>,
+      options?: ShowTooltipOptions,
+    ) => {
+      mouseTargetRef.current = triggerElement;
 
-        window.clearTimeout(delayTimeoutId.current);
-        delayTimeoutId.current = undefined;
+      window.clearTimeout(delayTimeoutId.current);
+      delayTimeoutId.current = undefined;
 
-        if (visibleTooltipRef.current) {
-          setVisibleTooltip({ triggerElement, tooltipProps, options });
-        } else {
-          delayTimeoutId.current = window.setTimeout(() => {
-            if (mouseTargetRef.current === triggerElement) {
-              setVisibleTooltip({ triggerElement, tooltipProps, options });
-            }
-          }, TOOLTIP_SHOW_DELAY_MS);
-        }
-      },
+      if (visibleTooltipRef.current || options?.showDelay) {
+        setVisibleTooltip({ triggerElement, tooltipProps, options });
+      } else {
+        setVisibleTooltip(undefined);
 
-      onLeave: (triggerElement: HTMLElement) => {
-        if (mouseTargetRef.current === triggerElement) {
-          mouseTargetRef.current = undefined;
-        }
-
-        if (
-          mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-          mouseTargetRef.current !== tooltipElementRef.current
-        ) {
-          window.clearTimeout(delayTimeoutId.current);
-          delayTimeoutId.current = undefined;
-
-          if (visibleTooltipRef.current) {
-            delayTimeoutId.current = window.setTimeout(() => {
-              if (
-                mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-                mouseTargetRef.current !== tooltipElementRef.current
-              ) {
-                setVisibleTooltip(undefined);
-              }
-            }, TOOLTIP_HIDE_DELAY_MS);
+        delayTimeoutId.current = window.setTimeout(() => {
+          if (mouseTargetRef.current === triggerElement) {
+            setVisibleTooltip({ triggerElement, tooltipProps, options });
           }
-        }
-      },
-    }),
-    [],
-  );
+        }, options?.showDelay ?? TOOLTIP_SHOW_DELAY_MS);
+      }
+    };
+
+    const hideAll = () => {
+      window.clearTimeout(delayTimeoutId.current);
+      delayTimeoutId.current = undefined;
+
+      if (visibleTooltipRef.current) {
+        delayTimeoutId.current = window.setTimeout(() => {
+          if (
+            mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
+            mouseTargetRef.current !== tooltipElementRef.current
+          ) {
+            setVisibleTooltip(undefined);
+          }
+        }, visibleTooltipRef.current.options?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS);
+      }
+    };
+
+    const hideTooltip = (triggerElement: HTMLElement) => {
+      if (mouseTargetRef.current === triggerElement) {
+        mouseTargetRef.current = undefined;
+      }
+
+      if (
+        mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
+        mouseTargetRef.current !== tooltipElementRef.current
+      ) {
+        hideAll();
+      }
+    };
+
+    return { showTooltip, hideTooltip, hideAll };
+  }, []);
 
   // Clean up the timeout when the component is unloaded
   React.useEffect(() => {
@@ -129,7 +134,7 @@ export const useTooltipManager = (
           mouseTargetRef.current = tooltipElementRef.current;
         },
         onPointerLeave: () => {
-          tooltipManagerApi.onLeave(tooltipElementRef.current!);
+          tooltipManagerApi.hideTooltip(tooltipElementRef.current!);
         },
         id: visibleTooltip.options?.id,
       },

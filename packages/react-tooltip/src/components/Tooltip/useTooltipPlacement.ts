@@ -14,16 +14,18 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
 
   const popper = usePopper(state.targetElement, rootElement, {
     placement: state.placement,
-    modifiers: [
-      {
-        name: 'arrow',
-        options: {
-          element: arrowElement,
-          padding: rootElement ? parseInt(window.getComputedStyle(rootElement).borderRadius, 10) : 0,
-        },
-      },
-      { name: 'offset', options: { offset: [0, arrowHeight] } },
-    ],
+    modifiers: state.noArrow
+      ? undefined
+      : [
+          {
+            name: 'arrow',
+            options: {
+              element: arrowElement,
+              padding: rootElement ? parseInt(window.getComputedStyle(rootElement).borderRadius, 10) : 0,
+            },
+          },
+          { name: 'offset', options: { offset: [0, arrowHeight] } },
+        ],
   });
 
   mergeProps(state, {

@@ -36,25 +36,25 @@ export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTo
 
   // Create event listeners to show or hide the tooltip.
   // These wrap the existing event handlers and ensure that they are still called.
-  const onEnter = <Event extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: Event) => void) => {
+  const showTooltip = <Event extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: Event) => void) => {
     return (ev: Event) => {
       wrappedHandler?.(ev);
       if (!ev.isDefaultPrevented()) {
-        managerRef.current?.onEnter(ev.currentTarget, tooltip, { id });
+        managerRef.current?.showTooltip(ev.currentTarget, tooltip, { id });
       }
     };
   };
 
-  const onLeave = <Event extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: Event) => void) => {
+  const hideTooltip = <Event extends React.SyntheticEvent<HTMLElement>>(wrappedHandler?: (ev: Event) => void) => {
     return (ev: Event) => {
       wrappedHandler?.(ev);
-      managerRef.current?.onLeave(ev.currentTarget);
+      managerRef.current?.hideTooltip(ev.currentTarget);
     };
   };
 
-  state.onFocus = onEnter(state.onFocus);
-  state.onPointerEnter = onEnter(state.onPointerEnter);
+  state.onFocus = showTooltip(state.onFocus);
+  state.onPointerEnter = showTooltip(state.onPointerEnter);
 
-  state.onBlur = onLeave(state.onBlur);
-  state.onPointerLeave = onLeave(state.onPointerLeave);
+  state.onBlur = hideTooltip(state.onBlur);
+  state.onPointerLeave = hideTooltip(state.onPointerLeave);
 }

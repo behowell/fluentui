@@ -13,19 +13,19 @@ export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>, showOptions
   const managerRef = useTooltipManagerRef();
 
   return useRefEffect<HTMLElement>(triggerElement => {
-    const onEnter = () => managerRef.current?.onEnter(triggerElement, tooltip, showOptions);
-    const onLeave = () => managerRef.current?.onLeave(triggerElement);
+    const showTooltip = () => managerRef.current?.showTooltip(triggerElement, tooltip, showOptions);
+    const hideTooltip = () => managerRef.current?.hideTooltip(triggerElement);
 
-    triggerElement.addEventListener('focus', onEnter);
-    triggerElement.addEventListener('blur', onLeave);
-    triggerElement.addEventListener('pointerenter', onEnter);
-    triggerElement.addEventListener('pointerleave', onLeave);
+    triggerElement.addEventListener('focus', showTooltip);
+    triggerElement.addEventListener('blur', hideTooltip);
+    triggerElement.addEventListener('pointerenter', showTooltip);
+    triggerElement.addEventListener('pointerleave', hideTooltip);
 
     return () => {
-      triggerElement.removeEventListener('focus', onEnter);
-      triggerElement.removeEventListener('blur', onLeave);
-      triggerElement.removeEventListener('pointerenter', onEnter);
-      triggerElement.removeEventListener('pointerleave', onLeave);
+      triggerElement.removeEventListener('focus', showTooltip);
+      triggerElement.removeEventListener('blur', hideTooltip);
+      triggerElement.removeEventListener('pointerenter', showTooltip);
+      triggerElement.removeEventListener('pointerleave', hideTooltip);
     };
   });
 }

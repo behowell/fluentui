@@ -39,11 +39,14 @@ const TooltipExampleCore = () => (
       />
       <AvatarWithTooltip
         style={{ margin: '10px' }}
-        tooltip={
-          <>
-            Custom <b>Tooltip</b> Content!
-          </>
-        }
+        tooltip={{
+          noArrow: true,
+          children: (
+            <>
+              This <u>Tooltip</u> doesn't have an arrow!
+            </>
+          ),
+        }}
       />
     </div>
     <div>

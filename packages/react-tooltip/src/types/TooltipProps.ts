@@ -16,6 +16,11 @@ export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLE
   subtle?: boolean;
 
   /**
+   * If true, does not render an arrow pointing to the target element
+   */
+  noArrow?: boolean;
+
+  /**
    * The element that this Tooltip points to.
    *
    * Normally this will be set by the TooltipManager when a tooltip is shown by hovering or focusing an element.
