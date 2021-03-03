@@ -8,7 +8,7 @@ import { ShowTooltipOptions, TooltipManagerApi } from '../../types';
 const mergeProps = makeMergeProps<TooltipManagerState>({ deepMerge: tooltipManagerShorthandProps });
 
 const TOOLTIP_SHOW_DELAY_MS = 500;
-const TOOLTIP_HIDE_DELAY_MS = 300;
+const TOOLTIP_HIDE_DELAY_MS = 250;
 
 /**
  * Create the state required to render TooltipManager.
@@ -84,7 +84,7 @@ export const useTooltipManager = (
                 mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
                 mouseTargetRef.current !== tooltipElementRef.current
               ) {
-                // setVisibleTooltip(undefined);
+                setVisibleTooltip(undefined);
               }
             }, TOOLTIP_HIDE_DELAY_MS);
           }
