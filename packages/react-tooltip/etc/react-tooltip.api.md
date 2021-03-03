@@ -30,7 +30,9 @@ export const renderTooltip: (state: import("@fluentui/react-utilities").Componen
 }, never, "arrow" | "placement">) => JSX.Element;
 
 // @public
-export const renderTooltipManager: (state: TooltipManagerState) => JSX.Element;
+export const renderTooltipManager: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipManager.types").TooltipManagerProps & {
+    tooltip?: import("@fluentui/react-utilities").ShorthandProps<import("../Tooltip").TooltipProps>;
+}, never, never>) => JSX.Element;
 
 // @public
 export const renderTooltipProvider: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>) => JSX.Element;
@@ -58,13 +60,12 @@ export interface TooltipManagerProps extends ComponentProps, React.HTMLAttribute
 }
 
 // @public (undocumented)
-export const tooltipManagerShorthandProps: (keyof TooltipManagerState)[];
+export const tooltipManagerShorthandProps: readonly ["tooltip"];
 
 // @public (undocumented)
-export interface TooltipManagerState extends TooltipManagerProps {
-    ref: React.MutableRefObject<HTMLElement>;
-    tooltip?: ObjectShorthandProps<TooltipProps>;
-}
+export type TooltipManagerState = ComponentState<TooltipManagerProps & {
+    tooltip?: ShorthandProps<TooltipProps>;
+}>;
 
 // @public (undocumented)
 export type TooltipPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
@@ -106,13 +107,19 @@ export const useTooltip: (props: TooltipProps, ref: React.Ref<HTMLElement>, defa
 }, never, "arrow" | "placement">;
 
 // @public
-export const useTooltipManager: (props: TooltipManagerProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipManagerProps | undefined) => TooltipManagerState;
+export const useTooltipManager: (props: TooltipManagerProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipManagerProps | undefined) => import("@fluentui/react-utilities").ComponentState<TooltipManagerProps & {
+    tooltip?: ShorthandProps<TooltipProps>;
+}, never, never>;
 
 // @public (undocumented)
 export const useTooltipManagerRef: () => React.MutableRefObject<TooltipManagerApi | undefined>;
 
 // @public
-export const useTooltipManagerStyles: (state: TooltipManagerState) => TooltipManagerState;
+export const useTooltipManagerStyles: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipManager.types").TooltipManagerProps & {
+    tooltip?: import("@fluentui/react-utilities").ShorthandProps<import("../Tooltip").TooltipProps>;
+}, never, never>) => import("@fluentui/react-utilities").ComponentState<import("./TooltipManager.types").TooltipManagerProps & {
+    tooltip?: import("@fluentui/react-utilities").ShorthandProps<import("../Tooltip").TooltipProps>;
+}, never, never>;
 
 // @public
 export const useTooltipProvider: (props: TooltipProviderProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipProviderProps | undefined) => import("@fluentui/react-utilities").ComponentState<TooltipProviderProps, never, never>;

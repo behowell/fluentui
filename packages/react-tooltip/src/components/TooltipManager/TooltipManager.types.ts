@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { ComponentProps, ObjectShorthandProps } from '@fluentui/react-utilities';
-import { TooltipProps } from '../Tooltip';
-import { TooltipManagerApi } from '../../TooltipProvider';
+import { ComponentProps, ComponentState, ShorthandProps } from '@fluentui/react-utilities';
+import { TooltipManagerApi, TooltipProps } from '../../types';
 // import { TooltipManagerApi } from '@fluentui/react-tooltip-provider';
 
-/** {@docCategory TooltipManager} */
 export interface TooltipManagerProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
   /**
    * Ref to the imperative interface to show and hide tooltips.
@@ -12,15 +10,13 @@ export interface TooltipManagerProps extends ComponentProps, React.HTMLAttribute
   componentRef?: React.Ref<TooltipManagerApi>;
 }
 
-/** {@docCategory TooltipManager} */
-export interface TooltipManagerState extends TooltipManagerProps {
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
+export const tooltipManagerShorthandProps = ['tooltip'] as const;
 
-  /**
-   * The Tooltip being rendered, if any.
-   */
-  tooltip?: ObjectShorthandProps<TooltipProps>;
-}
+export type TooltipManagerState = ComponentState<
+  TooltipManagerProps & {
+    /**
+     * The Tooltip being rendered, if any.
+     */
+    tooltip?: ShorthandProps<TooltipProps>;
+  }
+>;

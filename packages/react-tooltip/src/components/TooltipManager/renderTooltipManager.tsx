@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getSlots } from '@fluentui/react-utilities';
-import { TooltipManagerState } from './TooltipManager.types';
-import { tooltipManagerShorthandProps } from './useTooltipManager';
+import { TooltipManagerState, tooltipManagerShorthandProps } from './TooltipManager.types';
 
 /**
  * Render the final JSX of TooltipManager

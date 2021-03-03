@@ -1,4 +1,5 @@
-import { TooltipProps, useTooltipManagerRef } from '../components/TooltipProvider';
+import { useTooltipManagerRef } from '../components/TooltipProvider';
+import { TooltipProps } from '../types';
 import { useRefEffect } from '@fluentui/react-hooks';
 import { ShorthandProps } from '@fluentui/react-utilities';
 

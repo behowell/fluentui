@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ComponentState, ObjectShorthandProps } from '@fluentui/react-utilities';
-import { TooltipProps } from '../../TooltipProvider';
+import { TooltipProps } from '../../types';
+// import { TooltipProps } from '@fluentui/react-tooltip-provider';
 
 export { TooltipProps };
 

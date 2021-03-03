@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, ShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { TooltipManagerProps, TooltipManagerState } from './TooltipManager.types';
+import { TooltipManagerProps, tooltipManagerShorthandProps, TooltipManagerState } from './TooltipManager.types';
 import { Tooltip, TooltipProps } from '../Tooltip';
-import { ShowTooltipOptions, TooltipManagerApi, useTooltipManagerRef } from '../TooltipProvider';
-
-export const tooltipManagerShorthandProps: (keyof TooltipManagerState)[] = ['tooltip'];
+import { useTooltipManagerRef } from '../TooltipProvider';
+import { ShowTooltipOptions, TooltipManagerApi } from '../../types';
 
 const mergeProps = makeMergeProps<TooltipManagerState>({ deepMerge: tooltipManagerShorthandProps });
 
@@ -137,7 +136,7 @@ export const useTooltipManager = (
     },
     defaultProps,
     props,
-    resolveShorthandProps({ tooltip: visibleTooltip?.tooltipProps }, ['tooltip']),
+    resolveShorthandProps({ tooltip: visibleTooltip?.tooltipProps }, tooltipManagerShorthandProps),
   );
 
   return state;
