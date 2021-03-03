@@ -29,10 +29,16 @@ export interface ComponentProps {
 }
 
 // @public
+export type ComponentState<Props extends ComponentProps, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
+    as: React.ElementType;
+    ref: React.Ref<HTMLElement>;
+};
+
+// @public
 export type GenericDictionary = Record<string, any>;
 
 // @public
-export const getSlots: (state: Record<string, any>, slotNames?: string[] | undefined) => {
+export const getSlots: (state: Record<string, any>, slotNames?: readonly string[] | undefined) => {
     slots: Record<string, any>;
     slotProps: Record<string, any>;
 };
@@ -45,7 +51,7 @@ export const makeMergeProps: <TState = Record<string, any>>(options?: MergeProps
 
 // @public (undocumented)
 export type MergePropsOptions = {
-    deepMerge?: string[];
+    deepMerge?: readonly string[];
 };
 
 // @public (undocumented)
@@ -57,7 +63,17 @@ export type ObjectShorthandProps<TProps extends ComponentProps = {}> = TProps & 
 export type RefObjectFunction<T> = React.RefObject<T> & ((value: T) => void);
 
 // @public
-export const resolveShorthandProps: <TProps>(props: TProps, shorthandPropNames: string[]) => TProps;
+export type RequiredProps<Props, RequiredProps extends keyof Props> = Omit<Props, RequiredProps> & {
+    [P in RequiredProps]-?: Props[P];
+};
+
+// @public
+export type ResolvedShorthandProps<Props, ShorthandPropNames extends keyof Props> = Omit<Props, ShorthandPropNames> & {
+    [P in ShorthandPropNames]: Props[P] extends ShorthandProps<infer T> ? ObjectShorthandProps<T> : never;
+};
+
+// @public
+export const resolveShorthandProps: <TProps>(props: TProps, shorthandPropNames: readonly string[]) => TProps;
 
 // @public (undocumented)
 export type ShorthandProps<TProps extends ComponentProps = {}> = React.ReactChild | React.ReactNodeArray | React.ReactPortal | boolean | number | null | undefined | (TProps & ComponentProps & {

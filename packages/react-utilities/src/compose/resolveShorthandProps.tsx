@@ -6,7 +6,7 @@ import * as React from 'react';
  * @param props - The incoming props
  * @param shorthandPropNames - An array of prop names to apply simplification to
  */
-export const resolveShorthandProps = <TProps,>(props: TProps, shorthandPropNames: string[]) => {
+export const resolveShorthandProps = <TProps,>(props: TProps, shorthandPropNames: readonly string[]) => {
   let newProps = props;
 
   if (shorthandPropNames && shorthandPropNames.length) {

@@ -7,7 +7,7 @@ export type MergePropsOptions = {
    * A list of props to deep merge. By default, `style` will
    * always be deep merged so it's not required to be provided.
    */
-  deepMerge?: string[];
+  deepMerge?: readonly string[];
 };
 
 /**
