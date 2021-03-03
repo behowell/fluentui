@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { TooltipManagerApi, TooltipProviderProps, TooltipProviderState } from './TooltipProvider.types';
-
-export const tooltipProviderShorthandProps: (keyof TooltipProviderProps)[] = [];
+import {
+  TooltipManagerApi,
+  TooltipProviderProps,
+  tooltipProviderShorthandProps,
+  TooltipProviderState,
+} from './TooltipProvider.types';
 
 const mergeProps = makeMergeProps<TooltipProviderState>({ deepMerge: tooltipProviderShorthandProps });
 
@@ -16,7 +19,7 @@ const mergeProps = makeMergeProps<TooltipProviderState>({ deepMerge: tooltipProv
  * @param ref - reference to root HTMLElement of TooltipProvider
  * @param defaultProps - (optional) default prop values provided by the implementing type
  *
- * {@docCategory TooltipProvider }
+ * {@docCategory TooltipProvider}
  */
 export const useTooltipProvider = (
   props: TooltipProviderProps,

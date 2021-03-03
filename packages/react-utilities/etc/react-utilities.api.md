@@ -73,7 +73,7 @@ export type ResolvedShorthandProps<Props, ShorthandPropNames extends keyof Props
 };
 
 // @public
-export const resolveShorthandProps: <TProps>(props: TProps, shorthandPropNames: readonly string[]) => TProps;
+export const resolveShorthandProps: <TProps, TShorthandPropNames extends keyof TProps>(props: TProps, shorthandPropNames: readonly TShorthandPropNames[]) => ResolvedShorthandProps<TProps, TShorthandPropNames>;
 
 // @public (undocumented)
 export type ShorthandProps<TProps extends ComponentProps = {}> = React.ReactChild | React.ReactNodeArray | React.ReactPortal | boolean | number | null | undefined | (TProps & ComponentProps & {

@@ -5,7 +5,7 @@ import { renderTooltipProvider } from './renderTooltipProvider';
 import { useTooltipProviderStyles } from './useTooltipProviderStyles';
 
 /**
- * {@docCategory TooltipProvider }
+ * {@docCategory TooltipProvider}
  */
 export const TooltipProvider = React.forwardRef<HTMLElement, TooltipProviderProps>((props, ref) => {
   const state = useTooltipProvider(props, ref);

@@ -5,7 +5,7 @@ import { renderTooltipManager } from './renderTooltipManager';
 import { useTooltipManagerStyles } from './useTooltipManagerStyles';
 
 /**
- * {@docCategory TooltipManager }
+ * {@docCategory TooltipManager}
  */
 export const TooltipManager = React.forwardRef<HTMLElement, TooltipManagerProps>((props, ref) => {
   const state = useTooltipManager(props, ref);

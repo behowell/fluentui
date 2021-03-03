@@ -32,7 +32,7 @@ const useRootStyles = makeStyles<TooltipManagerState>([
 
 /**
  * Apply styling to the TooltipManager slots based on the state
- * {@docCategory TooltipManager }
+ * {@docCategory TooltipManager}
  */
 export const useTooltipManagerStyles = (state: TooltipManagerState): TooltipManagerState => {
   state.className = ax(useRootStyles(state), state.className);

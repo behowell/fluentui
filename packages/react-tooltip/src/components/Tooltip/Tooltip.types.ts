@@ -1,32 +1,19 @@
 import * as React from 'react';
-import { ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
-import { TooltipSlotProps } from '../TooltipProvider/index';
+import { ComponentState, ObjectShorthandProps } from '@fluentui/react-utilities';
+import { TooltipProps } from '../../TooltipProvider';
 
-/** {@docCategory Tooltip} */
-export interface TooltipProps extends TooltipSlotProps {
-  /**
-   * The element that this Tooltip should point to.
-   */
-  target?: HTMLElement | null;
+export { TooltipProps };
 
-  /**
-   * The arrow that points to the target element.
-   */
-  arrow?: ShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
-}
+export const tooltipShorthandProps = [] as const;
+export const tooltipSlotProps = [...tooltipShorthandProps, 'arrow'] as const;
 
-type PropsToState<T, ShorthandPropNames extends keyof T> = Omit<T, ShorthandPropNames> &
-  {
-    [U in ShorthandPropNames]: T[U] extends ShorthandProps<infer P> ? ObjectShorthandProps<P> : T[U];
-  };
-
-type ComponentDefaultProps<Props, DefaultedPropNames extends keyof Props> = {
-  ref: React.RefObject<HTMLElement>;
-} & Omit<Props, DefaultedPropNames> &
-  Required<Pick<Props, DefaultedPropNames>>;
-
-export type TooltipPropsWithDefaults = ComponentDefaultProps<TooltipProps, 'placement' | 'arrow'> & {
-  arrowRef: React.RefObject<HTMLElement>;
-};
-
-export type TooltipState = PropsToState<TooltipPropsWithDefaults, 'arrow'>;
+export type TooltipState = ComponentState<
+  TooltipProps & {
+    /**
+     * The arrow that points to the target element.
+     */
+    arrow?: ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
+  },
+  /* ShorthandProps: */ typeof tooltipShorthandProps[number],
+  /* DefaultedProps: */ 'arrow' | 'placement'
+>;

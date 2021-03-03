@@ -15,7 +15,7 @@ const useRootStyles = makeStyles<TooltipProviderState>([
 
 /**
  * Apply styling to the TooltipProvider slots based on the state
- * {@docCategory TooltipProvider }
+ * {@docCategory TooltipProvider}
  */
 export const useTooltipProviderStyles = (state: TooltipProviderState): TooltipProviderState => {
   state.className = ax(useRootStyles(state), state.className);

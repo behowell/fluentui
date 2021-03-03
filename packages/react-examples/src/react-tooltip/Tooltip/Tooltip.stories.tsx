@@ -8,8 +8,7 @@ import {
 } from '@fluentui/react-tooltip';
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { webLightTheme } from '@fluentui/react-theme';
-import { Avatar, AvatarProps, renderAvatar, useAvatar, useAvatarStyles } from '@fluentui/react-avatar';
-import { ButtonProps } from '@fluentui/react-button';
+import { AvatarProps, renderAvatar, useAvatar, useAvatarStyles } from '@fluentui/react-avatar';
 
 type AvatarWithTooltipProps = AvatarProps & WithTooltipSlot;
 

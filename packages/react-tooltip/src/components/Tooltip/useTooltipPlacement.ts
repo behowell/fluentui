@@ -3,6 +3,7 @@ import { useMergedRefs } from '@fluentui/react-utilities';
 import { usePopper } from 'react-popper';
 import { TooltipState } from './Tooltip.types';
 import { mergeProps } from './useTooltip';
+import { arrowHeight } from './useTooltipStyles';
 
 /**
  * Positions the tooltip relative to its targetElement
@@ -11,7 +12,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
   const [rootElement, setRootElement] = React.useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = React.useState<HTMLElement | null>(null);
 
-  const popper = usePopper(state.target, rootElement, {
+  const popper = usePopper(state.targetElement, rootElement, {
     placement: state.placement,
     modifiers: [
       {
@@ -21,7 +22,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
           padding: rootElement ? parseInt(window.getComputedStyle(rootElement).borderRadius, 10) : 0,
         },
       },
-      { name: 'offset', options: { offset: [0, 4.25] } },
+      { name: 'offset', options: { offset: [0, arrowHeight] } },
     ],
   });
 
@@ -31,7 +32,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
     ref: useMergedRefs(setRootElement, state.ref),
     arrow: {
       style: popper.styles.arrow,
-      ref: useMergedRefs(setArrowElement, state.arrow.ref),
+      ref: setArrowElement,
     },
   });
 

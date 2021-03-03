@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { TooltipProps, TooltipState } from './Tooltip.types';
+import { TooltipProps, tooltipShorthandProps, tooltipSlotProps, TooltipState } from './Tooltip.types';
 
-export const tooltipShorthandProps: (keyof TooltipProps)[] = ['arrow'];
-
-export const mergeProps = makeMergeProps<TooltipState>({ deepMerge: tooltipShorthandProps });
+export const mergeProps = makeMergeProps<TooltipState>({ deepMerge: tooltipSlotProps });
 
 /**
  * Create the state required to render Tooltip.
