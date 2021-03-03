@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipProvider, useTooltipSlot, useTooltipRef, WithTooltipSlot } from '@fluentui/react-tooltip';
+import { TooltipProvider, useTooltipSlot, useTooltipRef, WithTooltipSlot, Tooltip } from '@fluentui/react-tooltip';
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { webLightTheme } from '@fluentui/react-theme';
 import { AvatarProps, renderAvatar, useAvatar, useAvatarStyles } from '@fluentui/react-avatar';
@@ -28,6 +28,9 @@ export const TooltipExample = () => (
 );
 const TooltipExampleCore = () => (
   <div>
+    <div>
+      <Tooltip>Tooltip text</Tooltip>
+    </div>
     <div>
       <AvatarWithTooltip style={{ margin: '10px' }} tooltip="Simple tooltip" />
       <AvatarWithTooltip
