@@ -3,11 +3,11 @@ import { makeMergeProps, resolveShorthandProps, ShorthandProps, useMergedRefs } 
 import { TooltipManagerProps, tooltipManagerShorthandProps, TooltipManagerState } from './TooltipManager.types';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import { useTooltipManagerRef } from '../TooltipProvider';
-import { ShowTooltipOptions, TooltipManagerApi } from '../../types';
+import { TooltipOptions, TooltipManagerApi } from '../../types';
 
 const mergeProps = makeMergeProps<TooltipManagerState>({ deepMerge: tooltipManagerShorthandProps });
 
-const TOOLTIP_SHOW_DELAY_MS = 500;
+const TOOLTIP_SHOW_DELAY_MS = 250;
 const TOOLTIP_HIDE_DELAY_MS = 250;
 
 /**
@@ -31,7 +31,7 @@ export const useTooltipManager = (
   type VisibleTooltip = {
     triggerElement: HTMLElement;
     tooltipProps: ShorthandProps<TooltipProps>;
-    options?: ShowTooltipOptions;
+    options?: TooltipOptions;
   };
   const [visibleTooltip, setVisibleTooltip] = React.useState<VisibleTooltip>();
 
@@ -42,19 +42,25 @@ export const useTooltipManager = (
   const tooltipElementRef = React.useRef<HTMLElement>();
 
   const delayTimeoutId = React.useRef<number>();
+  const clearDelayTimeout = () => {
+    window.clearTimeout(delayTimeoutId.current);
+    delayTimeoutId.current = undefined;
+  };
+  // Clean up the timeout when the component is unloaded
+  React.useEffect(() => clearDelayTimeout, []);
 
+  // Create the TooltipManagerApi implementation to set on the context
   const tooltipManagerApi: TooltipManagerApi = React.useMemo(() => {
     const showTooltip = (
       triggerElement: HTMLElement,
       tooltipProps: ShorthandProps<TooltipProps>,
-      options?: ShowTooltipOptions,
+      options?: TooltipOptions,
     ) => {
       mouseTargetRef.current = triggerElement;
 
-      window.clearTimeout(delayTimeoutId.current);
-      delayTimeoutId.current = undefined;
+      clearDelayTimeout();
 
-      if (visibleTooltipRef.current || options?.showDelay) {
+      if (visibleTooltipRef.current || options?.showDelay === 0) {
         setVisibleTooltip({ triggerElement, tooltipProps, options });
       } else {
         setVisibleTooltip(undefined);
@@ -67,22 +73,6 @@ export const useTooltipManager = (
       }
     };
 
-    const hideAll = () => {
-      window.clearTimeout(delayTimeoutId.current);
-      delayTimeoutId.current = undefined;
-
-      if (visibleTooltipRef.current) {
-        delayTimeoutId.current = window.setTimeout(() => {
-          if (
-            mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-            mouseTargetRef.current !== tooltipElementRef.current
-          ) {
-            setVisibleTooltip(undefined);
-          }
-        }, visibleTooltipRef.current.options?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS);
-      }
-    };
-
     const hideTooltip = (triggerElement: HTMLElement) => {
       if (mouseTargetRef.current === triggerElement) {
         mouseTargetRef.current = undefined;
@@ -92,19 +82,27 @@ export const useTooltipManager = (
         mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
         mouseTargetRef.current !== tooltipElementRef.current
       ) {
-        hideAll();
+        clearDelayTimeout();
+
+        if (visibleTooltipRef.current) {
+          delayTimeoutId.current = window.setTimeout(() => {
+            if (
+              mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
+              mouseTargetRef.current !== tooltipElementRef.current
+            ) {
+              setVisibleTooltip(undefined);
+            }
+          }, visibleTooltipRef.current.options?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS);
+        }
       }
     };
 
-    return { showTooltip, hideTooltip, hideAll };
-  }, []);
-
-  // Clean up the timeout when the component is unloaded
-  React.useEffect(() => {
-    return () => {
-      window.clearTimeout(delayTimeoutId.current);
-      delayTimeoutId.current = undefined;
+    const hideAll = () => {
+      clearDelayTimeout();
+      setVisibleTooltip(undefined);
     };
+
+    return { showTooltip, hideTooltip, hideAll };
   }, []);
 
   // Register this instance of TooltipManager with the TooltipManagerRef from TooltipProvider
@@ -121,6 +119,18 @@ export const useTooltipManager = (
       tooltipManagerApiRef.current = undefined;
     };
   }, [tooltipManagerApi, tooltipManagerApiRef]);
+
+  // Listen for the escape key on the document
+  React.useEffect(() => {
+    const onKeyDown = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape' || ev.key === 'Esc') {
+        tooltipManagerApi.hideAll();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [tooltipManagerApi]);
 
   // Create the state object
   const state = mergeProps(

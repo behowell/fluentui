@@ -1,5 +1,5 @@
 import { useTooltipManagerRef } from '../components/TooltipProvider';
-import { ShowTooltipOptions, TooltipProps } from '../types';
+import { TooltipOptions, TooltipProps } from '../types';
 import { useRefEffect } from '@fluentui/react-hooks';
 import { ShorthandProps } from '@fluentui/react-utilities';
 
@@ -9,11 +9,11 @@ import { ShorthandProps } from '@fluentui/react-utilities';
  * @param tooltip - The tooltip to display on hover or focus. Can be a string, JSX element tree, or TooltipProps.
  * @param showOptions - Options when showing the tooltip, such as an ID to use for aria-describedby on the host element.
  */
-export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>, showOptions?: ShowTooltipOptions) {
+export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>, options?: TooltipOptions) {
   const managerRef = useTooltipManagerRef();
 
   return useRefEffect<HTMLElement>(triggerElement => {
-    const showTooltip = () => managerRef.current?.showTooltip(triggerElement, tooltip, showOptions);
+    const showTooltip = () => managerRef.current?.showTooltip(triggerElement, tooltip, options);
     const hideTooltip = () => managerRef.current?.hideTooltip(triggerElement);
 
     triggerElement.addEventListener('focus', showTooltip);

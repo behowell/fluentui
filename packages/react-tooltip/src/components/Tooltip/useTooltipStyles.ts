@@ -1,4 +1,5 @@
 import { makeStyles, ax } from '@fluentui/react-make-styles';
+import { Theme } from '@fluentui/react-theme';
 import { TooltipState } from './Tooltip.types';
 const animationDuration = {
   duration50: '50ms',
@@ -54,6 +55,13 @@ export const arrowHeight = 6 * Math.SQRT1_2;
 export const arrowSquareSize = 12 * Math.SQRT1_2;
 
 /**
+ * Gap between the tooltip and the target element
+ */
+export const tooltipOffset = 4; // REVIEW should this come from the theme?
+
+export const tooltipBorderRadius = (theme: Theme) => theme.global.borderRadius.medium;
+
+/**
  * Styles for the root slot
  */
 const useRootStyles = makeStyles<TooltipState>([
@@ -66,17 +74,12 @@ const useRootStyles = makeStyles<TooltipState>([
       fontFamily: theme.global.type.fontFamilies.base,
       fontSize: theme.global.type.fontSizes.base[200],
       lineHeight: theme.global.type.lineHeights.base[200],
-      borderRadius: theme.global.borderRadius.medium,
+      borderRadius: tooltipBorderRadius(theme),
 
       background: theme.alias.color.neutral.neutralForeground2, // TODO should be neutralBackgroundInverted
       color: theme.alias.color.neutral.neutralForegroundInverted,
 
       filter: theme.alias.shadow.shadowFilter8,
-
-      // transition: `transform ${animationTiming.normal} ${animations.fastEase}`,
-      transitionProperty: 'width, height',
-      transitionDuration: animationTiming.normal,
-      transitionTimingFunction: animations.fastEase,
     }),
   ],
 
