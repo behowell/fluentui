@@ -72,7 +72,6 @@ export const useTooltipManager = (
   visibleTooltipRef.current = visibleTooltip;
 
   const mouseTargetRef = React.useRef<HTMLElement>();
-  const tooltipElementRef = React.useRef<HTMLElement>();
 
   const [setDelayTimeout, clearDelayTimeout] = useTimeout();
 
@@ -85,14 +84,15 @@ export const useTooltipManager = (
 
       clearDelayTimeout();
 
-      if (visibleTooltipRef.current || tooltipProps.showDelay === 0) {
+      const showDelay = tooltipProps.showDelay ?? TOOLTIP_SHOW_DELAY_MS;
+      if (visibleTooltipRef.current || showDelay === 0) {
         setVisibleTooltip({ triggerElement, tooltipProps });
       } else {
         setDelayTimeout(() => {
           if (mouseTargetRef.current === triggerElement) {
             setVisibleTooltip({ triggerElement, tooltipProps });
           }
-        }, tooltipProps.showDelay ?? TOOLTIP_SHOW_DELAY_MS);
+        }, showDelay);
       }
     };
 
@@ -101,25 +101,19 @@ export const useTooltipManager = (
         mouseTargetRef.current = undefined;
       }
 
-      if (
-        mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-        mouseTargetRef.current !== tooltipElementRef.current
-      ) {
+      if (!mouseTargetRef.current || mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement) {
         clearDelayTimeout();
 
         if (visibleTooltipRef.current) {
-          const delay = visibleTooltipRef.current.tooltipProps?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS;
-          if (!delay) {
+          const hideDelay = visibleTooltipRef.current.tooltipProps?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS;
+          if (!hideDelay) {
             setVisibleTooltip(undefined);
           } else {
             setDelayTimeout(() => {
-              if (
-                mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-                mouseTargetRef.current !== tooltipElementRef.current
-              ) {
+              if (!mouseTargetRef.current || mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement) {
                 setVisibleTooltip(undefined);
               }
-            }, delay);
+            }, hideDelay);
           }
         }
       }
@@ -166,19 +160,12 @@ export const useTooltipManager = (
       ref: useMergedRefs(ref, React.useRef(null)),
       tooltip: visibleTooltip && {
         as: Tooltip,
-        ref: tooltipElementRef,
         targetElement: visibleTooltip.triggerElement,
-        onPointerEnter: () => {
-          mouseTargetRef.current = tooltipElementRef.current;
-        },
-        onPointerLeave: () => {
-          tooltipManagerApi.hideTooltip(tooltipElementRef.current!);
-        },
       },
     },
     defaultProps,
     props,
-    resolveShorthandProps({ tooltip: visibleTooltip?.tooltipProps }, tooltipManagerShorthandProps),
+    visibleTooltip && resolveShorthandProps({ tooltip: visibleTooltip.tooltipProps }, ['tooltip']),
   );
 
   return state;
