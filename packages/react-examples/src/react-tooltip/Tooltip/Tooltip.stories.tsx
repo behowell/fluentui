@@ -40,96 +40,47 @@ const AvatarWithTooltip = React.forwardRef((props: AvatarWithTooltipProps, ref: 
 });
 
 export const TooltipExample = () => (
-  <div style={{ padding: '100px' }}>
-    <ThemeProvider theme={webLightTheme}>
-      <TooltipProvider>
-        <TooltipExampleCore />
-      </TooltipProvider>
-    </ThemeProvider>
-  </div>
+  <ThemeProvider theme={webLightTheme}>
+    <TooltipProvider>
+      <TooltipExampleCore />
+    </TooltipProvider>
+  </ThemeProvider>
 );
 
 const TooltipExampleCore = () => {
+  const [placementTarget, setPlacementTarget] = React.useState<HTMLElement | null>(null);
   const [redBox, setRedBox] = React.useState<HTMLElement | null>(null);
-  const [exampleTarget, setExampleTarget] = React.useState<HTMLElement | null>(null);
-  const [sectionHeader, setSectionHeader] = React.useState<HTMLElement | null>(null);
   const [badgeElement, setBadgeElement] = React.useState<HTMLElement | null>(null);
 
   return (
     <div>
       <h1>Basic tooltips</h1>
+      <div>Normally tooltips aren't rendered on their own like this, but this shows what they look like:</div>
       <div style={{ display: 'flex', gap: '20px', margin: '20px 0' }}>
-        <Tooltip>Tooltip</Tooltip>
-        <Tooltip subtle>Subtle</Tooltip>
+        <Tooltip>Default</Tooltip>
         <Tooltip noArrow>No arrow</Tooltip>
+        <Tooltip subtle>Subtle</Tooltip>
       </div>
-      <h1>Tooltip placement</h1>
-      <div style={{ margin: '20px 0', padding: '40px 100px' }}>
-        <div
-          ref={setRedBox}
-          style={{ width: '275px', height: '125px', background: 'lightgray', border: '1px solid darkgray' }}
-        />
-        <Tooltip targetElement={redBox} placement="left-start">
-          left-start
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="left">
-          left
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="left-end">
-          left-end
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="right-start">
-          right-start
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="right">
-          right
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="right-end">
-          right-end
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="top-start">
-          top-start
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="top">
-          top
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="top-end">
-          top-end
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="bottom-start">
-          bottom-start
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="bottom">
-          bottom
-        </Tooltip>
-        <Tooltip targetElement={redBox} placement="bottom-end">
-          bottom-end
-        </Tooltip>
-      </div>
-      <h1 ref={setSectionHeader}>Simple tooltips</h1>
+      <h1>Triggered tooltips</h1>
       <div style={{ display: 'flex', gap: '10px', margin: '20px' }}>
-        <AvatarWithTooltip tooltip="Basic tooltip" />
+        <AvatarWithTooltip name="Example Person" />
+        <AvatarWithTooltip tooltip="Tooltip text" />
         <AvatarWithTooltip
-          // eslint-disable-next-line @fluentui/max-len
-          tooltip="This is a very long tooltip, which is hopefully long enough to wrap around to more than one line of text in the tooltip. This demonstrates what a wrapped tooltip looks like."
+          tooltip={
+            <>
+              <i>Custom</i> <code>Tooltip</code> content!
+            </>
+          }
         />
         <AvatarWithTooltip
           tooltip={{
-            noArrow: true,
-            children: (
-              <>
-                This <u>Tooltip</u> doesn't have an arrow
-              </>
-            ),
+            placement: 'right',
+            children:
+              'This is a very long tooltip, which is hopefully long enough to wrap around to more than one line ' +
+              'of text in the tooltip. This demonstrates what a wrapped tooltip looks like.',
           }}
         />
-        <AvatarWithTooltip
-          tooltip={{
-            targetElement: sectionHeader,
-            placement: 'bottom-start',
-            children: 'This tooltip targets the section header',
-          }}
-        />
+        <AvatarWithTooltip tooltip={{ children: "This Tooltip doesn't have an arrow", noArrow: true }} />
         <AvatarWithTooltip
           badge={{ state: 'success', ref: setBadgeElement } as BadgeProps}
           tooltip={{
@@ -140,74 +91,99 @@ const TooltipExampleCore = () => {
           }}
         />
       </div>
-      <div style={{ display: 'inline-grid', gap: '5px', margin: '20px' }}>
+      <h1>Tooltip placement</h1>
+      <div style={{ display: 'inline-grid', gap: '5px', margin: '20px 100px' }}>
         <AvatarWithTooltip
-          size={48}
           name="top start"
           style={{ gridColumn: 2, gridRow: 1 }}
           tooltip={{ placement: 'top-start' }}
         />
-        <AvatarWithTooltip size={48} name="top" style={{ gridColumn: 3, gridRow: 1 }} tooltip={{ placement: 'top' }} />
+        <AvatarWithTooltip name="top" style={{ gridColumn: 3, gridRow: 1 }} tooltip={{ placement: 'top' }} />
+        <AvatarWithTooltip name="top end" style={{ gridColumn: 4, gridRow: 1 }} tooltip={{ placement: 'top-end' }} />
         <AvatarWithTooltip
-          size={48}
-          name="top end"
-          style={{ gridColumn: 4, gridRow: 1 }}
-          tooltip={{ placement: 'top-end' }}
-        />
-        <AvatarWithTooltip
-          size={48}
           name="left start"
           style={{ gridColumn: 1, gridRow: 2 }}
           tooltip={{ placement: 'left-start' }}
         />
+        <AvatarWithTooltip name="left" style={{ gridColumn: 1, gridRow: 3 }} tooltip={{ placement: 'left' }} />
+        <AvatarWithTooltip name="left end" style={{ gridColumn: 1, gridRow: 4 }} tooltip={{ placement: 'left-end' }} />
         <AvatarWithTooltip
-          size={48}
           name="right start"
           style={{ gridColumn: 5, gridRow: 2 }}
           tooltip={{ placement: 'right-start' }}
         />
+        <AvatarWithTooltip name="right" style={{ gridColumn: 5, gridRow: 3 }} tooltip={{ placement: 'right' }} />
         <AvatarWithTooltip
-          size={48}
-          name="left"
-          style={{ gridColumn: 1, gridRow: 3 }}
-          tooltip={{ placement: 'left' }}
-        />
-        <AvatarWithTooltip
-          size={48}
-          name="right"
-          style={{ gridColumn: 5, gridRow: 3 }}
-          tooltip={{ placement: 'right' }}
-        />
-        <AvatarWithTooltip
-          size={48}
-          name="left end"
-          style={{ gridColumn: 1, gridRow: 4 }}
-          tooltip={{ placement: 'left-end' }}
-        />
-        <AvatarWithTooltip
-          size={48}
           name="right end"
           style={{ gridColumn: 5, gridRow: 4 }}
           tooltip={{ placement: 'right-end' }}
         />
         <AvatarWithTooltip
-          size={48}
           name="bottom start"
           style={{ gridColumn: 2, gridRow: 5 }}
           tooltip={{ placement: 'bottom-start' }}
         />
+        <AvatarWithTooltip name="bottom" style={{ gridColumn: 3, gridRow: 5 }} tooltip={{ placement: 'bottom' }} />
         <AvatarWithTooltip
-          size={48}
-          name="bottom"
-          style={{ gridColumn: 3, gridRow: 5 }}
-          tooltip={{ placement: 'bottom' }}
-        />
-        <AvatarWithTooltip
-          size={48}
           name="bottom end"
           style={{ gridColumn: 4, gridRow: 5 }}
           tooltip={{ placement: 'bottom-end' }}
         />
+      </div>
+      <div style={{ margin: '20px 0', padding: '40px 100px' }}>
+        <div
+          ref={setPlacementTarget}
+          style={{
+            width: '275px',
+            height: '125px',
+            boxSizing: 'border-box',
+            background: '#DDD',
+            color: '#222',
+            border: '1px solid #555',
+            display: 'flex',
+            textAlign: 'center',
+            alignItems: 'center',
+            padding: '20px',
+          }}
+        >
+          This shows all of the possible placement values for tooltips relative to this box.
+        </div>
+        <Tooltip targetElement={placementTarget} placement="left-start">
+          left-start
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="left">
+          left
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="left-end">
+          left-end
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="right-start">
+          right-start
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="right">
+          right
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="right-end">
+          right-end
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="top-start">
+          top-start
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="top">
+          top
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="top-end">
+          top-end
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="bottom-start">
+          bottom-start
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="bottom">
+          bottom
+        </Tooltip>
+        <Tooltip targetElement={placementTarget} placement="bottom-end">
+          bottom-end
+        </Tooltip>
       </div>
       <div style={{ padding: '10px' }}>
         <a href="http://example.com" ref={useTooltipRef('http://example.com')}>
