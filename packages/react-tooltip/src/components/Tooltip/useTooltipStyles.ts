@@ -25,6 +25,7 @@ const useRootStyles = makeStyles<TooltipState>([
     theme => ({
       display: 'inline-block',
       padding: '5px 12px 7px 12px',
+      pointerEvents: 'none',
       maxWidth: '240px',
       fontFamily: theme.global.type.fontFamilies.base,
       fontSize: theme.global.type.fontSizes.base[200],
