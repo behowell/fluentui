@@ -12,6 +12,8 @@ import {
   useAvatarStyles,
 } from '@fluentui/react-avatar';
 import { resolveShorthandProp } from '@fluentui/react-utilities';
+import { Button } from '@fluentui/react-button';
+import { Checkbox } from '@fluentui/react';
 
 type AvatarWithTooltipProps = AvatarProps & WithTooltipSlot;
 type AvatarWithTooltipState = AvatarState & WithTooltipSlot;
@@ -49,7 +51,6 @@ export const TooltipExample = () => (
 
 const TooltipExampleCore = () => {
   const [placementTarget, setPlacementTarget] = React.useState<HTMLElement | null>(null);
-  const [redBox, setRedBox] = React.useState<HTMLElement | null>(null);
   const [badgeElement, setBadgeElement] = React.useState<HTMLElement | null>(null);
 
   return (
@@ -62,17 +63,13 @@ const TooltipExampleCore = () => {
         <Tooltip subtle>Subtle</Tooltip>
       </div>
       <h1>Triggered tooltips</h1>
-      <div style={{ display: 'flex', gap: '10px', margin: '20px' }}>
+      <div style={{ display: 'flex', gap: '10px', margin: '20px 0' }}>
         <AvatarWithTooltip name="Example Person" />
         <AvatarWithTooltip tooltip="Tooltip text" />
         <AvatarWithTooltip
           tooltip={
             <>
-              <i>Custom</i>
-              <code>
-                <u>Tooltip</u>
-              </code>
-              content!
+              <i>Custom</i> <code>Tooltip</code> content!
             </>
           }
         />
@@ -80,8 +77,9 @@ const TooltipExampleCore = () => {
           tooltip={{
             placement: 'right',
             children:
-              'This is a very long tooltip, which is hopefully long enough to wrap around to more than one line ' +
-              'of text in the tooltip. This demonstrates what a wrapped tooltip looks like.',
+              'This is a very long tooltip, which demonstrates what wrapped text looks like. ' +
+              'It also is positioned so that it covers other elements, which is not usually a good idea. ' +
+              'But hey, this is just an example.',
           }}
         />
         <AvatarWithTooltip tooltip={{ children: "This Tooltip doesn't have an arrow", noArrow: true }} />
@@ -192,21 +190,22 @@ const TooltipExampleCore = () => {
           bottom-end
         </Tooltip>
       </div>
-      <div style={{ padding: '10px' }}>
+      <h1>Tooltips attached via ref</h1>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'flex-start' }}>
         <a href="http://example.com" ref={useTooltipRef('http://example.com')}>
-          This &lt;a&gt; has a tooltip
+          A native &lt;a&gt; link
         </a>
-      </div>
-      <div style={{ padding: '10px' }}>
         <button
           ref={useTooltipRef(
             <>
-              Tooltips <u>everywhere</u>!
+              Tooltips on <u>anything</u>!
             </>,
           )}
         >
-          This &lt;button&gt; has a styled tooltip
+          A native &lt;button&gt;
         </button>
+        <Button ref={useTooltipRef('Button from @fluentui/react-button')}>A &lt;Button&gt;</Button>
+        <Checkbox ref={useTooltipRef('Checkbox from @fluentui/react')} label="A &lt;Checkbox&gt;" />
       </div>
     </div>
   );
