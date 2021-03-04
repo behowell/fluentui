@@ -26,7 +26,7 @@ export const useTooltip = (
       as: 'div',
       role: 'tooltip',
       'aria-hidden': 'true',
-      placement: 'bottom',
+      placement: 'top',
       ref: useMergedRefs(ref, React.useRef<HTMLElement>(null)),
       arrow: {
         as: 'div',

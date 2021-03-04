@@ -24,7 +24,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
           ? undefined
           : {
               element: arrowElement,
-              padding: parseInt(tooltipBorderRadius(theme), 10),
+              padding: 2 * parseInt(tooltipBorderRadius(theme), 10),
             },
       },
       { name: 'offset', options: { offset: [0, tooltipOffset + (state.noArrow ? 0 : arrowHeight)] } },
@@ -32,11 +32,11 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
   });
 
   mergeProps(state, {
-    style: popper.styles.popper,
+    style: state.targetElement && popper.styles.popper,
     placement: popper.attributes.popper?.['data-popper-placement'],
     ref: useMergedRefs(setRootElement, state.ref),
     arrow: {
-      style: popper.styles.arrow,
+      style: state.targetElement && popper.styles.arrow,
       ref: setArrowElement,
     },
   });

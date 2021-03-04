@@ -6,7 +6,7 @@ export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLE
    * How to position the tooltip relative to the target element. This is a "best effort" placement,
    * but the tooltip may be flipped to the other side if there is not enough room.
    *
-   * @defaultvalue bottom
+   * @defaultvalue top
    */
   placement?: TooltipPlacement;
 
@@ -16,16 +16,34 @@ export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLE
   subtle?: boolean;
 
   /**
-   * If true, does not render an arrow pointing to the target element
+   * Do not render an arrow pointing to the target element
    */
   noArrow?: boolean;
+
+  /**
+   * Delay before the tooltip is shown, in milliseconds
+   *
+   * @defaultvalue 250
+   */
+  showDelay?: number;
+
+  /**
+   * Delay before the tooltip is hidden, in milliseconds
+   *
+   * @defaultvalue 250
+   */
+  hideDelay?: number;
+
+  /**
+   * Only show the tooltip if the target element's children are truncated (overflowing).
+   */
+  onlyIfTruncated?: boolean;
 
   /**
    * The element that this Tooltip points to.
    *
    * Normally this will be set by the TooltipManager when a tooltip is shown by hovering or focusing an element.
-   * The target can be specified if the tooltip needs to point to a different element than the one that triggered it
-   * (this is rare).
+   * The target can be specified if the tooltip needs to point to a different element than the one that triggered it.
    */
   targetElement?: HTMLElement | null;
 }

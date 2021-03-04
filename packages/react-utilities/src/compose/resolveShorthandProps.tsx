@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ObjectShorthandProps, ResolvedShorthandProps } from './types';
+import { ObjectShorthandProps, ResolvedShorthandProps, ShorthandProps } from './types';
 
 /**
  * Ensures that the given slots are represented using object syntax. This ensures that
@@ -14,17 +14,24 @@ export const resolveShorthandProps = <TProps, TShorthandPropNames extends keyof 
   let newProps = props;
 
   if (shorthandPropNames && shorthandPropNames.length) {
-    newProps = {
-      ...props,
-    };
+    newProps = { ...props };
     for (const propName of shorthandPropNames) {
-      const propValue = props[propName];
-
-      if (propValue !== undefined && (typeof propValue !== 'object' || React.isValidElement(propValue))) {
-        (newProps[propName] as ObjectShorthandProps) = { children: propValue };
-      }
+      newProps[propName] = resolveShorthandProp(props[propName]);
     }
   }
 
   return (newProps as unknown) as ResolvedShorthandProps<TProps, TShorthandPropNames>;
+};
+
+/**
+ * Resolve a single ShorthandProps object into an ObjectShorthandProps
+ *
+ * @param propValue - The value of the shorthand prop to be resolved
+ */
+export const resolveShorthandProp = <T,>(propValue: ShorthandProps<T>): ObjectShorthandProps<T> => {
+  if (propValue !== undefined && (typeof propValue !== 'object' || React.isValidElement(propValue))) {
+    return ({ children: propValue } as unknown) as ObjectShorthandProps<T>;
+  }
+
+  return (propValue as unknown) as ObjectShorthandProps<T>;
 };

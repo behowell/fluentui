@@ -73,6 +73,9 @@ export type ResolvedShorthandProps<Props, ShorthandPropNames extends keyof Props
 };
 
 // @public
+export const resolveShorthandProp: <T>(propValue: ShorthandProps<T>) => ObjectShorthandProps<T>;
+
+// @public
 export const resolveShorthandProps: <TProps, TShorthandPropNames extends keyof TProps>(props: TProps, shorthandPropNames: readonly TShorthandPropNames[]) => ResolvedShorthandProps<TProps, TShorthandPropNames>;
 
 // @public (undocumented)

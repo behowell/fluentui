@@ -9,6 +9,7 @@ import { ComponentState } from '@fluentui/react-utilities';
 import { ObjectShorthandProps } from '@fluentui/react-utilities';
 import * as React from 'react';
 import { ShorthandProps } from '@fluentui/react-utilities';
+import { Theme } from '@fluentui/react-theme';
 
 // @public
 export const arrowHeight: number;
@@ -38,20 +39,10 @@ export const renderTooltipManager: (state: import("@fluentui/react-utilities").C
 export const renderTooltipProvider: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>) => JSX.Element;
 
 // @public (undocumented)
-export type ShowTooltipOptions = {
-    id?: string;
-    showDelay?: number;
-    hideDelay?: number;
-};
-
-// @public (undocumented)
 export const Tooltip: React.ForwardRefExoticComponent<TooltipProps & React.RefAttributes<HTMLElement>>;
 
 // @public (undocumented)
-export const TOOLTIP_HIDE_DELAY_MS = 250;
-
-// @public (undocumented)
-export const TOOLTIP_SHOW_DELAY_MS = 500;
+export const tooltipBorderRadius: (theme: Theme) => string;
 
 // @public (undocumented)
 export const TooltipManager: React.ForwardRefExoticComponent<TooltipManagerProps & React.RefAttributes<HTMLElement>>;
@@ -60,7 +51,7 @@ export const TooltipManager: React.ForwardRefExoticComponent<TooltipManagerProps
 export interface TooltipManagerApi {
     hideAll: () => void;
     hideTooltip: (triggerElement: HTMLElement) => void;
-    showTooltip: (triggerElement: HTMLElement, tooltip: ShorthandProps<TooltipProps>, options?: ShowTooltipOptions) => void;
+    showTooltip: (triggerElement: HTMLElement, tooltip: ShorthandProps<TooltipProps>) => void;
 }
 
 // @public (undocumented)
@@ -76,13 +67,19 @@ export type TooltipManagerState = ComponentState<TooltipManagerProps & {
     tooltip?: ShorthandProps<TooltipProps>;
 }>;
 
+// @public
+export const tooltipOffset = 4;
+
 // @public (undocumented)
 export type TooltipPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
 
 // @public (undocumented)
 export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+    hideDelay?: number;
     noArrow?: boolean;
+    onlyIfTruncated?: boolean;
     placement?: TooltipPlacement;
+    showDelay?: number;
     subtle?: boolean;
     targetElement?: HTMLElement | null;
 }
@@ -138,7 +135,7 @@ export const useTooltipProvider: (props: TooltipProviderProps, ref: React.Ref<HT
 export const useTooltipProviderStyles: (state: import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>) => import("@fluentui/react-utilities").ComponentState<import("./TooltipProvider.types").TooltipProviderProps, never, never>;
 
 // @public
-export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>, showOptions?: ShowTooltipOptions): import("@fluentui/react-hooks").RefCallback<HTMLElement>;
+export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>): import("@fluentui/react-hooks").RefCallback<HTMLElement>;
 
 // @public
 export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTooltipSlot): void;

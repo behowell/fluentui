@@ -1,14 +1,48 @@
 import * as React from 'react';
-import { makeMergeProps, resolveShorthandProps, ShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
+import {
+  makeMergeProps,
+  ObjectShorthandProps,
+  resolveShorthandProp,
+  resolveShorthandProps,
+  ShorthandProps,
+  useMergedRefs,
+} from '@fluentui/react-utilities';
 import { TooltipManagerProps, tooltipManagerShorthandProps, TooltipManagerState } from './TooltipManager.types';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import { useTooltipManagerRef } from '../TooltipProvider';
-import { TooltipOptions, TooltipManagerApi } from '../../types';
+import { TooltipManagerApi } from '../../types';
 
 const mergeProps = makeMergeProps<TooltipManagerState>({ deepMerge: tooltipManagerShorthandProps });
 
 const TOOLTIP_SHOW_DELAY_MS = 250;
 const TOOLTIP_HIDE_DELAY_MS = 250;
+
+const useTimeout = () => {
+  type TimeoutState = {
+    id: number | undefined;
+    set: (fn: () => void, delay: number) => void;
+    clear: () => void;
+  };
+
+  const state = React.useRef<TimeoutState>({
+    id: undefined,
+    set: (fn: () => void, delay: number) => {
+      state.clear();
+      state.id = window.setTimeout(fn, delay);
+    },
+    clear: () => {
+      if (state.id !== undefined) {
+        window.clearTimeout(state.id);
+        state.id = undefined;
+      }
+    },
+  }).current;
+
+  // Clean up the timeout when the component is unloaded
+  React.useEffect(() => state.clear, [state.clear]);
+
+  return [state.set, state.clear] as const;
+};
 
 /**
  * Create the state required to render TooltipManager.
@@ -29,9 +63,8 @@ export const useTooltipManager = (
 ): TooltipManagerState => {
   // Use state to keep track of the current Tooltip being shown (if any), and the element it's attached to
   type VisibleTooltip = {
-    triggerElement: HTMLElement;
-    tooltipProps: ShorthandProps<TooltipProps>;
-    options?: TooltipOptions;
+    readonly triggerElement: HTMLElement;
+    readonly tooltipProps: ObjectShorthandProps<TooltipProps>;
   };
   const [visibleTooltip, setVisibleTooltip] = React.useState<VisibleTooltip>();
 
@@ -41,35 +74,25 @@ export const useTooltipManager = (
   const mouseTargetRef = React.useRef<HTMLElement>();
   const tooltipElementRef = React.useRef<HTMLElement>();
 
-  const delayTimeoutId = React.useRef<number>();
-  const clearDelayTimeout = () => {
-    window.clearTimeout(delayTimeoutId.current);
-    delayTimeoutId.current = undefined;
-  };
-  // Clean up the timeout when the component is unloaded
-  React.useEffect(() => clearDelayTimeout, []);
+  const [setDelayTimeout, clearDelayTimeout] = useTimeout();
 
-  // Create the TooltipManagerApi implementation to set on the context
+  // Create the TooltipManagerApi implementation
   const tooltipManagerApi: TooltipManagerApi = React.useMemo(() => {
-    const showTooltip = (
-      triggerElement: HTMLElement,
-      tooltipProps: ShorthandProps<TooltipProps>,
-      options?: TooltipOptions,
-    ) => {
+    const showTooltip = (triggerElement: HTMLElement, tooltipShorthandProps: ShorthandProps<TooltipProps>) => {
+      const tooltipProps = resolveShorthandProp(tooltipShorthandProps);
+
       mouseTargetRef.current = triggerElement;
 
       clearDelayTimeout();
 
-      if (visibleTooltipRef.current || options?.showDelay === 0) {
-        setVisibleTooltip({ triggerElement, tooltipProps, options });
+      if (visibleTooltipRef.current || tooltipProps.showDelay === 0) {
+        setVisibleTooltip({ triggerElement, tooltipProps });
       } else {
-        setVisibleTooltip(undefined);
-
-        delayTimeoutId.current = window.setTimeout(() => {
+        setDelayTimeout(() => {
           if (mouseTargetRef.current === triggerElement) {
-            setVisibleTooltip({ triggerElement, tooltipProps, options });
+            setVisibleTooltip({ triggerElement, tooltipProps });
           }
-        }, options?.showDelay ?? TOOLTIP_SHOW_DELAY_MS);
+        }, tooltipProps.showDelay ?? TOOLTIP_SHOW_DELAY_MS);
       }
     };
 
@@ -85,14 +108,19 @@ export const useTooltipManager = (
         clearDelayTimeout();
 
         if (visibleTooltipRef.current) {
-          delayTimeoutId.current = window.setTimeout(() => {
-            if (
-              mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
-              mouseTargetRef.current !== tooltipElementRef.current
-            ) {
-              setVisibleTooltip(undefined);
-            }
-          }, visibleTooltipRef.current.options?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS);
+          const delay = visibleTooltipRef.current.tooltipProps?.hideDelay ?? TOOLTIP_HIDE_DELAY_MS;
+          if (!delay) {
+            setVisibleTooltip(undefined);
+          } else {
+            setDelayTimeout(() => {
+              if (
+                mouseTargetRef.current !== visibleTooltipRef.current?.triggerElement &&
+                mouseTargetRef.current !== tooltipElementRef.current
+              ) {
+                setVisibleTooltip(undefined);
+              }
+            }, delay);
+          }
         }
       }
     };
@@ -103,7 +131,7 @@ export const useTooltipManager = (
     };
 
     return { showTooltip, hideTooltip, hideAll };
-  }, []);
+  }, [setDelayTimeout, clearDelayTimeout]);
 
   // Register this instance of TooltipManager with the TooltipManagerRef from TooltipProvider
   const tooltipManagerApiRef = useTooltipManagerRef();
@@ -146,7 +174,6 @@ export const useTooltipManager = (
         onPointerLeave: () => {
           tooltipManagerApi.hideTooltip(tooltipElementRef.current!);
         },
-        id: visibleTooltip.options?.id,
       },
     },
     defaultProps,
