@@ -21,6 +21,13 @@ export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLE
   noArrow?: boolean;
 
   /**
+   * Distance between the tooltip and the target element, in pixels
+   *
+   * @defaultvalue 4
+   */
+  offset?: number;
+
+  /**
    * Delay before the tooltip is shown, in milliseconds
    *
    * @defaultvalue 250

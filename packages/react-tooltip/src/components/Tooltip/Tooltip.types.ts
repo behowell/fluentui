@@ -16,5 +16,5 @@ export type TooltipState = ComponentState<
     arrow?: ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
   },
   /* ShorthandProps: */ typeof tooltipShorthandProps[number],
-  /* DefaultedProps: */ 'arrow' | 'placement'
+  /* DefaultedProps: */ 'arrow' | 'placement' | 'offset'
 >;

@@ -68,7 +68,11 @@ const TooltipExampleCore = () => {
         <AvatarWithTooltip
           tooltip={
             <>
-              <i>Custom</i> <code>Tooltip</code> content!
+              <i>Custom</i>
+              <code>
+                <u>Tooltip</u>
+              </code>
+              content!
             </>
           }
         />
@@ -81,6 +85,9 @@ const TooltipExampleCore = () => {
           }}
         />
         <AvatarWithTooltip tooltip={{ children: "This Tooltip doesn't have an arrow", noArrow: true }} />
+        <AvatarWithTooltip
+          tooltip={{ children: 'This tooltip has a large offset from the target', placement: 'bottom', offset: 20 }}
+        />
         <AvatarWithTooltip
           badge={{ state: 'success', ref: setBadgeElement } as BadgeProps}
           tooltip={{

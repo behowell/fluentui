@@ -3,7 +3,7 @@ import { useMergedRefs } from '@fluentui/react-utilities';
 import { usePopper } from 'react-popper';
 import { TooltipState } from './Tooltip.types';
 import { mergeProps } from './useTooltip';
-import { arrowHeight, tooltipBorderRadius, tooltipOffset } from './useTooltipStyles';
+import { arrowHeight, tooltipBorderRadius } from './useTooltipStyles';
 import { useTheme } from '@fluentui/react-theme-provider';
 
 /**
@@ -27,7 +27,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
               padding: 2 * parseInt(tooltipBorderRadius(theme), 10),
             },
       },
-      { name: 'offset', options: { offset: [0, tooltipOffset + (state.noArrow ? 0 : arrowHeight)] } },
+      { name: 'offset', options: { offset: [0, state.offset + (state.noArrow ? 0 : arrowHeight)] } },
     ],
   });
 

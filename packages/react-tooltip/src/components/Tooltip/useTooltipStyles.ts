@@ -9,11 +9,6 @@ import { TooltipState } from './Tooltip.types';
 export const arrowHeight = 6 * Math.SQRT1_2;
 export const arrowSquareSize = 12 * Math.SQRT1_2;
 
-/**
- * Gap between the tooltip and the target element
- */
-export const tooltipOffset = 4; // REVIEW should this come from the theme?
-
 export const tooltipBorderRadius = (theme: Theme) => theme.global.borderRadius.medium;
 
 /**
