@@ -14,6 +14,30 @@ import {
 import { resolveShorthandProp } from '@fluentui/react-utilities';
 import { Button } from '@fluentui/react-button';
 import { Checkbox } from '@fluentui/react';
+import { makeStyles } from '@fluentui/react-make-styles';
+
+const usePlacementTargetClassName = makeStyles([
+  [
+    null,
+    theme => ({
+      width: '275px',
+      height: '125px',
+      boxSizing: 'border-box',
+      display: 'flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      padding: '20px',
+
+      fontFamily: theme.global.type.fontFamilies.base,
+      fontSize: theme.global.type.fontSizes.base[300],
+      lineHeight: theme.global.type.lineHeights.base[300],
+
+      background: theme.alias.color.neutral.neutralBackground3,
+      color: theme.alias.color.neutral.neutralForeground3,
+      border: `1px solid ${theme.alias.color.neutral.neutralStroke1}`,
+    }),
+  ],
+]);
 
 type AvatarWithTooltipProps = AvatarProps & WithTooltipSlot;
 type AvatarWithTooltipState = AvatarState & WithTooltipSlot;
@@ -69,7 +93,7 @@ const TooltipExampleCore = () => {
         <AvatarWithTooltip
           tooltip={
             <>
-              <i>Custom</i> <code>Tooltip</code> content!
+              <u>Custom</u> <code>Tooltip</code> <b>content</b>!
             </>
           }
         />
@@ -136,57 +160,43 @@ const TooltipExampleCore = () => {
         />
       </div>
       <div style={{ margin: '20px 0', padding: '40px 100px' }}>
-        <div
-          ref={setPlacementTarget}
-          style={{
-            width: '275px',
-            height: '125px',
-            boxSizing: 'border-box',
-            background: '#DDD',
-            color: '#222',
-            border: '1px solid #555',
-            display: 'flex',
-            textAlign: 'center',
-            alignItems: 'center',
-            padding: '20px',
-          }}
-        >
+        <div ref={setPlacementTarget} className={usePlacementTargetClassName({})}>
           This shows all of the possible placement values for tooltips relative to this box.
         </div>
-        <Tooltip targetElement={placementTarget} placement="left-start">
+        <Tooltip targetElement={placementTarget} subtle placement="left-start">
           left-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="left">
+        <Tooltip targetElement={placementTarget} subtle placement="left">
           left
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="left-end">
+        <Tooltip targetElement={placementTarget} subtle placement="left-end">
           left-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="right-start">
+        <Tooltip targetElement={placementTarget} subtle placement="right-start">
           right-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="right">
+        <Tooltip targetElement={placementTarget} subtle placement="right">
           right
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="right-end">
+        <Tooltip targetElement={placementTarget} subtle placement="right-end">
           right-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="top-start">
+        <Tooltip targetElement={placementTarget} subtle placement="top-start">
           top-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="top">
+        <Tooltip targetElement={placementTarget} subtle placement="top">
           top
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="top-end">
+        <Tooltip targetElement={placementTarget} subtle placement="top-end">
           top-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="bottom-start">
+        <Tooltip targetElement={placementTarget} subtle placement="bottom-start">
           bottom-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="bottom">
+        <Tooltip targetElement={placementTarget} subtle placement="bottom">
           bottom
         </Tooltip>
-        <Tooltip targetElement={placementTarget} placement="bottom-end">
+        <Tooltip targetElement={placementTarget} subtle placement="bottom-end">
           bottom-end
         </Tooltip>
       </div>
