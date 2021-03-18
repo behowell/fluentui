@@ -71,8 +71,9 @@ export type RequiredProps<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: T[P
 export type ComponentState<
   Props extends ComponentProps,
   ShorthandProps extends keyof Props = never,
-  DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never
+  DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never,
+  Ref = React.Ref<HTMLElement>
 > = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
   as: React.ElementType;
-  ref: React.Ref<HTMLElement>;
+  ref: Ref;
 };
