@@ -26,7 +26,7 @@ export interface WidgetProps extends ComponentProps, React.HTMLAttributes<HTMLEl
 }
 ```
 
-**Problem:** The `WidgeState` type is handwritten, requires repeating the types for slot props and any props that have defaults.
+**Problem:** The `WidgetState` type is handwritten, requires repeating the types for slot props and any props that have defaults.
 
 ```typescript
 export interface WidgetState extends WidgetProps {

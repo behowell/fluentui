@@ -10,7 +10,7 @@ import { ObjectShorthandProps, ResolvedShorthandProps } from './types';
 export const resolveShorthandProps = <TProps, TShorthandPropNames extends keyof TProps>(
   props: TProps,
   shorthandPropNames: readonly TShorthandPropNames[],
-) => {
+): ResolvedShorthandProps<TProps, TShorthandPropNames> => {
   let newProps = props;
 
   if (shorthandPropNames && shorthandPropNames.length) {
