@@ -1,8 +1,54 @@
 # Change Log - @fluentui/react-menu
 
-This log was last generated on Sun, 07 Mar 2021 23:34:51 GMT and should not be manually modified.
+This log was last generated on Tue, 16 Mar 2021 07:32:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## [0.8.3](https://github.com/microsoft/fluentui/tree/@fluentui/react-menu_v0.8.3)
+
+Tue, 16 Mar 2021 07:32:44 GMT 
+[Compare changes](https://github.com/microsoft/fluentui/compare/@fluentui/react-menu_v0.8.2..@fluentui/react-menu_v0.8.3)
+
+### Patches
+
+- Bump @fluentui/react-conformance to v0.2.4 ([PR #17418](https://github.com/microsoft/fluentui/pull/17418) by elcraig@microsoft.com)
+
+### Changes
+
+- Bump @fluentui/react-make-styles to v9.0.0-alpha.11 ([PR #17418](https://github.com/microsoft/fluentui/pull/17418) by elcraig@microsoft.com)
+
+## [0.8.2](https://github.com/microsoft/fluentui/tree/@fluentui/react-menu_v0.8.2)
+
+Mon, 15 Mar 2021 07:36:20 GMT 
+[Compare changes](https://github.com/microsoft/fluentui/compare/@fluentui/react-menu_v0.8.1..@fluentui/react-menu_v0.8.2)
+
+### Patches
+
+- Remove set-version references ([PR #17381](https://github.com/microsoft/fluentui/pull/17381) by elcraig@microsoft.com)
+
+## [0.8.1](https://github.com/microsoft/fluentui/tree/@fluentui/react-menu_v0.8.1)
+
+Fri, 12 Mar 2021 20:04:27 GMT 
+[Compare changes](https://github.com/microsoft/fluentui/compare/@fluentui/react-menu_v0.8.0..@fluentui/react-menu_v0.8.1)
+
+### Patches
+
+- Change makeStyles to makeStylesCompat ([PR #17354](https://github.com/microsoft/fluentui/pull/17354) by bsunderhus@microsoft.com)
+
+### Changes
+
+- Bump @fluentui/react-make-styles to v9.0.0-alpha.9 ([PR #17373](https://github.com/microsoft/fluentui/pull/17373) by elcraig@microsoft.com)
+
+## [0.8.0](https://github.com/microsoft/fluentui/tree/@fluentui/react-menu_v0.8.0)
+
+Wed, 10 Mar 2021 07:34:39 GMT 
+[Compare changes](https://github.com/microsoft/fluentui/compare/@fluentui/react-menu_v0.8.0..@fluentui/react-menu_v0.8.0)
+
+### Changes
+
+- Bump @fluentui/react-utilities to v9.0.0-alpha.7 ([PR #17293](https://github.com/microsoft/fluentui/pull/17293) by lingfan.gao@microsoft.com)
+- Bump @fluentui/react-focus-management to v9.0.0-alpha.6 ([PR #17293](https://github.com/microsoft/fluentui/pull/17293) by lingfan.gao@microsoft.com)
+- Bump @fluentui/react-make-styles to v9.0.0-alpha.8 ([PR #17293](https://github.com/microsoft/fluentui/pull/17293) by lingfan.gao@microsoft.com)
 
 ## [0.8.0](https://github.com/microsoft/fluentui/tree/@fluentui/react-menu_v0.8.0)
 
