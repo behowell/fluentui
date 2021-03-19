@@ -4,6 +4,7 @@
 
 ```ts
 
+import { ComponentState } from '@fluentui/react-utilities';
 import { getAbilityHelpersAttribute } from 'ability-helpers';
 import * as React from 'react';
 import { Types } from 'ability-helpers';
@@ -20,19 +21,16 @@ export interface FocusManagementProvideProps extends React.HTMLAttributes<HTMLEl
 export const FocusManagementProvider: React.FunctionComponent<FocusManagementProvideProps>;
 
 // @public (undocumented)
-export interface FocusManagementProviderState extends FocusManagementProvideProps {
-    // Warning: (ae-forgotten-export) The symbol "FocusManagementContextValue" needs to be exported by the entry point index.d.ts
-    //
-    // (undocumented)
+export type FocusManagementProviderState = ComponentState<FocusManagementProvideProps & {
     contextValue: FocusManagementContextValue;
-    // (undocumented)
-    dir: FocusManagementProvideProps['dir'];
-}
+}, never, 'dir'>;
 
 export { getAbilityHelpersAttribute }
 
 // @public (undocumented)
-export const renderFocusManagementProvider: (state: FocusManagementProviderState) => JSX.Element;
+export const renderFocusManagementProvider: (state: ComponentState<FocusManagementProvideProps & {
+    contextValue: FocusManagementContextValue;
+}, never, "dir", React.Ref<HTMLElement>>) => JSX.Element;
 
 // @public
 export const useArrowNavigationGroup: (options?: UseArrowNavigationGroupOptions) => Types.AbilityHelpersDOMAttribute;
@@ -50,8 +48,14 @@ export const useFocusFinders: () => {
 };
 
 // @public (undocumented)
-export const useFocusManagementProvider: (props: FocusManagementProvideProps, ref: React.Ref<HTMLElement>) => FocusManagementProviderState;
+export const useFocusManagementProvider: (props: FocusManagementProvideProps, ref: React.Ref<HTMLElement>) => ComponentState<FocusManagementProvideProps & {
+    contextValue: FocusManagementContextValue;
+}, never, "dir", React.Ref<HTMLElement>>;
 
+
+// Warnings were encountered during analysis:
+//
+// lib/FocusManagementProvider.d.ts:17:5 - (ae-forgotten-export) The symbol "FocusManagementContextValue" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 

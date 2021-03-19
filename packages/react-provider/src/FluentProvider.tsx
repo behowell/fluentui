@@ -1,7 +1,7 @@
 import { PartialTheme, Theme } from '@fluentui/react-theme';
 import { internal__ThemeContext, ThemeProviderState, useThemeProviderState } from '@fluentui/react-theme-provider';
 import { FocusManagementProvider } from '@fluentui/react-focus-management';
-import { getSlots, makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
+import { ComponentState, getSlots, makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
 import * as React from 'react';
 
 import { internal__FluentProviderContext, useFluent } from './context';
@@ -15,15 +15,13 @@ export interface ProviderProps {
 
   theme?: PartialTheme;
 }
-export interface ProviderState {
-  dir: 'ltr' | 'rtl';
-  document: Document | undefined;
-  theme: Theme;
-}
 
-const mergeProps = makeMergeProps<ProviderState>();
+type PartialProviderState = ComponentState<ProviderProps, /* ShorthandProps: */ never, /* DefaultedProps: */ 'dir'>;
+export type ProviderState = PartialProviderState & { theme: Theme };
 
-export function useFluentProviderState(draftState: ProviderState) {
+const mergeProps = makeMergeProps<PartialProviderState>();
+
+export function useFluentProviderState(draftState: PartialProviderState): ProviderState {
   const parentContext = useFluent();
 
   useThemeProviderState(draftState as ThemeProviderState);
@@ -31,6 +29,8 @@ export function useFluentProviderState(draftState: ProviderState) {
   // TODO: add merge functions
   draftState.document = draftState.document || parentContext.document;
   draftState.dir = draftState.dir || parentContext.dir;
+
+  return draftState as ProviderState;
 }
 
 export function renderFluentProvider(state: ProviderState) {
@@ -56,20 +56,21 @@ export function renderFluentProvider(state: ProviderState) {
  * a set of default prop values.
  */
 export function useFluentProvider(props: ProviderProps, ref: React.Ref<HTMLElement>) {
+  const parentContext = useFluent();
   const rootRef = useMergedRefs(ref, React.useRef<HTMLElement>(null));
   const state = mergeProps(
     {
       ref: rootRef,
       as: 'div',
+      document: parentContext.document,
+      dir: parentContext.dir,
     },
     {},
     props,
   );
 
-  useFluentProviderState(state);
-
   return {
-    state,
+    state: useFluentProviderState(state),
     render: renderFluentProvider,
   };
 }

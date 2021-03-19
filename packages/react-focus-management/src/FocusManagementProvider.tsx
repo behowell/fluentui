@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
+import { ComponentState, makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
 import { getCurrentAbilityHelpers, createAbilityHelpers, Types as AHTypes } from 'ability-helpers';
 import { internal__FocusManagementContext, FocusManagementContextValue } from './focusManagementContext';
 
@@ -18,11 +18,13 @@ export interface FocusManagementProvideProps extends React.HTMLAttributes<HTMLEl
   customRoot?: boolean;
 }
 
-export interface FocusManagementProviderState extends FocusManagementProvideProps {
-  dir: FocusManagementProvideProps['dir'];
-
-  contextValue: FocusManagementContextValue;
-}
+export type FocusManagementProviderState = ComponentState<
+  FocusManagementProvideProps & {
+    contextValue: FocusManagementContextValue;
+  },
+  /*ShorthandProps:*/ never,
+  /*DefaultedProps:*/ 'dir'
+>;
 
 const mergeProps = makeMergeProps<FocusManagementProviderState>();
 
@@ -35,14 +37,14 @@ export const useFocusManagementProvider = (
     {
       ref: rootRef,
       as: 'div',
+      dir: 'ltr',
+      contextValue: {},
     },
     {},
     props,
   );
 
-  state.dir = state.dir || 'ltr';
-
-  const ahOptions = { autoRoot: {} };
+  const ahOptions: AHTypes.AbilityHelpersCoreProps = { autoRoot: {} };
   if (state.customRoot) {
     delete ahOptions.autoRoot;
   }

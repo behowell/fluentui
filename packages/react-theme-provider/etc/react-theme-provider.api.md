@@ -4,12 +4,16 @@
 
 ```ts
 
+import { ComponentState } from '@fluentui/react-utilities';
 import { PartialTheme } from '@fluentui/react-theme';
 import * as React from 'react';
 import { Theme } from '@fluentui/react-theme';
 
 // @public (undocumented)
 export const internal__ThemeContext: React.Context<ThemeProviderValue>;
+
+// @public (undocumented)
+export type PartialThemeProviderState = ComponentState<ThemeProviderProps>;
 
 // @public (undocumented)
 export function renderThemeProvider(state: ThemeProviderState): JSX.Element;
@@ -24,10 +28,9 @@ export interface ThemeProviderProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 // @public (undocumented)
-export interface ThemeProviderState extends React.HTMLAttributes<HTMLElement> {
-    // (undocumented)
+export type ThemeProviderState = PartialThemeProviderState & {
     theme: Theme;
-}
+};
 
 // @public (undocumented)
 export interface ThemeProviderValue extends Theme {
@@ -43,7 +46,7 @@ export function useThemeProvider(props: ThemeProviderProps, ref: React.Ref<HTMLE
 };
 
 // @public (undocumented)
-export function useThemeProviderState(draftState: ThemeProviderState): void;
+export function useThemeProviderState(draftState: PartialThemeProviderState): ThemeProviderState;
 
 
 // (No @packageDocumentation comment for this package)

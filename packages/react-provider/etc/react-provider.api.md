@@ -4,6 +4,7 @@
 
 ```ts
 
+import { ComponentState } from '@fluentui/react-utilities';
 import { PartialTheme } from '@fluentui/react-theme';
 import * as React from 'react';
 import { Theme } from '@fluentui/react-theme';
@@ -32,15 +33,12 @@ export interface ProviderProps {
     theme?: PartialTheme;
 }
 
+// Warning: (ae-forgotten-export) The symbol "PartialProviderState" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
-export interface ProviderState {
-    // (undocumented)
-    dir: 'ltr' | 'rtl';
-    // (undocumented)
-    document: Document | undefined;
-    // (undocumented)
+export type ProviderState = PartialProviderState & {
     theme: Theme;
-}
+};
 
 // @public (undocumented)
 export function renderFluentProvider(state: ProviderState): JSX.Element;
@@ -55,7 +53,7 @@ export function useFluentProvider(props: ProviderProps, ref: React.Ref<HTMLEleme
 };
 
 // @public (undocumented)
-export function useFluentProviderState(draftState: ProviderState): void;
+export function useFluentProviderState(draftState: PartialProviderState): ProviderState;
 
 
 // (No @packageDocumentation comment for this package)

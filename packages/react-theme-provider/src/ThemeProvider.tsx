@@ -1,5 +1,5 @@
 import { mergeThemes, themeToCSSVariables, PartialTheme, Theme } from '@fluentui/react-theme';
-import { getSlots, makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
+import { ComponentState, getSlots, makeMergeProps, useMergedRefs } from '@fluentui/react-utilities';
 import * as React from 'react';
 
 import { internal__ThemeContext, useTheme } from './context';
@@ -7,17 +7,17 @@ import { internal__ThemeContext, useTheme } from './context';
 export interface ThemeProviderProps extends React.HTMLAttributes<HTMLElement> {
   theme?: PartialTheme | Theme;
 }
-export interface ThemeProviderState extends React.HTMLAttributes<HTMLElement> {
-  theme: Theme;
-}
+export type PartialThemeProviderState = ComponentState<ThemeProviderProps>;
+export type ThemeProviderState = PartialThemeProviderState & { theme: Theme };
 
-const mergeProps = makeMergeProps<ThemeProviderState>();
+const mergeProps = makeMergeProps<PartialThemeProviderState>();
 
-export function useThemeProviderState(draftState: ThemeProviderState) {
+export function useThemeProviderState(draftState: PartialThemeProviderState): ThemeProviderState {
   const parentTheme = useTheme();
   const localTheme = draftState.theme;
+  const mergedTheme = mergeThemes(parentTheme, localTheme);
 
-  draftState.theme = mergeThemes(parentTheme, localTheme);
+  draftState.theme = mergedTheme;
   draftState.style = React.useMemo(() => {
     // TODO: should we consider insertion to head?
     //       - how to modify, remove styles?
@@ -27,9 +27,11 @@ export function useThemeProviderState(draftState: ThemeProviderState) {
     // TODO: how we will proceed with Portals?
     return {
       ...draftState.style,
-      ...themeToCSSVariables(draftState.theme),
+      ...themeToCSSVariables(mergedTheme),
     };
-  }, [draftState.style, draftState.theme]);
+  }, [draftState.style, mergedTheme]);
+
+  return draftState as ThemeProviderState;
 }
 
 export function renderThemeProvider(state: ThemeProviderState) {
@@ -58,10 +60,8 @@ export function useThemeProvider(props: ThemeProviderProps, ref: React.Ref<HTMLE
     props,
   );
 
-  useThemeProviderState(state);
-
   return {
-    state,
+    state: useThemeProviderState(state),
     render: renderThemeProvider,
   };
 }
