@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { AccordionPanelProps, AccordionPanelState } from './AccordionPanel.types';
+import { AccordionPanelProps, accordionPanelShorthandProps, AccordionPanelState } from './AccordionPanel.types';
 import { useAccordionItemContext } from '../AccordionItem/index';
-
-/**
- * Consts listing which props are shorthand props.
- */
-export const accordionPanelShorthandProps = [];
 
 const mergeProps = makeMergeProps<AccordionPanelState>({ deepMerge: accordionPanelShorthandProps });
 

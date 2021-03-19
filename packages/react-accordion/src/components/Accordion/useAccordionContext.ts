@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { createDescendantContext, useDescendant, useDescendantsInit } from '../../utils/descendants';
-import { AccordionContext, AccordionDescendant, AccordionIndex, AccordionState } from './Accordion.types';
+import {
+  AccordionContext,
+  AccordionDescendant,
+  AccordionIndex,
+  AccordionState,
+  PartialAccordionState,
+} from './Accordion.types';
 import { useControllableValue, useEventCallback } from '@fluentui/react-utilities';
 import { createContext } from '@fluentui/react-context-selector';
 
@@ -16,12 +22,12 @@ export const accordionContext = createContext<AccordionContext>({
 /**
  * Creates the context to be provided for AccordionItem components
  */
-export function useCreateAccordionContext(state: AccordionState) {
+export function useCreateAccordionContext(state: PartialAccordionState) {
   const { index, multiple, collapsible, onToggle, size, expandIcon, expandIconPosition, button } = state;
   const [descendants, setDescendants] = useDescendantsInit<AccordionDescendant>();
   const normalizedIndex = React.useMemo(() => (index !== undefined ? normalizeIndex(index) : undefined), [index]);
   const [openItems, setOpenItems] = useControllableValue<number[], HTMLElement>(normalizedIndex!, () =>
-    initializeUncontrolledOpenItems(state),
+    initializeUncontrolledOpenItems(state as AccordionState),
   );
 
   const requestToggle = useEventCallback((ev: React.MouseEvent<HTMLElement>, i: number) => {

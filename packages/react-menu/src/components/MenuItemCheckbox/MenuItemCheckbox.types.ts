@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ComponentProps, ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
+import { ComponentProps, ComponentState, ShorthandProps } from '@fluentui/react-utilities';
 import { MenuItemSelectableProps, MenuItemSelectableState } from '../../selectable/index';
-import { MenuItemProps, MenuItemState } from '../MenuItem/MenuItem.types';
+import { MenuItemProps } from '../MenuItem/MenuItem.types';
 
 /**
  * {@docCategory MenuItemCheckbox}
@@ -23,18 +23,16 @@ export interface MenuItemCheckboxProps
 }
 
 /**
+ * Consts listing which props are shorthand props.
+ */
+export const menuItemCheckboxShorthandProps = ['icon', 'checkmark'] as const;
+
+/**
  * {@docCategory MenuItemCheckbox}
  */
-export interface MenuItemCheckboxState extends MenuItemCheckboxProps, MenuItemState, MenuItemSelectableState {
-  ref: React.MutableRefObject<HTMLElement>;
-
-  /**
-   * Icon slot rendered before children content
-   */
-  icon?: ObjectShorthandProps<HTMLElement>;
-
-  /**
-   * Slot for the checkmark indicator
-   */
-  checkmark: ObjectShorthandProps<HTMLElement>;
-}
+export type MenuItemCheckboxState = MenuItemSelectableState &
+  ComponentState<
+    MenuItemCheckboxProps,
+    /* ShorthandProps: */ typeof menuItemCheckboxShorthandProps[number],
+    /* DefaultedProps: */ 'icon' | 'checkmark'
+  >;

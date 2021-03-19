@@ -3,6 +3,7 @@ import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/
 import {
   AccordionHeaderExpandIconPosition,
   AccordionHeaderProps,
+  accordionHeaderShorthandProps,
   AccordionHeaderSize,
   AccordionHeaderState,
 } from './AccordionHeader.types';
@@ -10,11 +11,6 @@ import { useAccordionItemContext } from '../AccordionItem/index';
 import { DefaultExpandIcon } from './DefaultExpandIcon';
 import { accordionContext } from '../Accordion/useAccordionContext';
 import { useContextSelector } from '@fluentui/react-context-selector';
-
-/**
- * Consts listing which props are shorthand props.
- */
-export const accordionHeaderShorthandProps = ['expandIcon', 'button', 'children'];
 
 const mergeProps = makeMergeProps<AccordionHeaderState>({ deepMerge: accordionHeaderShorthandProps });
 
@@ -42,6 +38,7 @@ export const useAccordionHeader = (
         as: DefaultExpandIcon,
         open,
         'aria-hidden': true,
+        expandIconPosition: 'start',
       },
       button: {
         as: 'div',

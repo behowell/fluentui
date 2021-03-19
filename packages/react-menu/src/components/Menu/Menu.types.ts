@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
+import { ComponentState, ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
 import { MenuListProps } from '../MenuList/index';
 
 /**
@@ -28,20 +28,21 @@ export interface MenuProps extends MenuListProps {
   menuPopup?: ShorthandProps<React.HTMLAttributes<HTMLElement>>;
 }
 
+export const menuShorthandProps = ['menuPopup'] as const;
+
 /**
  * {@docCategory Menu }
  */
-export interface MenuState extends MenuProps {
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
+export type PartialMenuState = ComponentState<
+  MenuProps,
+  /* ShorthandProps: */ typeof menuShorthandProps[number],
+  /* DefaultedProps: */ 'open' | 'menuPopup'
+>;
 
-  /**
-   * Whether the popup is open
-   */
-  open: boolean;
-
+/**
+ * {@docCategory Menu }
+ */
+export type MenuState = PartialMenuState & {
   /**
    * Callback to open/close the popup
    */
@@ -61,4 +62,4 @@ export interface MenuState extends MenuProps {
    * Wrapper to style and add events for the popup
    */
   menuPopup: ObjectShorthandProps<React.HTMLAttributes<HTMLElement>>;
-}
+};

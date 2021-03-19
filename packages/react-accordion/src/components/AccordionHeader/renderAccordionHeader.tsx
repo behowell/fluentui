@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getSlots } from '@fluentui/react-utilities';
-import { AccordionHeaderState } from './AccordionHeader.types';
-import { accordionHeaderShorthandProps } from './useAccordionHeader';
+import { accordionHeaderShorthandProps, AccordionHeaderState } from './AccordionHeader.types';
 
 /**
  * Function that renders the final JSX of the component

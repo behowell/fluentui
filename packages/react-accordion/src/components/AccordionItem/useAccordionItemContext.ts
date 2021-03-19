@@ -1,7 +1,7 @@
 import { useId } from '@fluentui/react-utilities';
 import * as React from 'react';
 import { useAccordionDescendant, accordionContext } from '../Accordion/useAccordionContext';
-import { AccordionItemContext, AccordionItemState } from './AccordionItem.types';
+import { AccordionItemContext, PartialAccordionItemState } from './AccordionItem.types';
 import { useContextSelector } from '@fluentui/react-context-selector';
 
 // No default value.
@@ -19,7 +19,7 @@ export const useAccordionItemContext = () => React.useContext(accordionItemConte
 /**
  * Creates internal context to be consumed by AccordionHeader and AccordionPanel
  */
-export function useCreateAccordionItemContext(state: AccordionItemState) {
+export function useCreateAccordionItemContext(state: PartialAccordionItemState) {
   const headingId = useId('accordion-item-heading-');
   const panelId = useId('accordion-item-panel-');
   // index -1 means context not provided

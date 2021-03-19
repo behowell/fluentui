@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs, useId } from '@fluentui/react-utilities';
-import { MenuGroupProps, MenuGroupState } from './MenuGroup.types';
-
-/**
- * Consts listing which props are shorthand props.
- */
-export const menuGroupShorthandProps = ['loader', 'content'];
+import { MenuGroupProps, menuGroupShorthandProps, MenuGroupState } from './MenuGroup.types';
 
 const mergeProps = makeMergeProps<MenuGroupState>({ deepMerge: menuGroupShorthandProps });
 
@@ -23,12 +18,11 @@ export const useMenuGroup = (
       ref: useMergedRefs(ref, React.useRef<HTMLElement>(null)),
       'aria-labelledby': id,
       role: 'group',
+      headerId: id,
     },
     defaultProps,
     resolveShorthandProps(props, []),
   );
-
-  state.headerId = id;
 
   return state;
 };

@@ -1,6 +1,6 @@
 import { EnterKey, getCode, SpacebarKey } from '@fluentui/keyboard-key';
 import { useMenuListContext } from '../menuListContext';
-import { MenuItemSelectableState, SelectableHandler } from './types';
+import { MenuItemSelectableProps, MenuItemSelectableState, SelectableHandler } from './types';
 
 /**
  * Hook used to perform the shared operations that any selectable menu item will need
@@ -8,10 +8,10 @@ import { MenuItemSelectableState, SelectableHandler } from './types';
  * @param state - Selectable menu item state
  * @param handleSelection - Each kind of selecatable will have its own way of handling selection
  */
-export const useMenuItemSelectable = (
-  state: MenuItemSelectableState,
+export const useMenuItemSelectable = <TState extends MenuItemSelectableProps & Partial<MenuItemSelectableState>>(
+  state: TState,
   handleSelection: SelectableHandler = () => null,
-) => {
+): TState & MenuItemSelectableState => {
   const { onClick: onClickCallback, onKeyDown: onKeyDownCallback } = state;
 
   const checked = useMenuListContext(context => {
@@ -19,25 +19,29 @@ export const useMenuItemSelectable = (
     return checkedItems.indexOf(state.value) !== -1;
   });
 
-  state.checked = checked;
-  state['aria-checked'] = state.checked;
+  const menuItemSelectableState: MenuItemSelectableState = {
+    checked,
+    'aria-checked': checked,
 
-  state.onClick = e => {
-    if (onClickCallback) {
-      onClickCallback(e);
-    }
+    onClick: e => {
+      if (onClickCallback) {
+        onClickCallback(e);
+      }
 
-    handleSelection(e, state.name, state.value, state.checked);
+      handleSelection(e, state.name, state.value, checked);
+    },
+
+    onKeyDown: e => {
+      if (onKeyDownCallback) {
+        onKeyDownCallback(e);
+      }
+
+      const keyCode = getCode(e);
+      if (!e.defaultPrevented && (keyCode === EnterKey || keyCode === SpacebarKey)) {
+        handleSelection(e, state.name, state.value, checked);
+      }
+    },
   };
 
-  state.onKeyDown = e => {
-    if (onKeyDownCallback) {
-      onKeyDownCallback(e);
-    }
-
-    const keyCode = getCode(e);
-    if (!e.defaultPrevented && (keyCode === EnterKey || keyCode === SpacebarKey)) {
-      handleSelection(e, state.name, state.value, state.checked);
-    }
-  };
+  return Object.assign(state, menuItemSelectableState);
 };

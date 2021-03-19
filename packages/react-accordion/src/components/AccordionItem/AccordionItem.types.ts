@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps } from '@fluentui/react-utilities';
+import { ComponentProps, ComponentState } from '@fluentui/react-utilities';
 
 export interface AccordionItemContext {
   headingId: string;
@@ -16,13 +16,22 @@ export interface AccordionItemProps extends ComponentProps, React.HTMLAttributes
    */
   disabled?: boolean;
 }
+/**
+ * Consts listing which props are shorthand props.
+ */
+export const accordionItemShorthandProps = [] as const;
 
 /**
  * {@docCategoryAccordionItem} */
-export interface AccordionItemState extends AccordionItemProps {
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
+export type PartialAccordionItemState = ComponentState<
+  AccordionItemProps,
+  /* ShorthandProps: */ typeof accordionItemShorthandProps[number],
+  /* DefaultedProps: */ never,
+  React.RefObject<HTMLElement>
+>;
+
+/**
+ * {@docCategoryAccordionItem} */
+export type AccordionItemState = PartialAccordionItemState & {
   context: AccordionItemContext;
-}
+};

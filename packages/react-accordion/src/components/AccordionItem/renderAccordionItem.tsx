@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getSlots } from '@fluentui/react-utilities';
-import { AccordionItemState } from './AccordionItem.types';
-import { accordionItemShorthandProps } from './useAccordionItem';
+import { accordionItemShorthandProps, AccordionItemState } from './AccordionItem.types';
 import { accordionItemContext } from './useAccordionItemContext';
 
 /**

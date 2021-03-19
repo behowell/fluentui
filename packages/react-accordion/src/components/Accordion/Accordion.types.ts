@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps } from '@fluentui/react-utilities';
+import { ComponentProps, ComponentState } from '@fluentui/react-utilities';
 import { Descendant } from '../../utils/descendants';
 import { AccordionHeaderProps } from '../AccordionHeader/AccordionHeader.types';
 
@@ -44,15 +44,17 @@ export interface AccordionProps extends ComponentProps, AccordionHeaderCommonPro
 }
 
 /**
- * {@docCategory Accordion}
+ * Consts listing which props are shorthand props.
  */
-export interface AccordionState extends AccordionProps {
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
-  multiple: boolean;
-  collapsible: boolean;
+export const accordionShorthandProps = [] as const;
+
+export type PartialAccordionState = ComponentState<
+  AccordionProps,
+  /* ShorthandProps: */ typeof accordionShorthandProps[number],
+  /* DefaultedProps: */ 'multiple' | 'collapsible'
+>;
+
+export type AccordionState = PartialAccordionState & {
   /**
    * Internal Context used by Accordion and AccordionItem communication
    */
@@ -65,7 +67,7 @@ export interface AccordionState extends AccordionProps {
    * Internal Context used by Accordion and AccordionItem communication
    */
   setDescendants: React.Dispatch<React.SetStateAction<AccordionDescendant[]>>;
-}
+};
 
 export interface AccordionDescendant<ElementType = HTMLElement> extends Descendant<ElementType> {
   /**

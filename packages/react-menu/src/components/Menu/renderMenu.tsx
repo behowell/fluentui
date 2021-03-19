@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getSlots } from '@fluentui/react-utilities';
-import { MenuState } from './Menu.types';
-import { menuShorthandProps } from './useMenu';
+import { menuShorthandProps, MenuState } from './Menu.types';
 import { MenuProvider } from '../../menuContext';
 
 /**

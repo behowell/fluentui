@@ -1,14 +1,9 @@
 import * as React from 'react';
-import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { MenuItemCheckboxProps, MenuItemCheckboxState } from './MenuItemCheckbox.types';
+import { makeMergeProps, ObjectShorthandProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
+import { MenuItemCheckboxProps, menuItemCheckboxShorthandProps, MenuItemCheckboxState } from './MenuItemCheckbox.types';
 import { useMenuItemSelectable } from '../../selectable/index';
 import { useCharacterSearch } from '../../utils/useCharacterSearch';
 import { useMenuListContext } from '../../menuListContext';
-
-/**
- * Consts listing which props are shorthand props.
- */
-export const menuItemCheckboxShorthandProps = ['icon', 'checkmark'];
 
 const mergeProps = makeMergeProps<MenuItemCheckboxState>({ deepMerge: menuItemCheckboxShorthandProps });
 

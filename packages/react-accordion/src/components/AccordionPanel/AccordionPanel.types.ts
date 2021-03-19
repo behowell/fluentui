@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { ComponentProps } from '@fluentui/react-utilities';
+import { ComponentProps, ComponentState } from '@fluentui/react-utilities';
 
 /**
  * {@docCategoryAccordionPanel} */
 export interface AccordionPanelProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {}
 
 /**
+ * Consts listing which props are shorthand props.
+ */
+export const accordionPanelShorthandProps = [] as const;
+
+/**
  * {@docCategoryAccordionPanel} */
-export interface AccordionPanelState extends AccordionPanelProps {
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
-  /**
-   * Internal open state, provided by context
-   */
-  open: boolean;
-}
+export type AccordionPanelState = ComponentState<
+  AccordionPanelProps & {
+    /**
+     * Internal open state, provided by context
+     */
+    open: boolean;
+  },
+  /* ShorthandProps: */ typeof accordionPanelShorthandProps[number]
+>;

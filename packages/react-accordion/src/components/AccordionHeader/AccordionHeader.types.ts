@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps, ObjectShorthandProps, ShorthandProps } from '@fluentui/react-utilities';
+import { ComponentProps, ComponentState, ShorthandProps } from '@fluentui/react-utilities';
 
 export type AccordionHeaderSize = 'small' | 'medium' | 'large' | 'extra-large';
 export type AccordionHeaderExpandIconPosition = 'start' | 'end';
@@ -33,21 +33,14 @@ export interface AccordionHeaderProps extends ComponentProps, React.HTMLAttribut
 }
 
 /**
+ * Consts listing which props are shorthand props.
+ */
+export const accordionHeaderShorthandProps = ['expandIcon', 'button', 'children'] as const;
+
+/**
  * {@docCategoryAccordionHeader} */
-export interface AccordionHeaderState extends AccordionHeaderProps {
-  size: AccordionHeaderSize;
-  /**
-   * Ref to the root slot
-   */
-  ref: React.MutableRefObject<HTMLElement>;
-  /**
-   * Expand icon slot when processed by internal state
-   */
-  expandIcon: ObjectShorthandProps<AccordionHeaderExpandIconProps>;
-  expandIconPosition: AccordionHeaderExpandIconPosition;
-  /**
-   * The component to be used as button
-   */
-  button: ObjectShorthandProps<React.HTMLAttributes<HTMLElement>>;
-  children?: ObjectShorthandProps<React.HTMLAttributes<HTMLElement>>;
-}
+export type AccordionHeaderState = ComponentState<
+  AccordionHeaderProps,
+  /* ShorthandProps: */ typeof accordionHeaderShorthandProps[number],
+  /* DefaultedProps: */ 'size' | 'expandIcon' | 'expandIconPosition' | 'button'
+>;

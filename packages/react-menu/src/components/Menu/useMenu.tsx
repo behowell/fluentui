@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs, useControllableValue } from '@fluentui/react-utilities';
-import { MenuProps, MenuState } from './Menu.types';
+import { MenuProps, menuShorthandProps, MenuState, PartialMenuState } from './Menu.types';
 import { MenuTrigger } from '../MenuTrigger/index';
 
-export const menuShorthandProps: (keyof MenuProps)[] = ['menuPopup'];
-
-const mergeProps = makeMergeProps<MenuState>({ deepMerge: menuShorthandProps });
+const mergeProps = makeMergeProps<PartialMenuState>({ deepMerge: menuShorthandProps });
 
 /**
  * Create the state required to render Menu.
@@ -22,8 +20,10 @@ const mergeProps = makeMergeProps<MenuState>({ deepMerge: menuShorthandProps });
 export const useMenu = (props: MenuProps, ref: React.Ref<HTMLElement>, defaultProps?: MenuProps): MenuState => {
   const state = mergeProps(
     {
+      children: null,
       ref: useMergedRefs(ref, React.useRef(null)),
       menuPopup: { as: 'div' },
+      open: false,
     },
     defaultProps,
     resolveShorthandProps(props, menuShorthandProps),
@@ -38,27 +38,27 @@ export const useMenu = (props: MenuProps, ref: React.Ref<HTMLElement>, defaultPr
     console.warn('Menu can only take one MenuTrigger and one MenuList as children');
   }
 
+  let menuTrigger: React.ReactNode;
+  let menuList: React.ReactNode;
   children.forEach(child => {
     if (child.type === MenuTrigger) {
-      state.menuTrigger = child;
+      menuTrigger = child;
     } else {
-      state.menuList = child;
+      menuList = child;
     }
   });
 
   state.menuPopup.children = (Component, p) => {
-    return <Component {...p}> {state.menuList} </Component>;
+    return <Component {...p}> {menuList} </Component>;
   };
 
   const [open, setOpen] = useControllableValue(state.open, state.defaultOpen);
   // TODO fix useControllableValue typing
-  state.open = open !== undefined ? open : state.open;
-  state.setOpen = React.useCallback(
-    (...args) => {
-      setOpen(...args);
-    },
-    [setOpen],
-  );
 
-  return state;
+  return Object.assign(state, {
+    menuTrigger,
+    menuList,
+    open: open !== undefined ? open : state.open,
+    setOpen: React.useCallback((...args: Parameters<typeof setOpen>) => setOpen(...args), [setOpen]),
+  });
 };

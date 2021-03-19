@@ -1,15 +1,10 @@
 import * as React from 'react';
 import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
-import { AccordionProps, AccordionState } from './Accordion.types';
+import { AccordionProps, accordionShorthandProps, AccordionState, PartialAccordionState } from './Accordion.types';
 import { useCreateAccordionContext } from './useAccordionContext';
 import { useArrowNavigationGroup } from '@fluentui/react-focus-management';
 
-/**
- * Consts listing which props are shorthand props.
- */
-export const accordionShorthandProps = [];
-
-const mergeProps = makeMergeProps<AccordionState>({ deepMerge: accordionShorthandProps });
+const mergeProps = makeMergeProps<PartialAccordionState>({ deepMerge: accordionShorthandProps });
 
 /**
  * Returns the props and state required to render the component
@@ -35,7 +30,5 @@ export const useAccordion = (
     resolveShorthandProps(props, accordionShorthandProps),
   );
   const [context, descendants, setDescendants] = useCreateAccordionContext(state);
-  Object.assign(state, { context, descendants, setDescendants });
-
-  return state;
+  return Object.assign(state, { context, descendants, setDescendants });
 };
