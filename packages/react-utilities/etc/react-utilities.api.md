@@ -50,6 +50,12 @@ export interface ComponentProps {
 }
 
 // @public
+export type ComponentState<Props, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never, RefType = React.Ref<HTMLElement>> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
+    as?: React.ElementType;
+    ref: RefType;
+};
+
+// @public
 export const divProperties: Record<string, number>;
 
 // @public
@@ -65,7 +71,7 @@ export function getNativeElementProps<TAttributes extends React.HTMLAttributes<a
 export function getNativeProps<T extends Record<string, any>>(props: Record<string, any>, allowedPropNames: string[] | Record<string, number>, excludedPropNames?: string[]): T;
 
 // @public
-export const getSlots: (state: Record<string, any>, slotNames?: string[] | undefined) => {
+export const getSlots: (state: Record<string, any>, slotNames?: readonly string[] | undefined) => {
     slots: Record<string, any>;
     slotProps: Record<string, any>;
 };
@@ -92,18 +98,21 @@ export const labelProperties: Record<string, number>;
 export const liProperties: Record<string, number>;
 
 // @public
-export const makeMergeProps: <TState = Record<string, any>>(options?: MergePropsOptions) => (target: Record<string, any>, ...propSets: (Record<string, any> | undefined)[]) => TState;
+export const makeMergeProps: <TState = Record<string, any>, TProps = Record<string, any>>(options?: MergePropsOptions<TState>) => MergePropsFunction<TState, TProps>;
+
+// @public
+export type MergePropsFunction<TState, TProps> = (target: TState, ...propSets: (Partial<TState | TProps> | undefined)[]) => TState;
 
 // @public (undocumented)
-export type MergePropsOptions = {
-    deepMerge?: string[];
+export type MergePropsOptions<TState> = {
+    deepMerge?: readonly (keyof TState)[];
 };
 
 // @public
 export const nullRender: () => null;
 
 // @public (undocumented)
-export type ObjectShorthandProps<TProps extends ComponentProps = {}> = TProps & {
+export type ObjectShorthandProps<TProps extends ComponentProps = {}> = TProps & ComponentProps & {
     children?: TProps['children'] | ShorthandRenderFunction<TProps>;
 };
 
@@ -120,7 +129,17 @@ export const optionProperties: Record<string, number>;
 export type RefObjectFunction<T> = React.RefObject<T> & ((value: T) => void);
 
 // @public
-export const resolveShorthandProps: <TProps>(props: TProps, shorthandPropNames: string[]) => TProps;
+export type RequiredProps<T, K extends keyof T> = Omit<T, K> & {
+    [P in K]-?: T[P];
+};
+
+// @public
+export type ResolvedShorthandProps<T, K extends keyof T> = Omit<T, K> & {
+    [P in K]: T[P] extends ShorthandProps<infer U> ? ObjectShorthandProps<U> : T[P];
+};
+
+// @public
+export const resolveShorthandProps: <TProps, TShorthandPropNames extends keyof TProps>(props: TProps, shorthandPropNames: readonly TShorthandPropNames[]) => ResolvedShorthandProps<TProps, TShorthandPropNames>;
 
 // @public
 export const selectProperties: Record<string, number>;
