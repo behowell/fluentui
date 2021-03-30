@@ -3,6 +3,10 @@ import { getSlots } from '@fluentui/react-utilities';
 import { AvatarState } from './Avatar.types';
 import { avatarShorthandProps } from './useAvatar';
 
+/**
+ * Render the final JSX of Avatar
+ * {@docCategory Avatar}
+ */
 export const renderAvatar = (state: AvatarState) => {
   const { slots, slotProps } = getSlots(state, avatarShorthandProps);
   return (

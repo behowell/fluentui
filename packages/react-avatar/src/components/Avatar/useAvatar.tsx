@@ -9,6 +9,18 @@ export const avatarShorthandProps: (keyof AvatarProps)[] = ['label', 'image', 'b
 
 const mergeProps = makeMergeProps<AvatarState>({ deepMerge: avatarShorthandProps });
 
+/**
+ * Create the state required to render Avatar.
+ *
+ * The returned state can be modified with hooks such as useAvatarStyles,
+ * before being passed to renderAvatar.
+ *
+ * @param props - props from this instance of Avatar
+ * @param ref - reference to root HTMLElement of Avatar
+ * @param defaultProps - (optional) default prop values provided by the implementing type
+ *
+ * {@docCategory Avatar}
+ */
 export const useAvatar = (props: AvatarProps, ref: React.Ref<HTMLElement>, defaultProps?: AvatarProps): AvatarState => {
   const state = mergeProps(
     {

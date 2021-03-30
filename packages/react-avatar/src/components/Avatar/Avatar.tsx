@@ -7,6 +7,12 @@ import { renderAvatar } from './renderAvatar';
 import { useAvatar } from './useAvatar';
 import { useAvatarStyles } from './useAvatarStyles';
 
+/**
+ * An Avatar represents a person or entity.
+ * It displays the image, initials, or an icon, and can be either circular or square.
+ *
+ * {@docCategory Avatar}
+ */
 export const Avatar = React.forwardRef((props: AvatarProps, ref: React.Ref<HTMLElement>) => {
   const state = useAvatar(props, ref, {
     badge: { as: props.badge ? Badge : nullRender },

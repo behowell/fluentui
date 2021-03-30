@@ -4,6 +4,9 @@ import { ComponentProps, ObjectShorthandProps, ShorthandProps } from '@fluentui/
 import { BadgeProps } from '../Badge/index';
 import { ImageProps } from '../Image/index';
 
+/**
+ * {@docCategory Avatar}
+ */
 export interface AvatarProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
   /** The Avatar's image. */
   image?: ShorthandProps<ImageProps>;
@@ -83,11 +86,15 @@ export interface AvatarProps extends ComponentProps, React.HTMLAttributes<HTMLEl
  * Sizes for the Avatar
  *
  * This is a restricted list based on design guidelines for the Avatar control.
+ *
+ * {@docCategory Avatar}
  */
 export type AvatarSizeValue = 20 | 24 | 28 | 32 | 36 | 40 | 48 | 56 | 64 | 72 | 96 | 120 | 128;
 
 /**
  * A specific named color for the Avatar
+ *
+ * {@docCategory Avatar}
  */
 export type AvatarNamedColor =
   | 'darkRed'
@@ -125,16 +132,21 @@ export type AvatarNamedColor =
  * Convert from a Props type to a State type.
  * Replace all given shorthand props from ShorthandProps<P> to ObjectShorthandProps<P>
  */
-type PropsToState<T, ShorthandPropNames extends keyof T> = Omit<T, ShorthandPropNames> &
+export type PropsToState<T, ShorthandPropNames extends keyof T> = Omit<T, ShorthandPropNames> &
   {
     [U in ShorthandPropNames]: T[U] extends ShorthandProps<infer P> ? ObjectShorthandProps<P> : T[U];
   };
 
 /**
  * Avatar props that will never be undefined in AvatarState
+ *
+ * {@docCategory Avatar}
  */
 export type AvatarDefaults = { ref: React.RefObject<HTMLElement> } & Required<
   Pick<AvatarProps, 'as' | 'size' | 'getInitials' | 'label' | 'image' | 'badge'>
 >;
 
+/**
+ * {@docCategory Avatar}
+ */
 export type AvatarState = PropsToState<AvatarProps & AvatarDefaults, 'label' | 'image' | 'badge'>;
