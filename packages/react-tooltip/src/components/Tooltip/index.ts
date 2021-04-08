@@ -2,4 +2,5 @@ export * from './Tooltip';
 export * from './Tooltip.types';
 export * from './renderTooltip';
 export * from './useTooltip';
+export * from './useTooltipPlacement';
 export * from './useTooltipStyles';

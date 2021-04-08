@@ -13,7 +13,7 @@ const expectNever = (_: never) => {
   //
 };
 
-const toPopperPlacement = (placement: TooltipPlacement, rtl: boolean): PopperPlacement => {
+export const toPopperPlacement = (placement: TooltipPlacement, rtl: boolean): PopperPlacement => {
   switch (placement) {
     case 'above':
       return 'top';
@@ -49,7 +49,7 @@ const toPopperPlacement = (placement: TooltipPlacement, rtl: boolean): PopperPla
   }
 };
 
-const toTooltipPlacement = (popperPlacement: string, rtl: boolean): TooltipPlacement => {
+export const toTooltipPlacement = (popperPlacement: PopperPlacement, rtl: boolean): TooltipPlacement => {
   switch (popperPlacement) {
     case 'top':
       return 'above';
@@ -115,7 +115,7 @@ export const useTooltipPlacement = (state: TooltipState): TooltipState => {
   mergeProps(state, {
     style: state.targetElement ? popper.styles.popper : undefined,
     placement: popper.attributes.popper
-      ? toTooltipPlacement(popper.attributes.popper['data-popper-placement'], rtl)
+      ? toTooltipPlacement(popper.attributes.popper['data-popper-placement'] as PopperPlacement, rtl)
       : undefined,
     ref: useMergedRefs(setRootElement as (rootElement: HTMLElement | null) => void, state.ref),
     arrow: {

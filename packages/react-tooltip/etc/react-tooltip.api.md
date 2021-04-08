@@ -7,6 +7,7 @@
 import { ComponentProps } from '@fluentui/react-utilities';
 import { ComponentState } from '@fluentui/react-utilities';
 import { ObjectShorthandProps } from '@fluentui/react-utilities';
+import { Placement } from '@popperjs/core';
 import * as React from 'react';
 import { ShorthandProps } from '@fluentui/react-utilities';
 import { Theme } from '@fluentui/react-theme';
@@ -114,6 +115,12 @@ export type TooltipState = ComponentState<React.Ref<HTMLElement>, TooltipProps &
     arrow?: ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>>;
 }, typeof tooltipShorthandProps[number], 'arrow' | 'placement' | 'offset'>;
 
+// @public (undocumented)
+export const toPopperPlacement: (placement: TooltipPlacement, rtl: boolean) => Placement;
+
+// @public (undocumented)
+export const toTooltipPlacement: (popperPlacement: Placement, rtl: boolean) => TooltipPlacement;
+
 // @public
 export const useTooltip: (props: TooltipProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipProps | undefined) => import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, TooltipProps & {
     arrow?: import("@fluentui/react-utilities").ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>> | undefined;
@@ -133,6 +140,13 @@ export const useTooltipManagerStyles: (state: import("@fluentui/react-utilities"
 }, never, never>) => import("@fluentui/react-utilities").ComponentState<import("react").Ref<HTMLElement>, import("./TooltipManager.types").TooltipManagerProps & {
     tooltip?: import("@fluentui/react-utilities").ShorthandProps<import("../Tooltip").TooltipProps>;
 }, never, never>;
+
+// @public
+export const useTooltipPlacement: (state: import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, import("./Tooltip.types").TooltipProps & {
+    arrow?: import("@fluentui/react-utilities").ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>> | undefined;
+}, never, "arrow" | "placement" | "offset">) => import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, import("./Tooltip.types").TooltipProps & {
+    arrow?: import("@fluentui/react-utilities").ObjectShorthandProps<React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>> | undefined;
+}, never, "arrow" | "placement" | "offset">;
 
 // @public
 export const useTooltipProvider: (props: TooltipProviderProps, ref: React.Ref<HTMLElement>, defaultProps?: TooltipProviderProps | undefined) => import("@fluentui/react-utilities").ComponentState<React.Ref<HTMLElement>, TooltipProviderProps, never, never>;

@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { TooltipProvider, useTooltipSlot, useTooltipRef, WithTooltipSlot, Tooltip } from '@fluentui/react-tooltip';
+import {
+  TooltipProvider,
+  useTooltipSlot,
+  useTooltipRef,
+  WithTooltipSlot,
+  Tooltip,
+  toTooltipPlacement,
+} from '@fluentui/react-tooltip';
 import { ThemeProvider } from '@fluentui/react-theme-provider';
 import { webLightTheme } from '@fluentui/react-theme';
 import {
@@ -11,33 +18,30 @@ import {
   useAvatar,
   useAvatarStyles,
 } from '@fluentui/react-avatar';
-import { resolveShorthandProp } from '@fluentui/react-utilities';
+import { resolveShorthandProps } from '@fluentui/react-utilities';
 import { Button } from '@fluentui/react-button';
 import { Checkbox } from '@fluentui/react';
 import { makeStyles } from '@fluentui/react-make-styles';
 
-const usePlacementTargetClassName = makeStyles([
-  [
-    null,
-    theme => ({
-      width: '275px',
-      height: '125px',
-      boxSizing: 'border-box',
-      display: 'flex',
-      textAlign: 'center',
-      alignItems: 'center',
-      padding: '20px',
+const usePlacementTargetStyles = makeStyles({
+  root: theme => ({
+    width: '275px',
+    height: '125px',
+    boxSizing: 'border-box',
+    display: 'flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    padding: '20px',
 
-      fontFamily: theme.global.type.fontFamilies.base,
-      fontSize: theme.global.type.fontSizes.base[300],
-      lineHeight: theme.global.type.lineHeights.base[300],
+    fontFamily: theme.global.type.fontFamilies.base,
+    fontSize: theme.global.type.fontSizes.base[300],
+    lineHeight: theme.global.type.lineHeights.base[300],
 
-      background: theme.alias.color.neutral.neutralBackground3,
-      color: theme.alias.color.neutral.neutralForeground3,
-      border: `1px solid ${theme.alias.color.neutral.neutralStroke1}`,
-    }),
-  ],
-]);
+    background: theme.alias.color.neutral.neutralBackground3,
+    color: theme.alias.color.neutral.neutralForeground3,
+    border: `1px solid ${theme.alias.color.neutral.neutralStroke1}`,
+  }),
+});
 
 type AvatarWithTooltipProps = AvatarProps & WithTooltipSlot;
 type AvatarWithTooltipState = AvatarState & WithTooltipSlot;
@@ -52,9 +56,9 @@ const AvatarWithTooltip = React.forwardRef((props: AvatarWithTooltipProps, ref: 
     if (!state.tooltip) {
       state.tooltip = state.name;
     } else {
-      state.tooltip = resolveShorthandProp(state.tooltip);
-      if (!state.tooltip.children) {
-        state.tooltip.children = state.name;
+      const { tooltip } = resolveShorthandProps(state, ['tooltip']);
+      if (tooltip && !tooltip.children) {
+        tooltip.children = state.name;
       }
     }
   }
@@ -99,7 +103,7 @@ const TooltipExampleCore = () => {
         />
         <AvatarWithTooltip
           tooltip={{
-            placement: 'right',
+            placement: toTooltipPlacement('right', false),
             children:
               'This is a very long tooltip, which demonstrates what wrapped text looks like. ' +
               'It also is positioned so that it covers other elements, which is not usually a good idea. ' +
@@ -108,13 +112,17 @@ const TooltipExampleCore = () => {
         />
         <AvatarWithTooltip tooltip={{ children: "This Tooltip doesn't have an arrow", noArrow: true }} />
         <AvatarWithTooltip
-          tooltip={{ children: 'This tooltip has a large offset from the target', placement: 'bottom', offset: 20 }}
+          tooltip={{
+            children: 'This tooltip has a large offset from the target',
+            placement: toTooltipPlacement('bottom', false),
+            offset: 20,
+          }}
         />
         <AvatarWithTooltip
           badge={{ state: 'success', ref: setBadgeElement } as BadgeProps}
           tooltip={{
             targetElement: badgeElement,
-            placement: 'right',
+            placement: toTooltipPlacement('right', false),
             children: 'This tooltip targets the badge',
             subtle: true,
           }}
@@ -125,78 +133,102 @@ const TooltipExampleCore = () => {
         <AvatarWithTooltip
           name="top start"
           style={{ gridColumn: 2, gridRow: 1 }}
-          tooltip={{ placement: 'top-start' }}
+          tooltip={{ placement: toTooltipPlacement('top-start', false) }}
         />
-        <AvatarWithTooltip name="top" style={{ gridColumn: 3, gridRow: 1 }} tooltip={{ placement: 'top' }} />
-        <AvatarWithTooltip name="top end" style={{ gridColumn: 4, gridRow: 1 }} tooltip={{ placement: 'top-end' }} />
+        <AvatarWithTooltip
+          name="top"
+          style={{ gridColumn: 3, gridRow: 1 }}
+          tooltip={{ placement: toTooltipPlacement('top', false) }}
+        />
+        <AvatarWithTooltip
+          name="top end"
+          style={{ gridColumn: 4, gridRow: 1 }}
+          tooltip={{ placement: toTooltipPlacement('top-end', false) }}
+        />
         <AvatarWithTooltip
           name="left start"
           style={{ gridColumn: 1, gridRow: 2 }}
-          tooltip={{ placement: 'left-start' }}
+          tooltip={{ placement: toTooltipPlacement('left-start', false) }}
         />
-        <AvatarWithTooltip name="left" style={{ gridColumn: 1, gridRow: 3 }} tooltip={{ placement: 'left' }} />
-        <AvatarWithTooltip name="left end" style={{ gridColumn: 1, gridRow: 4 }} tooltip={{ placement: 'left-end' }} />
+        <AvatarWithTooltip
+          name="left"
+          style={{ gridColumn: 1, gridRow: 3 }}
+          tooltip={{ placement: toTooltipPlacement('left', false) }}
+        />
+        <AvatarWithTooltip
+          name="left end"
+          style={{ gridColumn: 1, gridRow: 4 }}
+          tooltip={{ placement: toTooltipPlacement('left-end', false) }}
+        />
         <AvatarWithTooltip
           name="right start"
           style={{ gridColumn: 5, gridRow: 2 }}
-          tooltip={{ placement: 'right-start' }}
+          tooltip={{ placement: toTooltipPlacement('right-start', false) }}
         />
-        <AvatarWithTooltip name="right" style={{ gridColumn: 5, gridRow: 3 }} tooltip={{ placement: 'right' }} />
+        <AvatarWithTooltip
+          name="right"
+          style={{ gridColumn: 5, gridRow: 3 }}
+          tooltip={{ placement: toTooltipPlacement('right', false) }}
+        />
         <AvatarWithTooltip
           name="right end"
           style={{ gridColumn: 5, gridRow: 4 }}
-          tooltip={{ placement: 'right-end' }}
+          tooltip={{ placement: toTooltipPlacement('right-end', false) }}
         />
         <AvatarWithTooltip
           name="bottom start"
           style={{ gridColumn: 2, gridRow: 5 }}
-          tooltip={{ placement: 'bottom-start' }}
+          tooltip={{ placement: toTooltipPlacement('bottom-start', false) }}
         />
-        <AvatarWithTooltip name="bottom" style={{ gridColumn: 3, gridRow: 5 }} tooltip={{ placement: 'bottom' }} />
+        <AvatarWithTooltip
+          name="bottom"
+          style={{ gridColumn: 3, gridRow: 5 }}
+          tooltip={{ placement: toTooltipPlacement('bottom', false) }}
+        />
         <AvatarWithTooltip
           name="bottom end"
           style={{ gridColumn: 4, gridRow: 5 }}
-          tooltip={{ placement: 'bottom-end' }}
+          tooltip={{ placement: toTooltipPlacement('bottom-end', false) }}
         />
       </div>
       <div style={{ margin: '20px 0', padding: '40px 100px' }}>
-        <div ref={setPlacementTarget} className={usePlacementTargetClassName({})}>
+        <div ref={setPlacementTarget} className={usePlacementTargetStyles().root}>
           This shows all of the possible placement values for tooltips relative to this box.
         </div>
-        <Tooltip targetElement={placementTarget} subtle placement="left-start">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('left-start', false)}>
           left-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="left">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('left', false)}>
           left
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="left-end">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('left-end', false)}>
           left-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="right-start">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('right-start', false)}>
           right-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="right">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('right', false)}>
           right
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="right-end">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('right-end', false)}>
           right-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="top-start">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('top-start', false)}>
           top-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="top">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('top', false)}>
           top
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="top-end">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('top-end', false)}>
           top-end
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="bottom-start">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('bottom-start', false)}>
           bottom-start
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="bottom">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('bottom', false)}>
           bottom
         </Tooltip>
-        <Tooltip targetElement={placementTarget} subtle placement="bottom-end">
+        <Tooltip targetElement={placementTarget} subtle placement={toTooltipPlacement('bottom-end', false)}>
           bottom-end
         </Tooltip>
       </div>
