@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   makeMergeProps,
   ObjectShorthandProps,
-  resolveShorthandProp,
   resolveShorthandProps,
   ShorthandProps,
   useMergedRefs,
@@ -78,7 +77,7 @@ export const useTooltipManager = (
   // Create the TooltipManagerApi implementation
   const tooltipManagerApi: TooltipManagerApi = React.useMemo(() => {
     const showTooltip = (triggerElement: HTMLElement, tooltipShorthandProps: ShorthandProps<TooltipProps>) => {
-      const tooltipProps = resolveShorthandProp(tooltipShorthandProps);
+      const tooltipProps = resolveShorthandProps({ tooltip: tooltipShorthandProps }, ['tooltip']).tooltip;
 
       mouseTargetRef.current = triggerElement;
 

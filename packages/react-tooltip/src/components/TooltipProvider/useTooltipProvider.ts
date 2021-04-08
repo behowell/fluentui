@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeMergeProps, resolveShorthandProps, useMergedRefs } from '@fluentui/react-utilities';
+import { makeMergeProps, resolveShorthandProps } from '@fluentui/react-utilities';
 import { TooltipProviderProps, tooltipProviderShorthandProps, TooltipProviderState } from './TooltipProvider.types';
 import { TooltipManagerApi, TooltipProps } from '../../types';
 
@@ -24,9 +24,9 @@ export const useTooltipProvider = (
 ): TooltipProviderState => {
   const state = mergeProps(
     {
-      ref: useMergedRefs(ref, React.useRef(null)),
+      ref,
     },
-    defaultProps,
+    defaultProps && resolveShorthandProps(defaultProps, tooltipProviderShorthandProps),
     resolveShorthandProps(props, tooltipProviderShorthandProps),
   );
 

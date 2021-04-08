@@ -13,6 +13,7 @@ export interface TooltipManagerProps extends ComponentProps, React.HTMLAttribute
 export const tooltipManagerShorthandProps = ['tooltip'] as const;
 
 export type TooltipManagerState = ComponentState<
+  React.Ref<HTMLElement>,
   TooltipManagerProps & {
     /**
      * The Tooltip being rendered, if any.

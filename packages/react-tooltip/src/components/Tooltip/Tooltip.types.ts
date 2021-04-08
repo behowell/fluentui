@@ -9,6 +9,7 @@ export const tooltipShorthandProps = [] as const;
 export const tooltipSlotProps = [...tooltipShorthandProps, 'arrow'] as const;
 
 export type TooltipState = ComponentState<
+  React.Ref<HTMLElement>,
   TooltipProps & {
     /**
      * The arrow that points to the target element.

@@ -7,4 +7,8 @@ export interface TooltipProviderProps extends ComponentProps, React.HTMLAttribut
 
 export const tooltipProviderShorthandProps = [] as const;
 
-export type TooltipProviderState = ComponentState<TooltipProviderProps, typeof tooltipProviderShorthandProps[number]>;
+export type TooltipProviderState = ComponentState<
+  React.Ref<HTMLElement>,
+  TooltipProviderProps,
+  typeof tooltipProviderShorthandProps[number]
+>;

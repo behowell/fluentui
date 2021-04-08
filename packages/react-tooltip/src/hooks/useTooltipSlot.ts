@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { resolveShorthandProp, ShorthandProps, useId } from '@fluentui/react-utilities';
+import { resolveShorthandProps, ShorthandProps, useId } from '@fluentui/react-utilities';
 import { TooltipProps } from '../types';
 import { useTooltipManagerRef, useTooltipRenderer } from '../components/TooltipProvider';
 
@@ -33,7 +33,7 @@ export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTo
     }
 
     // Resolve the tooltip shorthand props, which will let us add a generated ID to the tooltip for aria
-    const tooltipProps = resolveShorthandProp(state.tooltip);
+    const tooltipProps = resolveShorthandProps({ tooltip: state.tooltip }, ['tooltip']).tooltip;
 
     tooltipProps.id = tooltipProps.id || generatedId;
 
