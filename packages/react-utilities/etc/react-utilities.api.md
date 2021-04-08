@@ -50,9 +50,9 @@ export interface ComponentProps {
 }
 
 // @public
-export type ComponentState<Props extends ComponentProps, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
-    as: React.ElementType;
-    ref: React.Ref<HTMLElement>;
+export type ComponentState<RefType, Props, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
+    as?: React.ElementType;
+    ref: RefType;
 };
 
 // @public (undocumented)
@@ -122,24 +122,30 @@ export const imgProperties: Record<string, number>;
 export const inputProperties: Record<string, number>;
 
 // @public
+export function isSSR(): boolean;
+
+// @public
 export const labelProperties: Record<string, number>;
 
 // @public
 export const liProperties: Record<string, number>;
 
 // @public
-export const makeMergeProps: <TState = Record<string, any>>(options?: MergePropsOptions) => (target: Record<string, any>, ...propSets: (Record<string, any> | undefined)[]) => TState;
+export const makeMergeProps: <TState>(options?: MergePropsOptions<TState>) => (target: TState, ...propSets: (Partial<TState> | undefined)[]) => TState;
+
+// @public @deprecated
+export const makeMergePropsCompat: <TState = Record<string, any>>(options?: MergePropsOptions<Record<string, any>> | undefined) => (target: Record<string, any>, ...propSets: (Record<string, any> | undefined)[]) => TState;
 
 // @public (undocumented)
-export type MergePropsOptions = {
-    deepMerge?: readonly string[];
+export type MergePropsOptions<TState> = {
+    deepMerge?: readonly (keyof TState)[];
 };
 
 // @public
 export const nullRender: () => null;
 
 // @public (undocumented)
-export type ObjectShorthandProps<TProps extends ComponentProps = {}> = TProps & {
+export type ObjectShorthandProps<TProps extends ComponentProps = {}> = TProps & Omit<ComponentProps, 'children'> & {
     children?: TProps['children'] | ShorthandRenderFunction<TProps>;
 };
 
@@ -156,17 +162,14 @@ export const optionProperties: Record<string, number>;
 export type RefObjectFunction<T> = React.RefObject<T> & ((value: T) => void);
 
 // @public
-export type RequiredProps<Props, RequiredProps extends keyof Props> = Omit<Props, RequiredProps> & {
-    [P in RequiredProps]-?: Props[P];
+export type RequiredProps<T, K extends keyof T> = Omit<T, K> & {
+    [P in K]-?: T[P];
 };
 
 // @public
-export type ResolvedShorthandProps<Props, ShorthandPropNames extends keyof Props> = Omit<Props, ShorthandPropNames> & {
-    [P in ShorthandPropNames]: Props[P] extends ShorthandProps<infer T> ? ObjectShorthandProps<T> : never;
+export type ResolvedShorthandProps<T, K extends keyof T> = Omit<T, K> & {
+    [P in K]: T[P] extends ShorthandProps<infer U> ? ObjectShorthandProps<U> : T[P];
 };
-
-// @public
-export const resolveShorthandProp: <T>(propValue: ShorthandProps<T>) => ObjectShorthandProps<T>;
 
 // @public
 export const resolveShorthandProps: <TProps, TShorthandPropNames extends keyof TProps>(props: TProps, shorthandPropNames: readonly TShorthandPropNames[]) => ResolvedShorthandProps<TProps, TShorthandPropNames>;
@@ -175,12 +178,13 @@ export const resolveShorthandProps: <TProps, TShorthandPropNames extends keyof T
 export const selectProperties: Record<string, number>;
 
 // @public (undocumented)
-export type ShorthandProps<TProps extends ComponentProps = {}> = React.ReactChild | React.ReactNodeArray | React.ReactPortal | boolean | number | null | undefined | (TProps & ComponentProps & {
-    children?: TProps['children'] | ShorthandRenderFunction<TProps>;
-});
+export type ShorthandProps<TProps extends ComponentProps = {}> = React.ReactChild | React.ReactNodeArray | React.ReactPortal | boolean | number | null | undefined | ObjectShorthandProps<TProps>;
 
 // @public (undocumented)
 export type ShorthandRenderFunction<TProps> = (Component: React.ElementType<TProps>, props: TProps) => React.ReactNode;
+
+// @public
+export function shouldPreventDefaultOnKeyDown(e: KeyboardEvent | React.KeyboardEvent): boolean;
 
 // @public (undocumented)
 export type SlotProps<TSlots extends BaseSlots, TProps, TRootProps extends React.HTMLAttributes<HTMLElement>> = {

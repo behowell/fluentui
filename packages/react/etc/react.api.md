@@ -89,8 +89,10 @@ export class Autofill extends React.Component<IAutofillProps, IAutofillState> im
     constructor(props: IAutofillProps);
     // (undocumented)
     clear(): void;
+    // Warning: (ae-forgotten-export) The symbol "ICursorLocation" needs to be exported by the entry point index.d.ts
+    //
     // (undocumented)
-    componentDidUpdate(): void;
+    componentDidUpdate(_: any, _1: any, cursor: ICursorLocation | null): void;
     // (undocumented)
     componentWillUnmount(): void;
     // (undocumented)
@@ -103,6 +105,8 @@ export class Autofill extends React.Component<IAutofillProps, IAutofillState> im
     focus(): void;
     // (undocumented)
     static getDerivedStateFromProps(props: IAutofillProps, state: IAutofillState): IAutofillState | null;
+    // (undocumented)
+    getSnapshotBeforeUpdate(): ICursorLocation | null;
     // (undocumented)
     get inputElement(): HTMLInputElement | null;
     // (undocumented)
@@ -1941,6 +1945,7 @@ export interface IButtonStyles {
     splitButtonMenuButtonChecked?: IStyle;
     splitButtonMenuButtonDisabled?: IStyle;
     splitButtonMenuButtonExpanded?: IStyle;
+    splitButtonMenuFocused?: IStyle;
     splitButtonMenuIcon?: IStyle;
     splitButtonMenuIconDisabled?: IStyle;
     textContainer?: IStyle;
@@ -3141,6 +3146,7 @@ export interface ICommandBarProps extends React.HTMLAttributes<HTMLDivElement> {
     overflowButtonAs?: IComponentAs<IButtonProps>;
     overflowButtonProps?: IButtonProps;
     overflowItems?: ICommandBarItemProps[];
+    resizeGroupAs?: IComponentAs<IResizeGroupProps>;
     shiftOnReduce?: boolean;
     styles?: IStyleFunctionOrObject<ICommandBarStyleProps, ICommandBarStyles>;
     theme?: ITheme;
