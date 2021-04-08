@@ -49,6 +49,12 @@ export interface ComponentProps {
     className?: string;
 }
 
+// @public
+export type ComponentState<Props extends ComponentProps, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
+    as: React.ElementType;
+    ref: React.Ref<HTMLElement>;
+};
+
 // @public (undocumented)
 export function createDescendantContext<DescendantType extends Descendant>(name: string, initialValue?: {}): React.Context<DescendantContextValue<DescendantType>>;
 
@@ -78,12 +84,6 @@ export const DescendantProvider: <DescendantType extends Descendant<HTMLElement>
     items: DescendantType[];
     set: React.Dispatch<React.SetStateAction<DescendantType[]>>;
 }) => JSX.Element;
-
-// @public
-export type ComponentState<Props extends ComponentProps, ShorthandProps extends keyof Props = never, DefaultedProps extends keyof ResolvedShorthandProps<Props, ShorthandProps> = never> = RequiredProps<ResolvedShorthandProps<Props, ShorthandProps>, DefaultedProps> & {
-    as: React.ElementType;
-    ref: React.Ref<HTMLElement>;
-};
 
 // @public
 export const divProperties: Record<string, number>;

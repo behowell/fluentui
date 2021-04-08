@@ -18,7 +18,10 @@ export const arrowHeight: number;
 export const arrowSquareSize: number;
 
 // @public (undocumented)
-export const internal__TooltipProviderContext: React.Context<React.MutableRefObject<TooltipManagerApi | undefined>>;
+export const internal__TooltipManagerRefContext: React.Context<React.MutableRefObject<TooltipManagerApi | undefined>>;
+
+// @public (undocumented)
+export const internal__TooltipRendererContext: React.Context<React.FC<TooltipProps & React.RefAttributes<HTMLElement>> | undefined>;
 
 // @public (undocumented)
 export const mergeProps: (target: Record<string, any>, ...propSets: (Record<string, any> | undefined)[]) => import("@fluentui/react-utilities").ComponentState<TooltipProps & {
@@ -67,8 +70,8 @@ export type TooltipManagerState = ComponentState<TooltipManagerProps & {
     tooltip?: ShorthandProps<TooltipProps>;
 }>;
 
-// @public (undocumented)
-export type TooltipPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'right' | 'right-start' | 'right-end' | 'left' | 'left-start' | 'left-end';
+// @public
+export type TooltipPlacement = 'above' | 'above-start' | 'above-end' | 'below' | 'below-start' | 'below-end' | 'before' | 'before-top' | 'before-bottom' | 'after' | 'after-top' | 'after-bottom';
 
 // @public (undocumented)
 export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
@@ -80,6 +83,7 @@ export interface TooltipProps extends ComponentProps, React.HTMLAttributes<HTMLE
     showDelay?: number;
     subtle?: boolean;
     targetElement?: HTMLElement | null;
+    visible?: boolean;
 }
 
 // @public (undocumented)
@@ -134,6 +138,9 @@ export const useTooltipProviderStyles: (state: import("@fluentui/react-utilities
 
 // @public
 export function useTooltipRef(tooltip: ShorthandProps<TooltipProps>): import("@fluentui/react-hooks").RefCallback<HTMLElement>;
+
+// @public (undocumented)
+export const useTooltipRenderer: () => React.FC<TooltipProps & React.RefAttributes<HTMLElement>> | undefined;
 
 // @public
 export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTooltipSlot): void;

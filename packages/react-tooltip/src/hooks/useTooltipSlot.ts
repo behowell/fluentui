@@ -1,7 +1,8 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { resolveShorthandProp, ShorthandProps, useId } from '@fluentui/react-utilities';
 import { TooltipProps } from '../types';
-import { useTooltipManagerRef } from '../components/TooltipProvider';
+import { useTooltipManagerRef, useTooltipRenderer } from '../components/TooltipProvider';
 
 /**
  * Mixin to add the tooltip slot to a component's Props.
@@ -21,16 +22,25 @@ export interface WithTooltipSlot {
  */
 export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTooltipSlot) {
   const managerRef = useTooltipManagerRef();
+  const renderTooltip = useTooltipRenderer();
   const generatedId = useId('tooltip');
+  const tooltipRef = React.useRef<HTMLElement>(null);
 
   if (state.tooltip) {
+    if (!renderTooltip) {
+      console.error("Trying to render a tooltip, but there's no TooltipProvider!");
+      return;
+    }
+
     // Resolve the tooltip shorthand props, which will let us add a generated ID to the tooltip for aria
-    const tooltip = resolveShorthandProp(state.tooltip);
+    const tooltipProps = resolveShorthandProp(state.tooltip);
 
-    tooltip.id = tooltip.id || generatedId;
+    tooltipProps.id = tooltipProps.id || generatedId;
 
-    state.tooltip = tooltip;
-    state['aria-describedby'] = tooltip.id;
+    state.tooltip = tooltipProps;
+    state['aria-describedby'] = tooltipProps.id;
+
+    ReactDOM.createPortal(renderTooltip({ ...tooltipProps, ref: tooltipRef }), document.body);
 
     // Create event listeners to show or hide the tooltip.
     // These wrap the existing event handlers and ensure that they are still called.
@@ -38,7 +48,7 @@ export function useTooltipSlot(state: React.HTMLAttributes<HTMLElement> & WithTo
       return (ev: Event) => {
         onEvent?.(ev);
         if (!ev.isDefaultPrevented()) {
-          managerRef.current?.showTooltip(ev.currentTarget, tooltip);
+          managerRef.current?.showTooltip(ev.currentTarget, tooltipProps);
         }
       };
     };
