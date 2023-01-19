@@ -146,6 +146,10 @@ export type {
   ResolveShorthandOptions,
   Slot,
   SlotClassNames,
+  SlotComponent,
+  SlotElement,
+  SlotElementAs,
+  SlotPropsObject,
   SlotPropsRecord,
 } from '@fluentui/react-utilities';
 

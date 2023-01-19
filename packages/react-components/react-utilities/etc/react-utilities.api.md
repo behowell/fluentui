@@ -116,6 +116,28 @@ export type SlotClassNames<Slots> = {
     [SlotName in keyof Slots]-?: string;
 };
 
+// @public (undocumented)
+export type SlotComponent<Type extends React_2.ComponentType | React_2.VoidFunctionComponent> = WithSlotShorthandValue<Type extends React_2.ComponentType<infer Props> ? WithSlotRenderFunction<Props extends {
+    children?: unknown;
+} ? Props : Props & {
+    children?: never;
+}> : never>;
+
+// @public (undocumented)
+export type SlotElement<Type extends keyof JSX.IntrinsicElements> = WithSlotShorthandValue<{
+    as?: Type;
+} & WithSlotRenderFunction<IntrisicElementProps<Type>>>;
+
+// @public (undocumented)
+export type SlotElementAs<AlternateAs extends keyof JSX.IntrinsicElements> = {
+    [As in AlternateAs]: {
+        as: As;
+    } & WithSlotRenderFunction<IntrisicElementProps<As>>;
+}[AlternateAs];
+
+// @public (undocumented)
+export type SlotPropsObject<Type extends UnknownSlotProps> = WithSlotShorthandValue<Type>;
+
 // @public
 export type SlotPropsRecord = Record<string, UnknownSlotProps | SlotShorthandValue | null | undefined>;
 

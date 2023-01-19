@@ -112,6 +112,23 @@ export type Slot<
       | null
   : 'Error: First parameter to Slot must not be not a union of types. See documentation of Slot type.';
 
+export type SlotElement<Type extends keyof JSX.IntrinsicElements> = WithSlotShorthandValue<
+  { as?: Type } & WithSlotRenderFunction<IntrisicElementProps<Type>>
+>;
+
+export type SlotElementAs<AlternateAs extends keyof JSX.IntrinsicElements> = {
+  [As in AlternateAs]: { as: As } & WithSlotRenderFunction<IntrisicElementProps<As>>;
+}[AlternateAs];
+
+export type SlotComponent<Type extends React.ComponentType | React.VoidFunctionComponent> = WithSlotShorthandValue<
+  Type extends React.ComponentType<infer Props>
+    ? // If this is a VoidFunctionComponent that doesn't allow children, add { children?: never }
+      WithSlotRenderFunction<Props extends { children?: unknown } ? Props : Props & { children?: never }>
+    : never
+>;
+
+export type SlotPropsObject<Type extends UnknownSlotProps> = WithSlotShorthandValue<Type>;
+
 /**
  * Evaluates to true if the given type contains exactly one string, or false if it is a union of strings.
  *

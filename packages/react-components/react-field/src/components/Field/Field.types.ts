@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { Label } from '@fluentui/react-label';
-import type { ComponentProps, ComponentState, Slot, SlotClassNames } from '@fluentui/react-utilities';
-import type { SlotComponent } from './SlotComponent.types';
+import type {
+  ComponentProps,
+  ComponentState,
+  SlotClassNames,
+  SlotComponent,
+  SlotElement,
+} from '@fluentui/react-utilities';
 
 /**
  * The minimum requirement for a component used by Field.
@@ -20,7 +25,7 @@ export type FieldControl = React.VoidFunctionComponent<
  * Slots added by Field
  */
 export type FieldSlots<T extends FieldControl> = {
-  root: NonNullable<Slot<'div'>>;
+  root: SlotElement<'div'>;
 
   /**
    * The underlying component wrapped by this field.
@@ -30,12 +35,12 @@ export type FieldSlots<T extends FieldControl> = {
   /**
    * The label associated with the field.
    */
-  label?: Slot<typeof Label>;
+  label?: SlotComponent<typeof Label> | null;
 
   /**
    * A message about the validation state. The appearance of the `validationMessage` depends on `validationState`.
    */
-  validationMessage?: Slot<'div'>;
+  validationMessage?: SlotElement<'div'> | null;
 
   /**
    * The icon associated with the `validationMessage`. If the `validationState` prop is set, this will default to an
@@ -43,12 +48,12 @@ export type FieldSlots<T extends FieldControl> = {
    *
    * This will only be displayed if `validationMessage` is set.
    */
-  validationMessageIcon?: Slot<'span'>;
+  validationMessageIcon?: SlotElement<'span'> | null;
 
   /**
    * Additional hint text below the field.
    */
-  hint?: Slot<'div'>;
+  hint?: SlotElement<'div'> | null;
 };
 
 /**
