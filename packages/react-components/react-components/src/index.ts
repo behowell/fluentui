@@ -142,6 +142,7 @@ export type {
   ComponentProps,
   ComponentState,
   ForwardRefComponent,
+  PropsOf,
   ResolveShorthandFunction,
   ResolveShorthandOptions,
   Slot,

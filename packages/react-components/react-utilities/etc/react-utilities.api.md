@@ -78,6 +78,13 @@ export function isResolvedShorthand<Shorthand extends Slot<UnknownSlotProps>>(sh
 // @internal
 export function mergeCallbacks<Args extends unknown[]>(callback1: ((...args: Args) => void) | undefined, callback2: ((...args: Args) => void) | undefined): (...args: Args) => void;
 
+// @public (undocumented)
+export type PropsOf<Type extends React_2.ComponentType | React_2.VoidFunctionComponent> = Type extends React_2.ComponentType<infer Props> ? Props extends {
+    children?: unknown;
+} ? Props : Props & {
+    children?: never;
+} : never;
+
 // @public
 export type RefObjectFunction<T> = React_2.RefObject<T> & ((value: T) => void);
 
@@ -116,26 +123,26 @@ export type SlotClassNames<Slots> = {
     [SlotName in keyof Slots]-?: string;
 };
 
-// @public (undocumented)
+// @public
 export type SlotComponent<Type extends React_2.ComponentType | React_2.VoidFunctionComponent> = WithSlotShorthandValue<Type extends React_2.ComponentType<infer Props> ? WithSlotRenderFunction<Props extends {
     children?: unknown;
 } ? Props : Props & {
     children?: never;
 }> : never>;
 
-// @public (undocumented)
+// @public
 export type SlotElement<Type extends keyof JSX.IntrinsicElements> = WithSlotShorthandValue<{
     as?: Type;
 } & WithSlotRenderFunction<IntrisicElementProps<Type>>>;
 
-// @public (undocumented)
+// @public
 export type SlotElementAs<AlternateAs extends keyof JSX.IntrinsicElements> = {
     [As in AlternateAs]: {
         as: As;
     } & WithSlotRenderFunction<IntrisicElementProps<As>>;
 }[AlternateAs];
 
-// @public (undocumented)
+// @public
 export type SlotPropsObject<Type extends UnknownSlotProps> = WithSlotShorthandValue<Type>;
 
 // @public

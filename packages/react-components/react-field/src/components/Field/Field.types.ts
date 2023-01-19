@@ -3,9 +3,10 @@ import { Label } from '@fluentui/react-label';
 import type {
   ComponentProps,
   ComponentState,
+  PropsOf,
   SlotClassNames,
-  SlotComponent,
   SlotElement,
+  SlotPropsObject,
 } from '@fluentui/react-utilities';
 
 /**
@@ -30,12 +31,12 @@ export type FieldSlots<T extends FieldControl> = {
   /**
    * The underlying component wrapped by this field.
    */
-  control: SlotComponent<T>;
+  control: SlotPropsObject<PropsOf<T>>;
 
   /**
    * The label associated with the field.
    */
-  label?: SlotComponent<typeof Label> | null;
+  label?: SlotPropsObject<PropsOf<typeof Label>> | null;
 
   /**
    * A message about the validation state. The appearance of the `validationMessage` depends on `validationState`.

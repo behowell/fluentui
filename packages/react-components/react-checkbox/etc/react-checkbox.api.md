@@ -13,9 +13,11 @@ import type { FieldProps } from '@fluentui/react-field';
 import { FieldSlots } from '@fluentui/react-field';
 import { ForwardRefComponent } from '@fluentui/react-utilities';
 import { Label } from '@fluentui/react-label';
+import { PropsOf } from '@fluentui/react-utilities';
 import * as React_2 from 'react';
-import { Slot } from '@fluentui/react-utilities';
 import { SlotClassNames } from '@fluentui/react-utilities';
+import { SlotElement } from '@fluentui/react-utilities';
+import { SlotPropsObject } from '@fluentui/react-utilities';
 
 // @public
 export const Checkbox: ForwardRefComponent<CheckboxProps>;
@@ -54,10 +56,10 @@ export type CheckboxProps = Omit<ComponentProps<Partial<CheckboxSlots>, 'input'>
 
 // @public (undocumented)
 export type CheckboxSlots = {
-    root: NonNullable<Slot<'span'>>;
-    label?: Slot<typeof Label>;
-    input: NonNullable<Slot<'input'>>;
-    indicator: Slot<'div'>;
+    root: SlotElement<'span'>;
+    label?: SlotPropsObject<PropsOf<typeof Label>> | null;
+    input: SlotElement<'input'>;
+    indicator: SlotElement<'div'>;
 };
 
 // @public

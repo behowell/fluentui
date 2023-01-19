@@ -9,10 +9,11 @@
 import type { ComponentProps } from '@fluentui/react-utilities';
 import type { ComponentState } from '@fluentui/react-utilities';
 import { Label } from '@fluentui/react-label';
+import type { PropsOf } from '@fluentui/react-utilities';
 import * as React_2 from 'react';
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import type { SlotComponent } from '@fluentui/react-utilities';
 import type { SlotElement } from '@fluentui/react-utilities';
+import type { SlotPropsObject } from '@fluentui/react-utilities';
 
 // @public
 export type FieldConfig<T extends FieldControl> = {
@@ -34,8 +35,8 @@ export type FieldProps<T extends FieldControl> = ComponentProps<Partial<FieldSlo
 // @public
 export type FieldSlots<T extends FieldControl> = {
     root: SlotElement<'div'>;
-    control: SlotComponent<T>;
-    label?: SlotComponent<typeof Label> | null;
+    control: SlotPropsObject<PropsOf<T>>;
+    label?: SlotPropsObject<PropsOf<typeof Label>> | null;
     validationMessage?: SlotElement<'div'> | null;
     validationMessageIcon?: SlotElement<'span'> | null;
     hint?: SlotElement<'div'> | null;

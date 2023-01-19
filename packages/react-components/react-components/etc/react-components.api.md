@@ -402,6 +402,10 @@ import { SliderSlots } from '@fluentui/react-slider';
 import { SliderState } from '@fluentui/react-slider';
 import { Slot } from '@fluentui/react-utilities';
 import { SlotClassNames } from '@fluentui/react-utilities';
+import { SlotComponent } from '@fluentui/react-utilities';
+import { SlotElement } from '@fluentui/react-utilities';
+import { SlotElementAs } from '@fluentui/react-utilities';
+import { SlotPropsObject } from '@fluentui/react-utilities';
 import { SlotPropsRecord } from '@fluentui/react-utilities';
 import { SpacingTokens } from '@fluentui/react-theme';
 import { SpinButton } from '@fluentui/react-spinbutton';
@@ -1425,6 +1429,14 @@ export { SliderState }
 export { Slot }
 
 export { SlotClassNames }
+
+export { SlotComponent }
+
+export { SlotElement }
+
+export { SlotElementAs }
+
+export { SlotPropsObject }
 
 export { SlotPropsRecord }
 

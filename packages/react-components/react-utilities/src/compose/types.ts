@@ -112,14 +112,39 @@ export type Slot<
       | null
   : 'Error: First parameter to Slot must not be not a union of types. See documentation of Slot type.';
 
+/**
+ * A slot that is an intrinsic element, such as `SlotElement<'div'>` or `SlotElement<'button'>`.
+ */
 export type SlotElement<Type extends keyof JSX.IntrinsicElements> = WithSlotShorthandValue<
   { as?: Type } & WithSlotRenderFunction<IntrisicElementProps<Type>>
 >;
 
+/**
+ * For slots that support multiple element types, use SlotElementAs to specify the alternative (non-default) types
+ * that it can be. Must be used alongside SlotElement, which specifies the default type (see examples below).
+ *
+ * @example
+ * ```
+ * SlotElement<'button'> | SlotElementAs<'a'> // Defaults to button, but allows as="a" with anchor-specific props
+ * SlotElement<'span'> | SlotElementAs<'div' | 'pre'> // Defaults to span, but allows as="div" or as="pre"
+ * ```
+ */
 export type SlotElementAs<AlternateAs extends keyof JSX.IntrinsicElements> = {
   [As in AlternateAs]: { as: As } & WithSlotRenderFunction<IntrisicElementProps<As>>;
 }[AlternateAs];
 
+export type PropsOf<Type extends React.ComponentType | React.VoidFunctionComponent> = Type extends React.ComponentType<
+  infer Props
+>
+  ? // If this is a VoidFunctionComponent that doesn't allow children, add { children?: never }
+    Props extends { children?: unknown }
+    ? Props
+    : Props & { children?: never }
+  : never;
+
+/**
+ * A slot that is rendered as a component, such as `SlotComponent<typeof Label>`
+ */
 export type SlotComponent<Type extends React.ComponentType | React.VoidFunctionComponent> = WithSlotShorthandValue<
   Type extends React.ComponentType<infer Props>
     ? // If this is a VoidFunctionComponent that doesn't allow children, add { children?: never }
@@ -127,6 +152,9 @@ export type SlotComponent<Type extends React.ComponentType | React.VoidFunctionC
     : never
 >;
 
+/**
+ * A slot that accepts only the given props
+ */
 export type SlotPropsObject<Type extends UnknownSlotProps> = WithSlotShorthandValue<Type>;
 
 /**

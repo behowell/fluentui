@@ -4,6 +4,7 @@ export type {
   ComponentState,
   ExtractSlotProps,
   ForwardRefComponent,
+  PropsOf,
   ResolveShorthandFunction,
   ResolveShorthandOptions,
   Slot,
