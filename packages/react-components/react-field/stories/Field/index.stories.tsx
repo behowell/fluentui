@@ -11,6 +11,7 @@ export { Size } from './FieldSize.stories';
 export { ValidationMessage } from './FieldValidationMessage.stories';
 export { Hint } from './FieldHint.stories';
 export { ComponentExamples } from './FieldComponentExamples.stories';
+export { GroupOfControls } from './FieldGroupOfControls.stories';
 export { RenderFunction } from './FieldRenderFunction.stories';
 
 import descriptionMd from './FieldDescription.md';

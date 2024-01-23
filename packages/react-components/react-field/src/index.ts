@@ -14,3 +14,6 @@ export {
   useFieldControlProps_unstable,
 } from './contexts/index';
 export type { FieldControlPropsOptions } from './contexts/index';
+
+export { Group, groupClassNames, renderGroup_unstable, useGroupStyles_unstable, useGroup_unstable } from './Group';
+export type { GroupProps, GroupSlots, GroupState } from './Group';

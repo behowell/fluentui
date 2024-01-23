@@ -111,7 +111,7 @@ export type FieldState = ComponentState<Required<FieldSlots>> &
   };
 
 export type FieldContextValue = Readonly<
-  Pick<FieldState, 'generatedControlId' | 'orientation' | 'required' | 'size' | 'validationState'> & {
+  Partial<Pick<FieldState, 'generatedControlId' | 'orientation' | 'required' | 'size' | 'validationState'>> & {
     /** The label's for prop. Undefined if there is no label. */
     labelFor?: string;
     /** The label's id prop. Undefined if there is no label. */
