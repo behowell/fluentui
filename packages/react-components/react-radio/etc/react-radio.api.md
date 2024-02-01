@@ -62,6 +62,33 @@ export type RadioGroupSlots = {
 export type RadioGroupState = ComponentState<RadioGroupSlots> & Required<Pick<RadioGroupProps, 'layout'>> & Pick<RadioGroupProps, 'name' | 'value' | 'defaultValue' | 'disabled' | 'layout' | 'required'>;
 
 // @public
+export const RadioItem: ForwardRefComponent<RadioItemProps>;
+
+// @public (undocumented)
+export const radioItemClassNames: SlotClassNames<RadioItemSlots>;
+
+// @public
+export type RadioItemProps = Omit<ComponentProps<Partial<RadioItemSlots>, 'input'>, 'checked' | 'defaultChecked' | 'disabled' | 'name' | 'onChange' | 'required' | 'size' | 'type' | 'value'> & {
+    value?: string;
+    labelPosition?: 'after' | 'below';
+    disabled?: boolean;
+};
+
+// @public (undocumented)
+export type RadioItemSlots = {
+    root: NonNullable<Slot<'label'>>;
+    label: Slot<'span'>;
+    input: NonNullable<Slot<'input'>>;
+    indicator: NonNullable<Slot<'div'>>;
+};
+
+// @public
+export type RadioItemState = ComponentState<RadioItemSlots> & Required<Pick<RadioItemProps, 'labelPosition'>> & {
+    hover?: boolean;
+    active?: boolean;
+};
+
+// @public
 export type RadioOnChangeData = {
     value: string;
 };
@@ -92,6 +119,9 @@ export const renderRadio_unstable: (state: RadioState) => JSX.Element;
 export const renderRadioGroup_unstable: (state: RadioGroupState, contextValues: RadioGroupContextValues) => JSX.Element;
 
 // @public
+export const renderRadioItem_unstable: (state: RadioItemState) => JSX.Element;
+
+// @public
 export const useRadio_unstable: (props: RadioProps, ref: React_2.Ref<HTMLInputElement>) => RadioState;
 
 // @public
@@ -108,6 +138,12 @@ export const useRadioGroupContextValues: (state: RadioGroupState) => RadioGroupC
 
 // @public
 export const useRadioGroupStyles_unstable: (state: RadioGroupState) => void;
+
+// @public
+export const useRadioItem_unstable: (props: RadioItemProps, ref: React_2.Ref<HTMLInputElement>) => RadioItemState;
+
+// @public
+export const useRadioItemStyles_unstable: (state: RadioItemState) => void;
 
 // @public
 export const useRadioStyles_unstable: (state: RadioState) => void;

@@ -21,4 +21,12 @@ export {
   useRadioGroupContext_unstable, // eslint-disable-line deprecation/deprecation
   useRadioGroupContextValue_unstable,
 } from './contexts/index';
-export * from './RadioItem';
+
+export {
+  RadioItem,
+  radioItemClassNames,
+  renderRadioItem_unstable,
+  useRadioItemStyles_unstable,
+  useRadioItem_unstable,
+} from './RadioItem';
+export type { RadioItemProps, RadioItemSlots, RadioItemState } from './RadioItem';

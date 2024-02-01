@@ -10,6 +10,11 @@ import type { RadioItemState, RadioItemSlots } from './RadioItem.types';
 export const renderRadioItem_unstable = (state: RadioItemState) => {
   assertSlots<RadioItemSlots>(state);
 
-  // TODO Add additional slots in the appropriate place
-  return <state.root />;
+  return (
+    <state.root>
+      <state.input />
+      <state.indicator />
+      {state.label && <state.label />}
+    </state.root>
+  );
 };

@@ -81,6 +81,7 @@ export const CustomStyleHooksContext_unstable: React_2.Context<Partial<{
     usePersonaStyles_unstable: CustomStyleHook;
     usePopoverSurfaceStyles_unstable: CustomStyleHook;
     useRadioGroupStyles_unstable: CustomStyleHook;
+    useRadioItemStyles_unstable: CustomStyleHook;
     useRadioStyles_unstable: CustomStyleHook;
     useSelectStyles_unstable: CustomStyleHook;
     useSliderStyles_unstable: CustomStyleHook;
@@ -206,6 +207,7 @@ export type CustomStyleHooksContextValue_unstable = Partial<{
     usePersonaStyles_unstable: CustomStyleHook;
     usePopoverSurfaceStyles_unstable: CustomStyleHook;
     useRadioGroupStyles_unstable: CustomStyleHook;
+    useRadioItemStyles_unstable: CustomStyleHook;
     useRadioStyles_unstable: CustomStyleHook;
     useSelectStyles_unstable: CustomStyleHook;
     useSliderStyles_unstable: CustomStyleHook;
@@ -331,6 +333,7 @@ export const CustomStyleHooksProvider_unstable: React_2.Provider<Partial<{
     usePersonaStyles_unstable: CustomStyleHook;
     usePopoverSurfaceStyles_unstable: CustomStyleHook;
     useRadioGroupStyles_unstable: CustomStyleHook;
+    useRadioItemStyles_unstable: CustomStyleHook;
     useRadioStyles_unstable: CustomStyleHook;
     useSelectStyles_unstable: CustomStyleHook;
     useSliderStyles_unstable: CustomStyleHook;
