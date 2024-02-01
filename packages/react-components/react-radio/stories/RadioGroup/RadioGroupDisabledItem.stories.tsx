@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { Field, Radio, RadioGroup } from '@fluentui/react-components';
+import { Field, RadioGroup } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 
 export const DisabledItem = () => (
   <Field label="Favorite Fruit">
     <RadioGroup defaultValue="apple">
-      <Radio value="apple" label="Apple" />
-      <Radio value="pear" label="Pear" />
-      <Radio value="banana" label="Banana" disabled />
-      <Radio value="orange" label="Orange" />
+      <RadioItem value="apple" label="Apple" />
+      <RadioItem value="pear" label="Pear" />
+      <RadioItem value="banana" label="Banana" disabled />
+      <RadioItem value="orange" label="Orange" />
     </RadioGroup>
   </Field>
 );
@@ -16,7 +17,7 @@ export const DisabledItem = () => (
 DisabledItem.parameters = {
   docs: {
     description: {
-      story: 'Radio items can be disabled individually.',
+      story: 'RadioItems can be disabled individually.',
     },
   },
 };

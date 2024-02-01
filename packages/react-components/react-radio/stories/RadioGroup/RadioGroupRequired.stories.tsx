@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { Field, Radio, RadioGroup } from '@fluentui/react-components';
+import { Field, RadioGroup } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 
 export const Required = () => (
   <Field label="Favorite Fruit" required>
     <RadioGroup>
-      <Radio value="apple" label="Apple" />
-      <Radio value="pear" label="Pear" />
-      <Radio value="banana" label="Banana" />
-      <Radio value="orange" label="Orange" />
+      <RadioItem value="apple" label="Apple" />
+      <RadioItem value="pear" label="Pear" />
+      <RadioItem value="banana" label="Banana" />
+      <RadioItem value="orange" label="Orange" />
     </RadioGroup>
   </Field>
 );
@@ -17,7 +18,7 @@ Required.parameters = {
   docs: {
     description: {
       story:
-        'Use the `required` prop to indicate that one of the radio items must be selected. ' +
+        'Use the `required` prop to indicate that one of the RadioItems must be selected. ' +
         'Or, if the RadioGroup is inside a Field, it will inherit the `required` prop from the Field.',
     },
   },

@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { Field, Radio, RadioGroup, Text } from '@fluentui/react-components';
+import { Field, RadioGroup, Text } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 
 export const LabelSubtext = () => (
   <Field label="Favorite Fruit">
     <RadioGroup>
-      <Radio
+      <RadioItem
         value="A"
         label={
           <>
@@ -15,7 +16,7 @@ export const LabelSubtext = () => (
           </>
         }
       />
-      <Radio
+      <RadioItem
         value="B"
         label={
           <>
@@ -32,7 +33,8 @@ export const LabelSubtext = () => (
 LabelSubtext.parameters = {
   docs: {
     description: {
-      story: "Radio's label supports any formatted text. In this example, smaller text is below the main label text.",
+      story:
+        "RadioItem's label supports any formatted text. In this example, smaller text is below the main label text.",
     },
   },
 };

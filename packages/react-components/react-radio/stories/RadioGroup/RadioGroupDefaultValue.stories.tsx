@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { Field, Radio, RadioGroup } from '@fluentui/react-components';
+import { Field, RadioGroup } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 
 export const DefaultValue = () => (
   <Field label="Favorite Fruit">
     <RadioGroup defaultValue="pear">
-      <Radio value="apple" label="Apple" />
-      <Radio value="pear" label="Pear" />
-      <Radio value="banana" label="Banana" />
-      <Radio value="orange" label="Orange" />
+      <RadioItem value="apple" label="Apple" />
+      <RadioItem value="pear" label="Pear" />
+      <RadioItem value="banana" label="Banana" />
+      <RadioItem value="orange" label="Orange" />
     </RadioGroup>
   </Field>
 );
@@ -16,10 +17,7 @@ export const DefaultValue = () => (
 DefaultValue.parameters = {
   docs: {
     description: {
-      story:
-        'The initially selected item can be set by setting the `defaultValue` of RadioGroup. ' +
-        'Alternatively, one Radio item can have `defaultChecked` set. ' +
-        'Both methods have the same effect, but only one should be used in a given RadioGroup.',
+      story: 'The initially selected item can be set by setting the `defaultValue` of RadioGroup.',
     },
   },
 };

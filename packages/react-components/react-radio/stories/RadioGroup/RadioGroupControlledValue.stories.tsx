@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Field, Radio, RadioGroup, Button } from '@fluentui/react-components';
+import { Field, RadioGroup, Button } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 
 export const ControlledValue = () => {
   const [value, setValue] = React.useState('banana');
@@ -8,10 +9,10 @@ export const ControlledValue = () => {
     <>
       <Field label="Favorite Fruit">
         <RadioGroup value={value} onChange={(_, data) => setValue(data.value)}>
-          <Radio value="apple" label="Apple" />
-          <Radio value="pear" label="Pear" />
-          <Radio value="banana" label="Banana" />
-          <Radio value="orange" label="Orange" />
+          <RadioItem value="apple" label="Apple" />
+          <RadioItem value="pear" label="Pear" />
+          <RadioItem value="banana" label="Banana" />
+          <RadioItem value="orange" label="Orange" />
         </RadioGroup>
       </Field>
       <Button disabled={!value} onClick={() => setValue('')}>

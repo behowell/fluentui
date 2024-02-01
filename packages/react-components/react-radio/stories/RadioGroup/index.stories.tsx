@@ -1,4 +1,5 @@
-import { Radio, RadioGroup } from '@fluentui/react-components';
+import { RadioGroup } from '@fluentui/react-components';
+import { RadioItem } from '@fluentui/react-radio';
 import bestPracticesMd from './RadioGroupBestPractices.md';
 import descriptionMd from './RadioGroupDescription.md';
 
@@ -16,7 +17,7 @@ export default {
   title: 'Components/RadioGroup',
   component: RadioGroup,
   subcomponents: {
-    Radio,
+    RadioItem,
   },
   parameters: {
     docs: {
