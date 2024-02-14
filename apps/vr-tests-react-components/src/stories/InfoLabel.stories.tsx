@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { Steps, StoryWright } from 'storywright';
 import { InfoLabel } from '@fluentui/react-infolabel';
 import { storiesOf } from '@storybook/react';
-import { TestWrapperDecoratorFixedWidth } from '../utilities/TestWrapperDecorator';
+import { Steps } from 'storywright';
+import { TestWrapper } from '../utilities/TestWrapper';
 
 storiesOf('InfoLabel', module)
-  .addDecorator(TestWrapperDecoratorFixedWidth)
   .addDecorator(story => (
-    <StoryWright steps={new Steps().snapshot('rest', { cropTo: '.testWrapper' }).end()}>{story()}</StoryWright>
+    <TestWrapper fixedWidth steps={new Steps().snapshot('rest', { cropTo: '.testWrapper' }).end()}>
+      {story()}
+    </TestWrapper>
   ))
   .addStory('default', () => <InfoLabel info="Test">This is an info label</InfoLabel>, {
     includeHighContrast: true,

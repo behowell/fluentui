@@ -12,24 +12,11 @@ import { Slider } from '@fluentui/react-slider';
 import { SpinButton } from '@fluentui/react-spinbutton';
 import { Switch } from '@fluentui/react-switch';
 import { Textarea } from '@fluentui/react-textarea';
-import { DecoratorFunction } from '@storybook/addons';
 import { storiesOf } from '@storybook/react';
-import { Steps, StoryWright } from 'storywright';
-import { ExtendedStoryFnReturnType } from '../utilities/types';
-
-const TestWrapperDecoratorFixedWidth400: DecoratorFunction<ExtendedStoryFnReturnType> = story => (
-  <div style={{ display: 'flex' }}>
-    <div className="testWrapper" style={{ padding: '10px', width: '400px' }}>
-      {story()}
-    </div>
-  </div>
-);
+import { TestWrapper } from '../utilities/TestWrapper';
 
 storiesOf('Field', module)
-  .addDecorator(TestWrapperDecoratorFixedWidth400)
-  .addDecorator(story => (
-    <StoryWright steps={new Steps().snapshot('default', { cropTo: '.testWrapper' }).end()}>{story()}</StoryWright>
-  ))
+  .addDecorator(story => <TestWrapper style={{ width: '400px' }}>{story()}</TestWrapper>)
   .addStory('base', () => (
     <Field label="Example field">
       <Input />

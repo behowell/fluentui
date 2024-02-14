@@ -1,9 +1,10 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Steps, StoryWright } from 'storywright';
+
 import { Avatar, AvatarProps } from '@fluentui/react-avatar';
-import { tokens } from '@fluentui/react-theme';
 import { PeopleRegular, PersonCallRegular } from '@fluentui/react-icons';
+import { tokens } from '@fluentui/react-theme';
+import { storiesOf } from '@storybook/react';
+import { TestWrapper } from '../utilities/TestWrapper';
 
 const imageRoot = 'http://fabricweb.azureedge.net/fabric-website/assets/images/avatar';
 
@@ -186,16 +187,7 @@ const AvatarColors: React.FC<Pick<AvatarProps, 'active' | 'activeAppearance'>> =
 };
 
 storiesOf('Avatar Converged', module)
-  .addDecorator(story => (
-    <div style={{ display: 'flex' }}>
-      <div className="testWrapper" style={{ maxWidth: '750px' }}>
-        {story()}
-      </div>
-    </div>
-  ))
-  .addDecorator(story => (
-    <StoryWright steps={new Steps().snapshot('normal', { cropTo: '.testWrapper' }).end()}>{story()}</StoryWright>
-  ))
+  .addDecorator(story => <TestWrapper style={{ padding: 0, maxWidth: '750px' }}>{story()}</TestWrapper>)
   .addStory(
     'basic',
     () => (
