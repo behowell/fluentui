@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "chore: Rename package to have -preview suffix",
+  "packageName": "@fluentui/react-platform-adapter-preview",
+  "email": "behowell@microsoft.com",
+  "dependentChangeType": "patch"
+}

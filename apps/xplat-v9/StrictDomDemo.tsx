@@ -7,7 +7,7 @@ import {
   makeStyles,
   mergeClasses,
   shorthands,
-} from '@fluentui/react-platform-adapter';
+} from '@fluentui/react-platform-adapter-preview';
 import { html } from 'react-strict-dom';
 
 const useBaseClassName = makeResetStyles({

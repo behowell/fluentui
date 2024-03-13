@@ -20,7 +20,7 @@
   "dependencies": {
     "@fluentui/react-button": "^9.3.61",
     "@fluentui/react-label": "^9.1.64",
-    "@fluentui/react-platform-adapter": "^0.0.0",
+    "@fluentui/react-platform-adapter-preview": "^0.0.0",
     "@stylexjs/babel-plugin": "^0.5.1",
     "@stylexjs/stylex": "^0.5.1",
     "react": "18.2.0",
