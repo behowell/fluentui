@@ -36,6 +36,7 @@
   "dependencies": {
     "@fluentui/react-field": "^9.1.56",
     "@fluentui/react-jsx-runtime": "^9.0.32",
+    "@fluentui/react-platform-adapter-preview": "^0.0.0",
     "@fluentui/react-shared-contexts": "^9.15.0",
     "@fluentui/react-theme": "^9.1.17",
     "@fluentui/react-utilities": "^9.18.3",

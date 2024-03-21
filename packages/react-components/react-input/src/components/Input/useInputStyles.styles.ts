@@ -1,6 +1,6 @@
 import { tokens, typographyStyles } from '@fluentui/react-theme';
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { InputSlots, InputState } from './Input.types';
 
 export const inputClassNames: SlotClassNames<InputSlots> = {
@@ -21,19 +21,19 @@ const useRootClassName = makeResetStyles({
   display: 'inline-flex',
   alignItems: 'center',
   flexWrap: 'nowrap',
-  gap: tokens.spacingHorizontalXXS,
-  borderRadius: tokens.borderRadiusMedium, // used for all but underline
+  horizontalGap: tokens.spacingHorizontalXXS,
+  ...shorthands.borderRadius(tokens.borderRadiusMedium), // used for all but underline
   position: 'relative',
   boxSizing: 'border-box',
 
   // size: medium (default)
   minHeight: fieldHeights.medium,
-  padding: `0 ${tokens.spacingHorizontalMNudge}`,
+  ...shorthands.padding('0', tokens.spacingHorizontalMNudge),
   ...typographyStyles.body1,
 
   // appearance: outline (default)
   backgroundColor: tokens.colorNeutralBackground1,
-  border: `1px solid ${tokens.colorNeutralStroke1}`,
+  ...shorthands.border('1px', 'solid', tokens.colorNeutralStroke1),
   borderBottomColor: tokens.colorNeutralStrokeAccessible,
 
   // This is all for the bottom focus border.
@@ -58,11 +58,11 @@ const useRootClassName = makeResetStyles({
     // By default borderBottom will cause little "horns" on the ends. The clipPath trims them off.
     // (This could be done without trimming using `background: linear-gradient(...)`, but using
     // borderBottom makes it easier for people to override the color if needed.)
-    borderBottom: `2px solid ${tokens.colorCompoundBrandStroke}`,
+    ...shorthands.borderBottom('2px', 'solid', tokens.colorCompoundBrandStroke),
     clipPath: 'inset(calc(100% - 2px) 0 0 0)',
 
     // Animation for focus OUT
-    transform: 'scaleX(0)',
+    // transform: 'scaleX(0)',
     transitionProperty: 'transform',
     transitionDuration: tokens.durationUltraFast,
     transitionDelay: tokens.curveAccelerateMid,
@@ -74,7 +74,7 @@ const useRootClassName = makeResetStyles({
   },
   ':focus-within::after': {
     // Animation for focus IN
-    transform: 'scaleX(1)',
+    // transform: 'scaleX(1)',
     transitionProperty: 'transform',
     transitionDuration: tokens.durationNormal,
     transitionDelay: tokens.curveDecelerateMid,
@@ -89,7 +89,7 @@ const useRootClassName = makeResetStyles({
     borderBottomColor: tokens.colorCompoundBrandStrokePressed,
   },
   ':focus-within': {
-    outline: '2px solid transparent',
+    ...shorthands.outline('2px', 'solid', 'transparent'),
   },
 });
 
@@ -198,8 +198,8 @@ const useInputClassName = makeResetStyles({
   boxSizing: 'border-box',
   flexGrow: 1,
   minWidth: 0, // required to make the input shrink to fit the wrapper
-  borderStyle: 'none', // input itself never has a border (this is handled by inputWrapper)
-  padding: `0 ${tokens.spacingHorizontalXXS}`,
+  ...shorthands.borderStyle('none'), // input itself never has a border (this is handled by inputWrapper)
+  ...shorthands.padding('0', tokens.spacingHorizontalXXS),
   color: tokens.colorNeutralForeground1,
   // Use literal "transparent" (not from the theme) to always let the color from the root show through
   backgroundColor: 'transparent',
