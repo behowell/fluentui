@@ -7,10 +7,15 @@ export type {
   ResolveShorthandFunction,
   ResolveShorthandOptions,
   Slot,
-  Slots,
   SlotClassNames,
+  SlotComponent,
+  SlotElement,
+  SlotElementAs,
+  SlotElements,
+  SlotProps,
   SlotPropsRecord,
   SlotRenderFunction,
+  Slots,
   SlotShorthandValue,
 } from './compose/index';
 

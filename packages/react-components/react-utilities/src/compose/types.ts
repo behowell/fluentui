@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { SlotElements } from './SlotElements.types';
+
 export type SlotRenderFunction<Props> = (
   Component: React.ElementType<Props>,
   props: Omit<Props, 'children' | 'as'>,
@@ -94,7 +96,7 @@ type IntrisicElementProps<Type extends keyof JSX.IntrinsicElements> = React.Prop
  * NonNullable<Slot<typeof Label>> // Slot is a Label and will always be rendered (can't be set to null by the user)
  * ```
  */
-export type Slot<
+export type Slot1<
   Type extends keyof JSX.IntrinsicElements | React.ComponentType | React.VoidFunctionComponent | UnknownSlotProps,
   AlternateAs extends keyof JSX.IntrinsicElements = never
 > = IsSingleton<Extract<Type, string>> extends true
@@ -111,6 +113,40 @@ export type Slot<
         }[AlternateAs]
       | null
   : 'Error: First parameter to Slot must not be not a union of types. See documentation of Slot type.';
+
+export type Slot2<
+  Type extends keyof SlotElements | VoidComponentType | UnknownSlotProps,
+  AlternateAs extends keyof SlotElements = never
+> =
+  | (Type extends keyof SlotElements // Intrinsic elements like `div`
+      ? SlotElement<Type>
+      : Type extends VoidComponentType<infer Props> // Component types like `typeof Button`
+      ? SlotProps<Props>
+      : SlotProps<Type>) // Props types like `ButtonProps`
+  | SlotElementAs<AlternateAs>
+  | null;
+
+export type { Slot2 as Slot };
+
+// Similar to React.ComponentType but with VoidFunctionComponent, which allows components that don't have children.
+type VoidComponentType<P = {}> = React.ComponentClass<P> | React.VoidFunctionComponent<P>;
+
+export type ExtractProps<Type extends VoidComponentType> = Type extends VoidComponentType<infer P> ? P : never;
+
+// export type SlotElement<T extends keyof SlotElements> = WithSlotShorthandValue<{ as?: T } & SlotElements[T]>;
+export type SlotElement<T extends keyof SlotElements> =
+  | ({ as?: T } & SlotElements[T])
+  | Extract<SlotShorthandValue, SlotElements[T]['children']>;
+
+export type SlotElementAs<As extends keyof SlotElements> = {
+  [T in As]: { as: T } & SlotElements[T];
+}[As];
+
+export type SlotProps<Props> = Props extends { children?: unknown }
+  ? WithSlotShorthandValue<WithSlotRenderFunction<Props>>
+  : Props & { children?: SlotRenderFunction<Props> };
+
+export type SlotComponent<Component extends VoidComponentType> = SlotProps<ExtractProps<Component>>;
 
 /**
  * Evaluates to true if the given type contains exactly one string, or false if it is a union of strings.
@@ -130,7 +166,7 @@ export type IsSingleton<T extends string> = { [K in T]: Exclude<T, K> extends ne
  * type Example<T> = T extends AsIntrinsicElement<infer As> ? As : never;
  * ```
  */
-export type AsIntrinsicElement<As extends keyof JSX.IntrinsicElements> = { as?: As };
+export type AsIntrinsicElement<As extends keyof SlotElements> = { as?: As };
 
 /**
  * Converts a union type (`A | B | C`) to an intersection type (`A & B & C`)

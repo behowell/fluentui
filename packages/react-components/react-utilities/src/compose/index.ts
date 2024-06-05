@@ -1,4 +1,5 @@
 export * from './getSlots';
-export * from './resolveShorthand';
-export * from './types';
 export * from './isResolvedShorthand';
+export * from './resolveShorthand';
+export * from './SlotElements.types';
+export * from './types';

@@ -108,18 +108,144 @@ export type ResolveShorthandOptions<Props, Required extends boolean = false> = {
     defaultProps?: Props;
 };
 
-// @public
-export type Slot<Type extends keyof JSX.IntrinsicElements | React_2.ComponentType | React_2.VoidFunctionComponent | UnknownSlotProps, AlternateAs extends keyof JSX.IntrinsicElements = never> = IsSingleton<Extract<Type, string>> extends true ? WithSlotShorthandValue<Type extends keyof JSX.IntrinsicElements ? {
-    as?: Type;
-} & WithSlotRenderFunction<IntrisicElementProps<Type>> : Type extends React_2.ComponentType<infer Props> ? WithSlotRenderFunction<Props> : Type> | {
-    [As in AlternateAs]: {
-        as: As;
-    } & WithSlotRenderFunction<IntrisicElementProps<As>>;
-}[AlternateAs] | null : 'Error: First parameter to Slot must not be not a union of types. See documentation of Slot type.';
+// @public (undocumented)
+export type Slot<Type extends keyof SlotElements | VoidComponentType | UnknownSlotProps, AlternateAs extends keyof SlotElements = never> = (Type extends keyof SlotElements ? SlotElement<Type> : Type extends VoidComponentType<infer Props> ? SlotProps<Props> : SlotProps<Type>) | SlotElementAs<AlternateAs> | null;
 
 // @public
 export type SlotClassNames<Slots> = {
     [SlotName in keyof Slots]-?: string;
+};
+
+// @public (undocumented)
+export type SlotComponent<Component extends VoidComponentType> = SlotProps<ExtractProps<Component>>;
+
+// @public (undocumented)
+export type SlotElement<T extends keyof SlotElements> = WithSlotShorthandValue<{
+    as?: T;
+} & SlotElements[T]>;
+
+// @public (undocumented)
+export type SlotElementAs<As extends keyof SlotElements> = {
+    [T in As]: {
+        as: T;
+    } & SlotElements[T];
+}[As];
+
+// @public (undocumented)
+export interface SlotElements {
+    // (undocumented)
+    a: AnchorSlotAttributes<HTMLAnchorElement>;
+    // (undocumented)
+    button: ButtonSlotAttributes<HTMLButtonElement>;
+    // (undocumented)
+    canvas: CanvasSlotAttributes<HTMLCanvasElement>;
+    // (undocumented)
+    caption: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    code: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    col: ColSlotAttributes<HTMLTableColElement>;
+    // (undocumented)
+    colgroup: ColgroupSlotAttributes<HTMLTableColElement>;
+    // (undocumented)
+    datalist: SlotAttributes<HTMLDataListElement>;
+    // (undocumented)
+    details: DetailsSlotAttributes<HTMLDetailsElement>;
+    // (undocumented)
+    dialog: DialogSlotAttributes<HTMLDialogElement>;
+    // (undocumented)
+    div: SlotAttributes<HTMLDivElement>;
+    // (undocumented)
+    fieldset: FieldsetSlotAttributes<HTMLFieldSetElement>;
+    // (undocumented)
+    footer: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    form: FormSlotAttributes<HTMLFormElement>;
+    // (undocumented)
+    h1: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    h2: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    h3: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    h4: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    h5: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    h6: SlotAttributes<HTMLHeadingElement>;
+    // (undocumented)
+    header: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    hgroup: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    img: ImgSlotAttributes<HTMLImageElement>;
+    // (undocumented)
+    input: InputSlotAttributes<HTMLInputElement>;
+    // (undocumented)
+    label: LabelSlotAttributes<HTMLLabelElement>;
+    // (undocumented)
+    legend: SlotAttributes<HTMLLegendElement>;
+    // (undocumented)
+    li: LiSlotAttributes<HTMLLIElement>;
+    // (undocumented)
+    menu: MenuSlotAttributes<HTMLElement>;
+    // (undocumented)
+    meter: MeterSlotAttributes<HTMLMeterElement>;
+    // (undocumented)
+    nav: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    ol: OlSlotAttributes<HTMLOListElement>;
+    // (undocumented)
+    optgroup: OptgroupSlotAttributes<HTMLOptGroupElement>;
+    // (undocumented)
+    option: OptionSlotAttributes<HTMLOptionElement>;
+    // (undocumented)
+    output: OutputSlotAttributes<HTMLOutputElement>;
+    // (undocumented)
+    p: SlotAttributes<HTMLParagraphElement>;
+    // (undocumented)
+    picture: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    pre: SlotAttributes<HTMLPreElement>;
+    // (undocumented)
+    progress: ProgressSlotAttributes<HTMLProgressElement>;
+    // (undocumented)
+    section: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    select: SelectSlotAttributes<HTMLSelectElement>;
+    // (undocumented)
+    source: SourceSlotAttributes<HTMLSourceElement>;
+    // (undocumented)
+    span: SlotAttributes<HTMLSpanElement>;
+    // (undocumented)
+    summary: SlotAttributes<HTMLElement>;
+    // (undocumented)
+    svg: SVGSlotAttributes<SVGSVGElement>;
+    // (undocumented)
+    table: TableSlotAttributes<HTMLTableElement>;
+    // (undocumented)
+    tbody: SlotAttributes<HTMLTableSectionElement>;
+    // (undocumented)
+    td: TdSlotAttributes<HTMLTableDataCellElement>;
+    // (undocumented)
+    textarea: TextareaSlotAttributes<HTMLTextAreaElement>;
+    // (undocumented)
+    tfoot: SlotAttributes<HTMLTableSectionElement>;
+    // (undocumented)
+    th: ThSlotAttributes<HTMLTableHeaderCellElement>;
+    // (undocumented)
+    thead: SlotAttributes<HTMLTableSectionElement>;
+    // (undocumented)
+    tr: SlotAttributes<HTMLTableRowElement>;
+    // (undocumented)
+    ul: SlotAttributes<HTMLUListElement>;
+}
+
+// @public (undocumented)
+export type SlotProps<Props> = Props extends {
+    children?: unknown;
+} ? WithSlotShorthandValue<WithSlotRenderFunction<Props>> : Props & {
+    children?: SlotRenderFunction<Props>;
 };
 
 // @public
