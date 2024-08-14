@@ -35,6 +35,9 @@ export { makeStylesCore }
 
 export { mergeClasses }
 
+// @public (undocumented)
+export const PlaceholderIcon: React_2.FC<any>;
+
 export { shorthands }
 
 // @public (undocumented)

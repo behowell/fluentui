@@ -18,6 +18,10 @@ export const jsxPlatformAdapter = (reactJsx: JSXRuntime): JSXRuntime => {
     self?: unknown,
   ) => {
     if (typeof type === 'string' && type in html) {
+      // if (type === 'svg' || type === 'path') {
+      //   return reactJsx(React.Fragment, {} as P, key, source, self);
+      // }
+
       if (props?.className) {
         props = {
           ...props,
@@ -25,6 +29,19 @@ export const jsxPlatformAdapter = (reactJsx: JSXRuntime): JSXRuntime => {
         };
 
         delete props!.className;
+      }
+
+      if (type === 'span' && props?.children) {
+        let hasNonStringChildren = false;
+        React.Children.forEach(props.children, child => {
+          if (typeof child !== 'string') {
+            hasNonStringChildren = true;
+          }
+        });
+        if (hasNonStringChildren) {
+          type = 'div' as React.ElementType<P>;
+          console.log('Rendering <span> with non-string children as <div>');
+        }
       }
 
       // TODO figure out which types need to wrap children in a span.
