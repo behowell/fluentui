@@ -40,6 +40,7 @@
     "@fluentui/react-badge": "^9.2.36",
     "@fluentui/react-context-selector": "^9.1.60",
     "@fluentui/react-icons": "^2.0.239",
+    "@fluentui/react-platform-adapter-preview": "*",
     "@fluentui/react-popover": "^9.9.9",
     "@fluentui/react-shared-contexts": "^9.19.0",
     "@fluentui/react-tabster": "^9.21.3",

@@ -1,6 +1,6 @@
 import { tokens } from '@fluentui/react-theme';
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { AvatarSlots, AvatarState } from './Avatar.types';
 
 export const avatarClassNames: SlotClassNames<AvatarSlots> = {
@@ -50,8 +50,8 @@ const useRootClassName = makeResetStyles({
     },
   },
   '::before': {
-    borderStyle: 'solid',
-    borderWidth: `var(${vars.ringWidth})`,
+    ...shorthands.borderStyle('solid'),
+    ...shorthands.borderWidth(`var(${vars.ringWidth})`),
   },
 });
 
@@ -75,7 +75,7 @@ const useIconInitialsClassName = makeResetStyles({
   width: '100%',
   height: '100%',
   lineHeight: '1',
-  border: `${tokens.strokeWidthThin} solid ${tokens.colorTransparentStroke}`,
+  ...shorthands.border(tokens.strokeWidthThin, 'solid', tokens.colorTransparentStroke),
 
   display: 'flex',
   alignItems: 'center',

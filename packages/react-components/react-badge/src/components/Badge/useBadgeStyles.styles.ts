@@ -1,4 +1,4 @@
-import { shorthands, makeResetStyles, makeStyles, mergeClasses } from '@griffel/react';
+import { shorthands, makeResetStyles, makeStyles, mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import { tokens, typographyStyles } from '@fluentui/react-theme';
 import type { BadgeSlots, BadgeState } from './Badge.types';
 import type { SlotClassNames } from '@fluentui/react-utilities';
@@ -25,7 +25,7 @@ const useRootClassName = makeResetStyles({
   padding: `0 calc(${tokens.spacingHorizontalXS} + ${textPadding})`,
   borderRadius: tokens.borderRadiusCircular,
   // Use a transparent stroke (rather than no border) so the border is visible in high contrast
-  borderColor: tokens.colorTransparentStroke,
+  ...shorthands.borderColor(tokens.colorTransparentStroke),
 
   '::after': {
     content: '""',
@@ -34,9 +34,9 @@ const useRootClassName = makeResetStyles({
     left: 0,
     bottom: 0,
     right: 0,
-    borderStyle: 'solid',
-    borderColor: 'inherit',
-    borderWidth: tokens.strokeWidthThin,
+    ...shorthands.borderStyle('solid'),
+    ...shorthands.borderColor('inherit'),
+    ...shorthands.borderWidth(tokens.strokeWidthThin),
     borderRadius: 'inherit',
   },
 });

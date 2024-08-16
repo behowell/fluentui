@@ -2,7 +2,7 @@ import * as React from 'react';
 import { getIntrinsicElementProps, mergeCallbacks, useId, slot } from '@fluentui/react-utilities';
 import { getInitials } from '../../utils/index';
 import type { AvatarNamedColor, AvatarProps, AvatarState } from './Avatar.types';
-import { PersonRegular } from '@fluentui/react-icons';
+import { PlaceholderIcon as PersonRegular } from '@fluentui/react-platform-adapter-preview';
 import { PresenceBadge } from '@fluentui/react-badge';
 import { useFluent_unstable as useFluent } from '@fluentui/react-shared-contexts';
 import { useAvatarContext } from '../../contexts/AvatarContext';
