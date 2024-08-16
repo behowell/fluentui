@@ -1,0 +1,12 @@
+/** @jsxRuntime automatic */
+/** @jsxImportSource @fluentui/react-jsx-runtime */
+
+import * as React from 'react';
+import { Avatar } from '@fluentui/react-avatar';
+
+export const Active = () => (
+  <div style={{ display: 'flex', gap: '20px' }}>
+    <Avatar active="active" name="Ashley McCarthy" />
+    <Avatar active="inactive" name="Isaac Fielder" badge={{ status: 'away' }} />
+  </div>
+);

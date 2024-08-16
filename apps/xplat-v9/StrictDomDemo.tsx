@@ -4,7 +4,7 @@ import { Label } from '@fluentui/react-label';
 import { mergeClasses, makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { FluentProvider } from '@fluentui/react-provider';
 import { tokens, webLightTheme } from '@fluentui/react-theme';
-import { ButtonStories } from './stories/Button/ButtonStories';
+import { AvatarStories } from './stories/Avatar/AvatarStories';
 
 const useClassNames = makeStyles({
   root: {
@@ -23,8 +23,7 @@ export const StrictDomDemo = () => {
 
   return (
     <FluentProvider theme={webLightTheme} className={mergeClasses(classNames.root)}>
-      <Label required>Label</Label>
-      <ButtonStories />
+      <AvatarStories />
     </FluentProvider>
   );
 };

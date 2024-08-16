@@ -38,7 +38,8 @@ Start the test app from the `apps/xplat-v9` directory:
 
 ```sh
 cd apps/xplat-v9
-yarn windows # or "ios" or "macos" or "android"
+yarn windows
+# or "ios" or "macos" or "android"
 ```
 
 #### iOS/macOS specific
