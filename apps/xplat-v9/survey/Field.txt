@@ -1,0 +1,41 @@
+ ERROR  [error] React Strict DOM: invalid prop "htmlFor"
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `TextInput`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style property "border"
+ WARN  [warn] React Strict DOM: unsupported style value in "borderWidth:1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "display:inline-block"
+ WARN  [warn] React Strict DOM: unsupported style value in "fontFamily:inherit"
+ WARN  [warn] React Strict DOM: unsupported style value in "fontSize:inherit"
+ WARN  [warn] React Strict DOM: unsupported style value in "fontWeight:inherit"
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "height:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "marginLeft:calc(-12px - 4px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "padding:0 12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(12px + 4px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(12px + 6px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingRight:calc(12px + 6px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "verticalAlign:-1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "width:12px"
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'boxShadow: var(--shadow2)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'display: grid'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: -1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 33% 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto auto auto 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outline: 2px solid transparent'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  ::after
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  ::placeholder
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  :focus-within::after
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  :focus-within:active::after
+ LOG  [convertGriffelToStyleX] Unsupported selector  :active,:focus-within
+ LOG  [convertGriffelToStyleX] Unsupported selector  :hover,:focus-within
+ LOG  [convertGriffelToStyleX] Unsupported selector  :not(:focus-within),:hover:not(:focus-within)
+ LOG  [convertGriffelToStyleX] Unsupported selector  > svg
+ LOG  Rendering <span> with non-string children as <div>

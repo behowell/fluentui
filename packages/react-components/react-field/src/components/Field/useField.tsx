@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-import { CheckmarkCircle12Filled, ErrorCircle12Filled, Warning12Filled } from '@fluentui/react-icons';
+import {
+  PlaceholderIcon as CheckmarkCircle12Filled,
+  PlaceholderIcon as ErrorCircle12Filled,
+  PlaceholderIcon as Warning12Filled,
+} from '@fluentui/react-platform-adapter-preview';
 import { Label } from '@fluentui/react-label';
 import { getIntrinsicElementProps, useId, slot } from '@fluentui/react-utilities';
 import type { FieldProps, FieldState } from './Field.types';

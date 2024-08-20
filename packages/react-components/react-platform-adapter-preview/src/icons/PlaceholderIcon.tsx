@@ -11,8 +11,8 @@ export const PlaceholderIcon: React.FC<any> = () => {
           borderStyle: 'solid',
           borderColor: 'orange',
           borderWidth: '1px',
-          width: '100%',
-          height: '100%',
+          width: '12px',
+          height: '12px',
         } as any
       }
     />

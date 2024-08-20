@@ -5,6 +5,8 @@ import { mergeClasses, makeStyles, shorthands } from '@fluentui/react-platform-a
 import { FluentProvider } from '@fluentui/react-provider';
 import { tokens, webLightTheme } from '@fluentui/react-theme';
 import { InputStories } from './stories/Input/index.stories';
+import { RadioGroupStories } from './stories/RadioGroup/index.stories';
+import { FieldStories } from './stories/Field/index.stories';
 import { PersonaStories } from './stories/Persona/index.stories';
 import { AvatarStories } from './stories/Avatar/index';
 import { CheckboxStories } from './stories/Checkbox/index';
@@ -26,7 +28,8 @@ export const StrictDomDemo = () => {
 
   return (
     <FluentProvider theme={webLightTheme} className={mergeClasses(classNames.root)}>
-      <PersonaStories />
+      <RadioGroupStories />
+      {/* <PersonaStories /> */}
       {/* <InputStories /> */}
       {/* <AvatarStories /> */}
       {/* <CheckboxStories /> */}

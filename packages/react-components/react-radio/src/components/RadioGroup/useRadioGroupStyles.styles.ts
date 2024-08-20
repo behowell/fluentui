@@ -1,4 +1,4 @@
-import { makeStyles, mergeClasses } from '@griffel/react';
+import { makeStyles, mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import { RadioGroupSlots, RadioGroupState } from './RadioGroup.types';
 import type { SlotClassNames } from '@fluentui/react-utilities';
 
