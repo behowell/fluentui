@@ -31,7 +31,7 @@ export const useDialog_unstable = (props: DialogProps): DialogState => {
 
     // if user prevents default then do not change state value
     // otherwise updates state value and trigger reference to the element that caused the opening
-    if (!data.event.isDefaultPrevented()) {
+    if (!data.event.isDefaultPrevented?.()) {
       setOpen(data.open);
     }
   });

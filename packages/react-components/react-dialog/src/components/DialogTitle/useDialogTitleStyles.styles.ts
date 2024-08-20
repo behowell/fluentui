@@ -1,4 +1,4 @@
-import { makeResetStyles, makeStyles, mergeClasses } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { DialogTitleSlots, DialogTitleState } from './DialogTitle.types';
 import type { SlotClassNames } from '@fluentui/react-utilities';
 import { typographyStyles } from '@fluentui/react-theme';
@@ -46,7 +46,7 @@ export const useDialogTitleInternalStyles = makeResetStyles({
   ...createFocusOutlineStyle(),
   overflow: 'visible',
   padding: 0,
-  borderStyle: 'none',
+  ...shorthands.borderStyle('none'),
   position: 'relative',
   boxSizing: 'content-box',
   backgroundColor: 'inherit',

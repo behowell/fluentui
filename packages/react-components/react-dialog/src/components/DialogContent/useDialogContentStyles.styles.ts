@@ -1,4 +1,4 @@
-import { makeResetStyles, mergeClasses } from '@griffel/react';
+import { makeResetStyles, mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import type { DialogContentSlots, DialogContentState } from './DialogContent.types';
 import type { SlotClassNames } from '@fluentui/react-utilities';
 import { tokens, typographyStyles } from '@fluentui/react-theme';

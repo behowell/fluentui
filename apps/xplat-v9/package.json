@@ -23,6 +23,7 @@
     "@fluentui/react-button": "*",
     "@fluentui/react-checkbox": "*",
     "@fluentui/react-combobox": "*",
+    "@fluentui/react-dialog": "*",
     "@fluentui/react-field": "*",
     "@fluentui/react-input": "*",
     "@fluentui/react-jsx-runtime": "*",

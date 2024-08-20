@@ -1,14 +1,10 @@
+/** @jsxRuntime automatic */
+/** @jsxImportSource @fluentui/react-jsx-runtime */
+
 import * as React from 'react';
-import {
-  Dialog,
-  DialogTrigger,
-  DialogSurface,
-  DialogTitle,
-  DialogBody,
-  DialogContent,
-  Button,
-} from '@fluentui/react-components';
-import story from './DialogTitleCustomAction.md';
+
+import { Button } from '@fluentui/react-button';
+import { Dialog, DialogBody, DialogContent, DialogSurface, DialogTitle, DialogTrigger } from '@fluentui/react-dialog';
 import { PlaceholderIcon as Dismiss24Regular } from '@fluentui/react-platform-adapter-preview';
 
 export const TitleCustomAction = () => {
@@ -37,12 +33,4 @@ export const TitleCustomAction = () => {
       </DialogSurface>
     </Dialog>
   );
-};
-
-TitleCustomAction.parameters = {
-  docs: {
-    description: {
-      story,
-    },
-  },
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { getIntrinsicElementProps, slot } from '@fluentui/react-utilities';
 import type { DialogTitleProps, DialogTitleState } from './DialogTitle.types';
 import { useDialogContext_unstable } from '../../contexts/dialogContext';
-import { Dismiss20Regular } from '@fluentui/react-icons';
+import { PlaceholderIcon as Dismiss20Regular } from '@fluentui/react-platform-adapter-preview';
 import { DialogTrigger } from '../DialogTrigger/DialogTrigger';
 import { useDialogTitleInternalStyles } from './useDialogTitleStyles.styles';
 

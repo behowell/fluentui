@@ -1,0 +1,59 @@
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@supports (-moz-appearance:button)", "&[data-fui-focus-visible]"]
+ LOG  [convertGriffelToStyleX] Unsupported array value for  overflowY
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'height: fit-content'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 3'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: 3'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnStart: 2'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnEnd: 4'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnStart: 1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 4'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: auto'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnEnd: 2'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'display: grid'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 1fr 1fr auto'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto 1fr auto'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: 1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnEnd: 3'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnStart: 3'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: pointer'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'boxShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'transform: scale(0.85) translateZ(0)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'boxShadow: var(--shadow64)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'transform: scale(1) translateZ(0)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 2'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: 2'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 33% 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto auto auto 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: -1'
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-within]:focus-within
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: default'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: inherit'
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  ::after
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  :focus-within::after
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  :focus-within:active::after
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outline: 2px solid transparent'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Unsupported selector  :active,:focus-within
+ LOG  [convertGriffelToStyleX] Unsupported selector  :hover,:focus-within
+ LOG  [convertGriffelToStyleX] Unsupported selector  :not(:focus-within),:hover:not(:focus-within)
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'boxShadow: var(--shadow2)'
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  ::placeholder
+ LOG  [convertGriffelToStyleX] Unsupported selector  > svg
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+ WARN  @fluentui/react-dialog [useFocusFirstElement]:

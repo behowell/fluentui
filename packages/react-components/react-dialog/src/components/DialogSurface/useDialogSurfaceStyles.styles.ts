@@ -1,4 +1,4 @@
-import { makeResetStyles, makeStyles, mergeClasses } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { SlotClassNames } from '@fluentui/react-utilities';
 import { tokens } from '@fluentui/react-theme';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
@@ -24,7 +24,7 @@ const useRootBaseStyle = makeResetStyles({
   inset: 0,
   padding: SURFACE_PADDING,
   margin: 'auto',
-  borderStyle: 'none',
+  ...shorthands.borderStyle('none'),
   overflow: 'unset',
   border: `${SURFACE_BORDER_WIDTH} solid ${tokens.colorTransparentStroke}`,
   borderRadius: tokens.borderRadiusXLarge,
