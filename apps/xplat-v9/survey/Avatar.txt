@@ -1,0 +1,5 @@
+ WARN  [warn] React Strict DOM: unsupported style value in "borderRadius:inherit"
+ ERROR  Warning: Failed prop type: Invalid props.style key `borderTopStyle` supplied to `Text`.
+ LOG  Rendering <span> with non-string children as <div>
+ WARN  [warn] React Strict DOM: unsupported style value in "display:inline-block"
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"

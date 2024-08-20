@@ -1,0 +1,3 @@
+cd /mnt/d/repos/fluentui-xplat2/apps/survey
+
+grep -E "LOG|WARN|ERROR" raw/Checkbox.txt | awk '!seen[$0]++' > Checkbox.txt

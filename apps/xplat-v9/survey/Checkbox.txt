@@ -1,0 +1,26 @@
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: pointer'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-within]:focus-within
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: default'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: inherit'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  Running "xplat-v9" with {"initialProps":null,"rootTag":11,"fabric":false}
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ LOG  Rendering <span> with non-string children as <div>
+ ERROR  [error] React Strict DOM: <input type="checkbox" /> is not implemented in React Native.
+ WARN  [warn] React Strict DOM: unsupported style value in "width:calc(16px + 2 * 8px)"
+ WARN  [warn] React Strict DOM: unrecognized custom property "--fui-Checkbox__indicator--backgroundColor"
+ WARN  [warn] React Strict DOM: unsupported style property "fill"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:8px 8px"
+ WARN  [warn] React Strict DOM: unsupported style value in "borderWidth:1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "width:100%" when used with "boxSizing:'content-box'". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".
+ ERROR  [error] React Strict DOM: invalid prop "htmlFor"
+ WARN  [warn] React Strict DOM: unsupported style value in "color:inherit"
+ WARN  [warn] React Strict DOM: unsupported style value in "marginTop:calc((16px - 20px) / 2)"
+ WARN  [warn] React Strict DOM: unsupported style value in "marginBottom:calc((16px - 20px) / 2)"
+ WARN  [warn] React Strict DOM: unsupported style value in "width:calc(20px + 2 * 8px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "marginTop:calc((20px - 20px) / 2)"
+ WARN  [warn] React Strict DOM: unsupported style value in "marginBottom:calc((20px - 20px) / 2)"
+ WARN  [warn] React Strict DOM: unsupported style value in "maxWidth:400px"
