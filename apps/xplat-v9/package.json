@@ -24,6 +24,7 @@
     "@fluentui/react-input": "*",
     "@fluentui/react-jsx-runtime": "*",
     "@fluentui/react-label": "*",
+    "@fluentui/react-persona": "*",
     "@fluentui/react-platform-adapter-preview": "*",
     "@fluentui/react-provider": "*",
     "@fluentui/react-theme": "*",
