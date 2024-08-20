@@ -7,6 +7,7 @@ import { tokens, webLightTheme } from '@fluentui/react-theme';
 import { InputStories } from './stories/Input/index.stories';
 import { RadioGroupStories } from './stories/RadioGroup/index.stories';
 import { DialogStories } from './stories/Dialog/index.stories';
+import { TabsStories } from './stories/Tabs/index.stories';
 import { ComboboxStories } from './stories/Combobox/index.stories';
 import { DropdownStories } from './stories/Dropdown/index.stories';
 import { SelectStories } from './stories/Select/index.stories';
@@ -33,7 +34,8 @@ export const StrictDomDemo = () => {
 
   return (
     <FluentProvider theme={webLightTheme} className={mergeClasses(classNames.root)}>
-      <DialogStories />
+      <TabsStories />
+      {/* <DialogStories /> */}
       {/* <AccordionStories /> */}
       {/* <ComboboxStories /> */}
       {/* <DropdownStories /> */}

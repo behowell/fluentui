@@ -18,6 +18,7 @@
     "windows": "react-native run-windows --sln windows/xplat-v9.sln"
   },
   "dependencies": {
+    "@fluentui/react-components": "*",
     "@fluentui/react-accordion": "*",
     "@fluentui/react-avatar": "*",
     "@fluentui/react-button": "*",

@@ -1,5 +1,5 @@
 import { SlotClassNames } from '@fluentui/react-utilities';
-import { makeStyles, mergeClasses } from '@griffel/react';
+import { makeStyles, mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import type { TabListSlots, TabListState } from './TabList.types';
 
 export const tabListClassNames: SlotClassNames<TabListSlots> = {

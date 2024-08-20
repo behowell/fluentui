@@ -1,6 +1,6 @@
 import type { TabSlots, TabState } from './Tab.types';
 
-import { makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { createCustomFocusIndicatorStyle } from '@fluentui/react-tabster';
 import { tokens, typographyStyles } from '@fluentui/react-theme';
 import { SlotClassNames } from '@fluentui/react-utilities';
