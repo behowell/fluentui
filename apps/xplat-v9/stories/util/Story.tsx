@@ -11,6 +11,7 @@ export type StoryProps = {
 export const Story = ({ title, story }: StoryProps) => (
   <div>
     <b>{title}</b>
-    <div style={{ display: 'flex', gap: '20px' }}>{story}</div>
+    <div style={{ display: 'flex', gap: '20px', margin: '20px' }}>{story}</div>
+    <br />
   </div>
 );

@@ -11,9 +11,9 @@ export const renderInput_unstable = (state: InputState) => {
   assertSlots<InputSlots>(state);
   return (
     <state.root>
-      {state.contentBefore && <state.contentBefore />}
+      {/* {state.contentBefore && <state.contentBefore />} */}
       <state.input />
-      {state.contentAfter && <state.contentAfter />}
+      {/* {state.contentAfter && <state.contentAfter />} */}
     </state.root>
   );
 };

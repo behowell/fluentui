@@ -1,6 +1,6 @@
 import { tokens, typographyStyles } from '@fluentui/react-theme';
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { InputSlots, InputState } from './Input.types';
 
 export const inputClassNames: SlotClassNames<InputSlots> = {
@@ -232,7 +232,7 @@ const useInputClassName = makeResetStyles({
   boxSizing: 'border-box',
   flexGrow: 1,
   minWidth: 0, // required to make the input shrink to fit the wrapper
-  borderStyle: 'none', // input itself never has a border (this is handled by inputWrapper)
+  ...shorthands.borderStyle('none'), // input itself never has a border (this is handled by inputWrapper)
   padding: `0 ${horizontalPadding.combined.medium}`,
   color: tokens.colorNeutralForeground1,
   // Use literal "transparent" (not from the theme) to always let the color from the root show through

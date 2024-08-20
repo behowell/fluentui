@@ -28,7 +28,7 @@ export const AvatarStories = () => (
     <Story title="Color: brand" story={<ColorBrand />} />
     <Story title="Color: colorful" story={<ColorColorful />} />
     <Story title="Color: palette" story={<ColorPalette />} />
-    <Story title="Active" story={<Active />} />
+    {/* <Story title="Active" story={<Active />} /> */}
     {/* <Story title="Active Appearance" story={<ActiveAppearance />} /> */}
     <Story title="Initials" story={<Initials />} />
     <Story title="Size" story={<Size />} />
