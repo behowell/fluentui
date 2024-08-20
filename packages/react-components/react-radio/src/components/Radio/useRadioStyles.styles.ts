@@ -164,7 +164,8 @@ const useIndicatorBaseClassName = makeResetStyles({
   justifyContent: 'center',
   overflow: 'hidden',
 
-  border: tokens.strokeWidthThin + ' solid',
+  ...shorthands.borderWidth(tokens.strokeWidthThin),
+  ...shorthands.borderStyle('solid'),
   borderRadius: tokens.borderRadiusCircular,
   margin: tokens.spacingVerticalS + ' ' + tokens.spacingHorizontalS,
   fill: 'currentColor',

@@ -1,15 +1,14 @@
- WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
- WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
- ERROR  [error] React Strict DOM: invalid prop "htmlFor"
  LOG  Rendering <span> with non-string children as <div>
  ERROR  [error] React Strict DOM: invalid prop "name"
  ERROR  [error] React Strict DOM: <input type="radio" /> is not implemented in React Native.
  WARN  [warn] React Strict DOM: unsupported style value in "width:calc(16px + 2 * 8px)"
  WARN  [warn] React Strict DOM: unsupported style property "fill"
- WARN  [warn] React Strict DOM: unsupported style property "border"
  WARN  [warn] React Strict DOM: unsupported style value in "margin:8px 8px"
+ ERROR  [error] React Strict DOM: invalid prop "htmlFor"
  WARN  [warn] React Strict DOM: unsupported style value in "marginTop:calc((16px - 20px) / 2)"
  WARN  [warn] React Strict DOM: unsupported style value in "marginBottom:calc((16px - 20px) / 2)"
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
  WARN  [warn] React Strict DOM: unsupported style property "overflowX"
  WARN  [warn] React Strict DOM: unsupported style property "overflowY"
  WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
