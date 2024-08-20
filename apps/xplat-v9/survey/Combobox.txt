@@ -1,0 +1,44 @@
+ LOG  [convertGriffelToStyleX] Unsupported selector  &:active
+ LOG  [convertGriffelToStyleX] Unsupported selector  :not(:focus-within),:hover:not(:focus-within)
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnStart: icon'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridColumnEnd: end'
+ LOG  [convertGriffelToStyleX] Unsupported selector  & svg
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: pointer'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'height: fit-content'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  &:not(:last-child)::after
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'display: grid'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: repeat(1fr)'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto auto'
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@supports (-moz-appearance:button)", "&[data-fui-focus-visible]"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@media (forced-colors: active)", ":hover", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@media (forced-colors: active)", ":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  & .fui-Button__icon
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridGap: var(--spacingHorizontalXXS)'
+ LOG  [convertGriffelToStyleX] Unsupported selector  > div
+ LOG  [convertGriffelToStyleX] Unsupported selector  > label
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
+ WARN  [warn] React Strict DOM: unsupported style property "justifyItems"
+ LOG  Rendering <span> with non-string children as <div>
+ WARN  [warn] React Strict DOM: unsupported style value in "display:inline-grid"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(10px + 2px)"
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `TextInput`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style value in "borderWidth:1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "width:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "height:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(6px + 2px)"
+ ERROR  [error] React Strict DOM: invalid prop "htmlFor"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(12px + 6px)"

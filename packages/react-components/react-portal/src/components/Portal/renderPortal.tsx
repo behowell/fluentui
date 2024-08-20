@@ -1,3 +1,6 @@
+/** @jsxRuntime automatic */
+/** @jsxImportSource @fluentui/react-jsx-runtime */
+
 import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 import type { PortalState } from './Portal.types';

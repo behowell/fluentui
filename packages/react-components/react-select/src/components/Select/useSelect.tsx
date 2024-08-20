@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useFieldControlProps_unstable } from '@fluentui/react-field';
 import { getPartitionedNativeProps, useEventCallback, slot } from '@fluentui/react-utilities';
-import { ChevronDownRegular } from '@fluentui/react-icons';
+import { PlaceholderIcon as ChevronDownRegular } from '@fluentui/react-platform-adapter-preview';
 import type { SelectProps, SelectState } from './Select.types';
 import { useOverrides_unstable as useOverrides } from '@fluentui/react-shared-contexts';
 

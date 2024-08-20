@@ -1,0 +1,37 @@
+ ERROR  [error] React Strict DOM: invalid prop "htmlFor"
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+ WARN  [warn] React Strict DOM: unsupported style property "appearance"
+ WARN  [warn] React Strict DOM: unsupported style value in "borderWidth:1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "height:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(10px + 2px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(12px + 6px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingLeft:calc(6px + 2px)"
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingRight:calc(10px
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingRight:calc(12px
+ WARN  [warn] React Strict DOM: unsupported style value in "paddingRight:calc(6px
+ WARN  [warn] React Strict DOM: unsupported style value in "width:12px"
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'boxShadow: none'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: pointer'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'display: grid'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowEnd: -1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowGap: var(--spacingVerticalXXS)'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridRowStart: 1'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateColumns: 33% 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'gridTemplateRows: auto auto auto 1fr'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineColor: transparent'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: solid'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineWidth: 2px'
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  &::after
+ LOG  [convertGriffelToStyleX] Unsupported pseudo-element  &:focus-within::after
+ LOG  [convertGriffelToStyleX] Unsupported selector  :not(:focus-within),:hover:not(:focus-within)
+ LOG  [convertGriffelToStyleX] Unsupported selector  & svg
+ LOG  [convertGriffelToStyleX] Unsupported selector  &:active
+ LOG  [convertGriffelToStyleX] Unsupported selector  &:hover
+ LOG  [convertGriffelToStyleX] Unsupported selector  > label
+ LOG  Rendering <span> with non-string children as <div>
+ LOG  Running "xplat-v9" with {"initialProps":null,"rootTag":11,"fabric":false}

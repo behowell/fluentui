@@ -32,6 +32,7 @@
     "@fluentui/scripts-tasks": "*"
   },
   "dependencies": {
+    "@fluentui/react-platform-adapter-preview": "*",
     "@fluentui/react-shared-contexts": "^9.19.0",
     "@fluentui/react-tabster": "^9.21.3",
     "@fluentui/react-utilities": "^9.18.9",

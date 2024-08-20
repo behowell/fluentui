@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Dropdown, makeStyles, Option, OptionGroup, shorthands, useId } from '@fluentui/react-components';
 import type { DropdownProps, OptionProps, OptionGroupProps } from '@fluentui/react-components';
 import {
-  AnimalCat24Filled,
-  AnimalDog24Filled,
-  AnimalRabbit24Filled,
-  AnimalTurtle24Filled,
-  FoodFish24Filled,
-  CheckboxChecked24Regular,
-} from '@fluentui/react-icons';
+  PlaceholderIcon as AnimalCat24Filled,
+  PlaceholderIcon as AnimalDog24Filled,
+  PlaceholderIcon as AnimalRabbit24Filled,
+  PlaceholderIcon as AnimalTurtle24Filled,
+  PlaceholderIcon as FoodFish24Filled,
+  PlaceholderIcon as CheckboxChecked24Regular,
+} from '@fluentui/react-platform-adapter-preview';
 
 const animalIcons = {
   Cat: AnimalCat24Filled,

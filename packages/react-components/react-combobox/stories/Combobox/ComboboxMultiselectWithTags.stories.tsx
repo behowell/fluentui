@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Combobox, makeStyles, Option, shorthands, tokens, useId } from '@fluentui/react-components';
 import type { ComboboxProps } from '@fluentui/react-components';
-import { Dismiss12Regular } from '@fluentui/react-icons';
+import { PlaceholderIcon as Dismiss12Regular } from '@fluentui/react-platform-adapter-preview';
 
 const useStyles = makeStyles({
   root: {

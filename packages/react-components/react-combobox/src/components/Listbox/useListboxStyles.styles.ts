@@ -1,6 +1,6 @@
 import { tokens } from '@fluentui/react-theme';
 import { SlotClassNames } from '@fluentui/react-utilities';
-import { makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import type { ListboxSlots, ListboxState } from './Listbox.types';
 
 export const listboxClassNames: SlotClassNames<ListboxSlots> = {

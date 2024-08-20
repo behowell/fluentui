@@ -34,14 +34,14 @@ export function useActiveDescendant<TActiveParentElement extends HTMLElement, TL
   const attributeVisibilityRef = React.useRef(true);
 
   const removeAttribute = React.useCallback(() => {
-    activeParentRef.current?.removeAttribute('aria-activedescendant');
+    activeParentRef?.current?.removeAttribute?.('aria-activedescendant');
   }, []);
   const setAttribute = React.useCallback((id?: string) => {
     if (id) {
       activeIdRef.current = id;
     }
     if (attributeVisibilityRef.current && activeIdRef.current) {
-      activeParentRef.current?.setAttribute('aria-activedescendant', activeIdRef.current);
+      activeParentRef?.current?.setAttribute?.('aria-activedescendant', activeIdRef.current);
     }
   }, []);
 
