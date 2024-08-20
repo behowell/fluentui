@@ -11,12 +11,12 @@ import {
 } from '@fluentui/react-utilities';
 import { CheckboxProps, CheckboxState } from './Checkbox.types';
 import {
-  Checkmark12Filled,
-  Checkmark16Filled,
-  Square12Filled,
-  Square16Filled,
-  CircleFilled,
-} from '@fluentui/react-icons';
+  PlaceholderIcon as Checkmark12Filled,
+  PlaceholderIcon as Checkmark16Filled,
+  PlaceholderIcon as Square12Filled,
+  PlaceholderIcon as Square16Filled,
+  PlaceholderIcon as CircleFilled,
+} from '@fluentui/react-platform-adapter-preview';
 import { Label } from '@fluentui/react-label';
 import { useFocusWithin } from '@fluentui/react-tabster';
 

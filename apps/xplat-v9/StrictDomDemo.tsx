@@ -4,7 +4,8 @@ import { Label } from '@fluentui/react-label';
 import { mergeClasses, makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { FluentProvider } from '@fluentui/react-provider';
 import { tokens, webLightTheme } from '@fluentui/react-theme';
-import { AvatarStories } from './stories/Avatar/AvatarStories';
+import { AvatarStories } from './stories/Avatar/index';
+import { CheckboxStories } from './stories/Checkbox/index';
 
 const useClassNames = makeStyles({
   root: {
@@ -24,6 +25,7 @@ export const StrictDomDemo = () => {
   return (
     <FluentProvider theme={webLightTheme} className={mergeClasses(classNames.root)}>
       <AvatarStories />
+      {/* <CheckboxStories /> */}
     </FluentProvider>
   );
 };

@@ -1,4 +1,4 @@
-import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeResetStyles, makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
 import { tokens } from '@fluentui/react-theme';
 import { CheckboxSlots, CheckboxState } from './Checkbox.types';
@@ -129,9 +129,9 @@ const useIndicatorBaseClassName = makeResetStyles({
 
   color: `var(${vars.indicatorColor})`,
   backgroundColor: `var(${vars.indicatorBackgroundColor})`,
-  borderColor: `var(${vars.indicatorBorderColor}, ${tokens.colorNeutralStrokeAccessible})`,
-  borderStyle: 'solid',
-  borderWidth: tokens.strokeWidthThin,
+  ...shorthands.borderColor(`var(${vars.indicatorBorderColor}, ${tokens.colorNeutralStrokeAccessible})`),
+  ...shorthands.borderStyle('solid'),
+  ...shorthands.borderWidth(tokens.strokeWidthThin),
   borderRadius: tokens.borderRadiusSmall,
   margin: tokens.spacingVerticalS + ' ' + tokens.spacingHorizontalS,
   fill: 'currentColor',
