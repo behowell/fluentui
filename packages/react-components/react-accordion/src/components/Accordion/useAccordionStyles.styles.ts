@@ -1,5 +1,5 @@
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import { mergeClasses } from '@griffel/react';
+import { mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import type { AccordionSlots, AccordionState } from './Accordion.types';
 
 export const accordionClassNames: SlotClassNames<AccordionSlots> = {

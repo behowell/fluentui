@@ -13,6 +13,7 @@ import { FieldStories } from './stories/Field/index.stories';
 import { PersonaStories } from './stories/Persona/index.stories';
 import { AvatarStories } from './stories/Avatar/index';
 import { CheckboxStories } from './stories/Checkbox/index';
+import { AccordionStories } from './stories/Accordion/index.stories';
 
 const useClassNames = makeStyles({
   root: {
@@ -31,7 +32,8 @@ export const StrictDomDemo = () => {
 
   return (
     <FluentProvider theme={webLightTheme} className={mergeClasses(classNames.root)}>
-      <ComboboxStories />
+      <AccordionStories />
+      {/* <ComboboxStories /> */}
       {/* <DropdownStories /> */}
       {/* <RadioGroupStories /> */}
       {/* <PersonaStories /> */}

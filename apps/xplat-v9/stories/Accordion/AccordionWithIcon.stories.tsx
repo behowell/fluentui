@@ -1,7 +1,11 @@
+/** @jsxRuntime automatic */
+/** @jsxImportSource @fluentui/react-jsx-runtime */
+
 import * as React from 'react';
+
 import { PlaceholderIcon as RocketRegular } from '@fluentui/react-platform-adapter-preview';
 
-import { Accordion, AccordionHeader, AccordionItem, AccordionPanel } from '@fluentui/react-components';
+import { Accordion, AccordionHeader, AccordionItem, AccordionPanel } from '@fluentui/react-accordion';
 
 export const WithIcon = () => (
   <Accordion>

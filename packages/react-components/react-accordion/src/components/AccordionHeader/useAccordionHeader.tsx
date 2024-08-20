@@ -3,7 +3,7 @@ import { getIntrinsicElementProps, useEventCallback, slot, isResolvedShorthand }
 import { useARIAButtonProps } from '@fluentui/react-aria';
 import type { AccordionHeaderProps, AccordionHeaderState } from './AccordionHeader.types';
 import { useAccordionContext_unstable } from '../../contexts/accordion';
-import { ChevronRightRegular } from '@fluentui/react-icons';
+import { PlaceholderIcon as ChevronRightRegular } from '@fluentui/react-platform-adapter-preview';
 import { useFluent_unstable as useFluent } from '@fluentui/react-shared-contexts';
 import { useAccordionItemContext_unstable } from '../../contexts/accordionItem';
 

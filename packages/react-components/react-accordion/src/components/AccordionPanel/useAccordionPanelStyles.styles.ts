@@ -1,5 +1,5 @@
 import type { SlotClassNames } from '@fluentui/react-utilities';
-import { makeStyles, mergeClasses, shorthands } from '@griffel/react';
+import { makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { tokens } from '@fluentui/react-theme';
 
 import type { AccordionPanelSlots, AccordionPanelState } from './AccordionPanel.types';

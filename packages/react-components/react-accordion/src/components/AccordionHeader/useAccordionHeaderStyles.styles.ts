@@ -1,4 +1,4 @@
-import { shorthands, makeStyles, mergeClasses } from '@griffel/react';
+import { shorthands, makeStyles, mergeClasses } from '@fluentui/react-platform-adapter-preview';
 import { createFocusOutlineStyle } from '@fluentui/react-tabster';
 import { tokens, typographyStyles } from '@fluentui/react-theme';
 import type { AccordionHeaderSlots, AccordionHeaderState } from './AccordionHeader.types';

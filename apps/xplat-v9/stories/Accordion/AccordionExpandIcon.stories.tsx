@@ -1,4 +1,8 @@
+/** @jsxRuntime automatic */
+/** @jsxImportSource @fluentui/react-jsx-runtime */
+
 import * as React from 'react';
+
 import {
   PlaceholderIcon as Add20Filled,
   PlaceholderIcon as Subtract20Filled,
@@ -9,7 +13,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionToggleEventHandler,
-} from '@fluentui/react-components';
+} from '@fluentui/react-accordion';
 
 export const ExpandIcon = () => {
   const [openItem, setOpenItems] = React.useState(0);

@@ -1,0 +1,14 @@
+ WARN  [warn] React Strict DOM: unsupported style value in "borderWidth:1px"
+ WARN  [warn] React Strict DOM: unsupported style value in "width:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "height:12px"
+ WARN  [warn] React Strict DOM: unsupported style value in "color:inherit"
+ LOG  Rendering <span> with non-string children as <div>
+ WARN  [warn] React Strict DOM: unsupported style value in "display:inline-block"
+ WARN  [warn] React Strict DOM: unsupported style value in "backgroundColor:inherit"
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+ WARN  [warn] React Strict DOM: unsupported style property "WebkitAppearance"
+ WARN  [warn] React Strict DOM: unsupported style value in "height:100%" when used with "boxSizing:'content-box'". Expected a value that resolves to a number. Percentage values can only be used with "boxSizing:'border-box'".
+ WARN  [warn] React Strict DOM: unsupported style value in "gap:20px"
+ WARN  [warn] React Strict DOM: unsupported style value in "margin:20px"
+ WARN  [warn] React Strict DOM: unsupported style property "backgroundImage"
