@@ -1,6 +1,6 @@
-cd /mnt/d/repos/fluentui-xplat2/apps/survey
+cd /mnt/d/repos/fluentui-xplat2/apps/xplat-v9/survey
 
-grep -E "LOG|WARN|ERROR" raw/Input.txt | awk '!seen[$0]++' > Input.txt
+grep -E "LOG|WARN|ERROR" raw/Tabs.txt | awk '!seen[$0]++' > Tabs.txt
 
 
 --

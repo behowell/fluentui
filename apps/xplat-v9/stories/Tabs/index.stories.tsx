@@ -22,16 +22,16 @@ export const TabsStories = () => (
   <div>
     <Story title="Default" story={<Default />} />
     <Story title="Horizontal" story={<Horizontal />} />
-    {/*  <Story title="Vertical" story={<Vertical />} />
-    <Story title="Appearance" story={<Appearance />} />
+    {/* <Story title="Vertical" story={<Vertical />} /> */}
+    {/* <Story title="Appearance" story={<Appearance />} /> */}
     <Story title="Disabled" story={<Disabled />} />
-    <Story title="Size Small" story={<SizeSmall />} />
-    <Story title="Size Medium" story={<SizeMedium />} />
-    <Story title="Size Large" story={<SizeLarge />} />
-    <Story title="With Icon" story={<WithIcon />} />
+    {/* <Story title="Size Small" story={<SizeSmall />} /> */}
+    {/* <Story title="Size Medium" story={<SizeMedium />} /> */}
+    {/* <Story title="Size Large" story={<SizeLarge />} /> */}
+    {/* <Story title="With Icon" story={<WithIcon />} /> */}
     <Story title="Icon Only" story={<IconOnly />} />
-    <Story title="Select Tab On Focus" story={<SelectTabOnFocus />} />
-    <Story title="With Overflow" story={<WithOverflow />} />
-    <Story title="With Panels" story={<WithPanels />} /> */}
+    {/* <Story title="Select Tab On Focus" story={<SelectTabOnFocus />} /> */}
+    {/* <Story title="With Overflow" story={<WithOverflow />} /> */}
+    <Story title="With Panels" story={<WithPanels />} />
   </div>
 );

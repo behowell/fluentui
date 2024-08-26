@@ -3,9 +3,9 @@
 
 import * as React from 'react';
 
-import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { Tab, TabList } from '@fluentui/react-components';
-import { PlaceholderIcon } from '@fluentui/react-platform-adapter-preview';
+import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon } from '../util/PlaceholderIcon';
 
 const CalendarMonth = PlaceholderIcon;
 

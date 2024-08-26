@@ -19,7 +19,8 @@ import {
   Overflow,
   OverflowItem,
 } from '@fluentui/react-components';
-import { makeStyles, mergeClasses, shorthands, PlaceholderIcon } from '@fluentui/react-platform-adapter-preview';
+import { makeStyles, mergeClasses, shorthands } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon } from '../util/PlaceholderIcon';
 
 const Calendar3Day = PlaceholderIcon; // bundleIcon(Calendar3DayFilled, Calendar3DayRegular);
 const CalendarAgenda = PlaceholderIcon; //bundleIcon(CalendarAgendaFilled, CalendarAgendaRegular);

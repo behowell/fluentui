@@ -3,8 +3,9 @@
 
 import * as React from 'react';
 
-import { PlaceholderIcon, makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { Tab, TabList } from '@fluentui/react-components';
+import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon } from '../util/PlaceholderIcon';
 
 const CalendarMonth = PlaceholderIcon;
 
@@ -40,9 +41,9 @@ export const SizeMedium = () => {
       <TabList defaultSelectedValue="tab2" size="medium">
         {renderTabs()}
       </TabList>
-      <TabList defaultSelectedValue="tab2" size="medium" vertical>
+      {/* <TabList defaultSelectedValue="tab2" size="medium" vertical>
         {renderTabs()}
-      </TabList>
+      </TabList> */}
     </div>
   );
 };
