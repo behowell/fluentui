@@ -3,6 +3,7 @@ cd /mnt/d/repos/fluentui-xplat2/apps/xplat-v9/survey
 grep -E "LOG|WARN|ERROR" raw/Combobox.txt | awk '!seen[$0]++' > Combobox.txt
 grep -E "LOG|WARN|ERROR" raw/Button.txt | awk '!seen[$0]++' > Button.txt
 grep -E "LOG|WARN|ERROR" raw/Tabs.txt | awk '!seen[$0]++' > Tabs.txt
+grep -E "LOG|WARN|ERROR" raw/ProgressBar.txt | awk '!seen[$0]++' > ProgressBar.txt
 
 
 --

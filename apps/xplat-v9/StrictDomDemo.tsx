@@ -17,6 +17,7 @@ import { AvatarStories } from './stories/Avatar/index';
 import { CheckboxStories } from './stories/Checkbox/index';
 import { AccordionStories } from './stories/Accordion/index.stories';
 import { ButtonStories } from './stories/Button/index';
+import { ProgressBarStories } from './stories/ProgressBar/index.stories';
 
 const useClassNames = makeStyles({
   root: {
@@ -47,7 +48,8 @@ export const StrictDomDemo = () => {
       {/* <AvatarStories /> */}
       {/* <CheckboxStories /> */}
       {/* <SelectStories /> */}
-      <ButtonStories />
+      {/* <ButtonStories /> */}
+      <ProgressBarStories />
     </FluentProvider>
   );
 };
