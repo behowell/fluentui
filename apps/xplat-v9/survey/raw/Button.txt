@@ -1,0 +1,2566 @@
+
+  WARNING: You should run npx react-native@latest to ensure you're always using the most current version of the CLI. NPX has cached version (0.73.6) != current release (0.75.2)
+
+info Welcome to React Native v0.73
+info Starting dev server on port 8081...
+
+                        ▒▒▓▓▓▓▒▒
+                     ▒▓▓▓▒▒░░▒▒▓▓▓▒
+                  ▒▓▓▓▓░░░▒▒▒▒░░░▓▓▓▓▒
+                 ▓▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓
+                 ▓▓░░░░░▒▓▓▓▓▓▓▒░░░░░▓▓
+                 ▓▓░░▓▓▒░░░▒▒░░░▒▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▒▒▒▒▓▓▓▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░▓▓
+                 ▓▓▒░░▒▒▓▓▓▓▓▓▓▓▒░░░▒▓▓
+                  ▒▓▓▓▒░░░▒▓▓▒░░░▒▓▓▓▒
+                     ▒▓▓▓▒░░░░▒▓▓▓▒
+                        ▒▒▓▓▓▓▒▒
+
+
+                Welcome to Metro v0.80.5
+              Fast - Scalable - Integrated
+
+
+info React Native v0.75.2 is now available (your project is running on v0.73.6).
+info Changelog: https://github.com/facebook/react-native/releases/tag/v0.75.2
+info Diff: https://react-native-community.github.io/upgrade-helper/?from=0.75.2
+info For more info, check out "https://reactnative.dev/docs/upgrading?os=windows".
+info Dev server ready
+
+i - run on iOS
+a - run on Android
+d - open Dev Menu
+r - reload app
+
+ BUNDLE  ./index.js
+
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: pointer'
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'outlineStyle: none'
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@supports (-moz-appearance:button)", "&[data-fui-focus-visible]"]
+ LOG  [convertGriffelToStyleX] Converting 'display: inline-flex' to 'display: flex'
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@media (forced-colors: active)", ":hover", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@media (forced-colors: active)", ":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Unsupported selector  & .fui-Button__icon
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Ignoring unsupported property 'cursor: not-allowed'
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-filled"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Icon-regular"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  [":hover:active", "& .fui-Button__icon"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  ["@supports (-moz-appearance:button)", "&[data-fui-focus-visible]"]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Unsupported selector  &[data-fui-focus-visible]
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'columnGap' to 'gap'
+ LOG  [convertGriffelToStyleX] Converting 'rowGap' to 'gap'
+ LOG  Running "xplat-v9" with {"initialProps":null,"rootTag":11,"fabric":false}
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "fontSize": 24,
+  "fontWeight": "bold",
+  "position": "static",
+  "userSelect": "auto"
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.h1 (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto"
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by ButtonStories)
+    in RCTText (created by Text)
+    in Text (created by html.h1)
+    in html.h1 (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at Default
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at Default
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at Default
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 14,
+  "fontWeight": "600",
+  "lineHeight": "20pxemem",
+  "color": "#242424",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Default)
+    in Default (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Shape
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 14,
+  "fontWeight": "600",
+  "lineHeight": "20pxemem",
+  "color": "#ffffff",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Appearance)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Appearance)
+    in Appearance (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 14,
+  "fontWeight": "600",
+  "lineHeight": "20pxemem",
+  "color": "#424242",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Appearance)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Appearance)
+    in Appearance (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Appearance
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 12,
+  "fontWeight": "400",
+  "lineHeight": "16pxemem",
+  "color": "#242424",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Size)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Size)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Size)
+    in Size (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Size
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 16,
+  "fontWeight": "600",
+  "lineHeight": "22pxemem",
+  "color": "#242424",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Size)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Size)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Size)
+    in Size (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ ERROR  Warning: Failed prop type: Invalid prop `position` of value `static` supplied to `Text`, expected one of ["absolute","relative"].
+Bad object: {
+  "position": "static",
+  "userSelect": "auto",
+  "color": null,
+  "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontSize": 14,
+  "fontWeight": "600",
+  "lineHeight": "20pxemem",
+  "flexShrink": 1
+}
+    at Text (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:82811:27)
+    in html.span (created by Button)
+    in RCTView (created by TextAncestorContext)
+    in View (created by Pressable)
+    in Pressable (created by Pressable)
+    in html.button (created by Button)
+    in _c (created by Disabled)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Disabled)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by Disabled)
+    in Disabled (created by ButtonStories)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by ButtonStories)
+    in ButtonStories (created by StrictDomDemo)
+    in RCTView (created by TextAncestorContext)
+    in View (created by html.div)
+    in html.div (created by FluentProvider)
+    in TextDirectionProvider (created by FluentProvider)
+    in ThemeProvider (created by _XPlatProvider)
+    in _XPlatProvider (created by FluentProvider)
+    in _c (created by StrictDomDemo)
+    in StrictDomDemo (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in RCTScrollContentView (created by ScrollView)
+    in RCTScrollView (created by ScrollView)
+    in ScrollView (created by ScrollView)
+    in ScrollView (created by App)
+    in RCTView (created by TextAncestorContext)
+    in View (created by App)
+    in App
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in RCTView (created by TextAncestorContext)
+    in View (created by AppContainer)
+    in AppContainer
+    in xplat-v9(RootComponent)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at Disabled
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowX"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "overflowY"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)
+ WARN  [warn] React Strict DOM: unsupported style property "forcedColorAdjust"
+    at html.button (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:178651:51)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at WithLongText
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at ButtonStories
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at html.div (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:129257:43)
+    at TextDirectionProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:135978:24)
+    at ThemeProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:128516:25)
+    at _XPlatProvider (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126971:29)
+    at _c (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:136441:67)
+    at StrictDomDemo
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTScrollContentView
+    at RCTScrollView
+    at ScrollView (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:67251:36)
+    at ScrollView
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at App (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:126366:54)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at RCTView
+    at View (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64855:43)
+    at AppContainer (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:64693:36)
+    at xplat-v9(RootComponent) (http://localhost:8081/index.bundle//&platform=windows&dev=true&hot=true&inlineSourceMap=true:111313:28)

@@ -142,7 +142,7 @@ describe('Avatar', () => {
   });
 
   it('sets role="img" on the root', () => {
-    const rootRef = React.createRef<HTMLSpanElement>();
+    const rootRef = React.createRef<HTMLDivElement>();
     render(<Avatar ref={rootRef} image={{ src: 'avatar.png' }} />);
 
     expect(rootRef.current?.getAttribute('role')).toBe('img');
@@ -164,7 +164,7 @@ describe('Avatar', () => {
   });
 
   it('sets aria-hidden on the icon', () => {
-    const iconRef = React.createRef<HTMLSpanElement>();
+    const iconRef = React.createRef<HTMLDivElement>();
     render(<Avatar icon={{ ref: iconRef }} />);
 
     expect(iconRef.current?.getAttribute('aria-hidden')).toBeTruthy();

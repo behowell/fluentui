@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { getIntrinsicElementProps, useId, useMergedRefs, slot } from '@fluentui/react-utilities';
 import { useActiveDescendantContext } from '@fluentui/react-aria';
-import {
-  PlaceholderIcon as CheckmarkFilled,
-  PlaceholderIcon as Checkmark12Filled,
-} from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as CheckmarkFilled, PlaceholderIcon as Checkmark12Filled } from './PlaceholderIcon';
 import { useListboxContext_unstable } from '../../contexts/ListboxContext';
 import type { OptionValue } from '../../utils/OptionCollection.types';
 import type { OptionProps, OptionState } from './Option.types';

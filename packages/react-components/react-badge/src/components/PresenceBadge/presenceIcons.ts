@@ -44,7 +44,7 @@ import {
   PlaceholderIcon as PresenceUnknown12Regular,
   PlaceholderIcon as PresenceUnknown16Regular,
   PlaceholderIcon as PresenceUnknown20Regular,
-} from '@fluentui/react-platform-adapter-preview';
+} from './PlaceholderIcon';
 import type { PresenceBadgeState } from './PresenceBadge.types';
 
 export const presenceAwayRegular: Record<PresenceBadgeState['size'], React.FunctionComponent> = {

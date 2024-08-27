@@ -148,10 +148,10 @@ export type AvatarSizes = AvatarSize;
 
 // @public (undocumented)
 export type AvatarSlots = {
-    root: Slot<'span'>;
+    root: Slot<'div'>;
     image?: Slot<'img'>;
-    initials?: Slot<'span'>;
-    icon?: Slot<'span'>;
+    initials?: Slot<'div'>;
+    icon?: Slot<'div'>;
     badge?: Slot<typeof PresenceBadge>;
 };
 

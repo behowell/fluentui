@@ -2,7 +2,7 @@ import * as React from 'react';
 import { getIntrinsicElementProps, mergeCallbacks, useId, slot } from '@fluentui/react-utilities';
 import { getInitials } from '../../utils/index';
 import type { AvatarNamedColor, AvatarProps, AvatarState } from './Avatar.types';
-import { PlaceholderIcon as PersonRegular } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as PersonRegular } from './PlaceholderIcon';
 import { PresenceBadge } from '@fluentui/react-badge';
 import { useFluent_unstable as useFluent } from '@fluentui/react-shared-contexts';
 import { useAvatarContext } from '../../contexts/AvatarContext';
@@ -34,17 +34,17 @@ export const useAvatar_unstable = (props: AvatarProps, ref: React.Ref<HTMLElemen
 
   const root: AvatarState['root'] = slot.always(
     getIntrinsicElementProps(
-      'span',
+      'div',
       {
         role: 'img',
         id: baseId,
         // aria-label and/or aria-labelledby are resolved below
         ...props,
-        ref,
+        ref: ref as React.Ref<HTMLDivElement>,
       },
       /* excludedPropNames: */ ['name'],
     ),
-    { elementType: 'span' },
+    { elementType: 'div' },
   );
   const [imageHidden, setImageHidden] = React.useState<true | undefined>(undefined);
   let image: AvatarState['image'] = slot.optional(props.image, {
@@ -64,7 +64,7 @@ export const useAvatar_unstable = (props: AvatarProps, ref: React.Ref<HTMLElemen
       children: getInitials(name, dir === 'rtl', { firstInitialOnly: size <= 16 }),
       id: baseId + '__initials',
     },
-    elementType: 'span',
+    elementType: 'div',
   }); // Don't render the initials slot if it's empty
   if (!initials?.children) {
     initials = undefined;
@@ -74,7 +74,7 @@ export const useAvatar_unstable = (props: AvatarProps, ref: React.Ref<HTMLElemen
     icon = slot.optional(props.icon, {
       renderByDefault: true,
       defaultProps: { children: <PersonRegular />, 'aria-hidden': true },
-      elementType: 'span',
+      elementType: 'div',
     });
   }
   const badge: AvatarState['badge'] = slot.optional(props.badge, {
@@ -116,7 +116,7 @@ export const useAvatar_unstable = (props: AvatarProps, ref: React.Ref<HTMLElemen
     activeAppearance,
     activeAriaLabelElement,
     color,
-    components: { root: 'span', initials: 'span', icon: 'span', image: 'img', badge: PresenceBadge },
+    components: { root: 'div', initials: 'div', icon: 'div', image: 'img', badge: PresenceBadge },
     root,
     initials,
     icon,

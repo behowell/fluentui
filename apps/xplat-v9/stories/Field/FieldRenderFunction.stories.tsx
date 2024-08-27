@@ -5,7 +5,8 @@ import * as React from 'react';
 
 import { Field } from '@fluentui/react-field';
 import { Input } from '@fluentui/react-input';
-import { makeStyles, PlaceholderIcon as AnimalCat24Regular } from '@fluentui/react-platform-adapter-preview';
+import { makeStyles } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as AnimalCat24Regular } from '../util/PlaceholderIcon';
 
 const useCatInputStyles = makeStyles({
   root: {

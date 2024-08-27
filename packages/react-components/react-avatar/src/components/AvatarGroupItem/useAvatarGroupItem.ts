@@ -50,7 +50,7 @@ export const useAvatarGroupItem_unstable = (
     }),
     avatar: slot.always(props.avatar, {
       defaultProps: {
-        ref,
+        ref: ref as React.Ref<HTMLDivElement>,
         size,
         color: 'colorful',
         ...avatarSlotProps,

@@ -17,7 +17,7 @@ export type AvatarSize = 16 | 20 | 24 | 28 | 32 | 36 | 40 | 48 | 56 | 64 | 72 | 
 export type AvatarShape = 'circular' | 'square';
 
 export type AvatarSlots = {
-  root: Slot<'span'>;
+  root: Slot<'div'>;
 
   /**
    * The Avatar's image.
@@ -34,14 +34,14 @@ export type AvatarSlots = {
    *
    * The initials are displayed when there is no image (including while the image is loading).
    */
-  initials?: Slot<'span'>;
+  initials?: Slot<'div'>;
 
   /**
    * Icon to be displayed when the avatar doesn't have an image or initials.
    *
    * @default `PersonRegular` (the default icon's size depends on the Avatar's size)
    */
-  icon?: Slot<'span'>;
+  icon?: Slot<'div'>;
 
   /**
    * Badge to show the avatar's presence status.

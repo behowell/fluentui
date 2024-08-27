@@ -11,9 +11,8 @@ import {
   PlaceholderIcon as AnimalTurtle24Filled,
   PlaceholderIcon as CheckboxChecked24Regular,
   PlaceholderIcon as FoodFish24Filled,
-  makeStyles,
-  shorthands,
-} from '@fluentui/react-platform-adapter-preview';
+} from '../util/PlaceholderIcon';
+import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { useId } from '@fluentui/react-utilities';
 
 const animalIcons = {

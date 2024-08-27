@@ -5,7 +5,8 @@ import * as React from 'react';
 
 import { Field } from '@fluentui/react-field';
 import { Input } from '@fluentui/react-input';
-import { makeResetStyles, PlaceholderIcon as SparkleFilled } from '@fluentui/react-platform-adapter-preview';
+import { makeResetStyles } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as SparkleFilled } from '../util/PlaceholderIcon';
 import { tokens } from '@fluentui/react-theme';
 
 const useStackClassName = makeResetStyles({

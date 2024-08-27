@@ -4,11 +4,8 @@
 import * as React from 'react';
 
 import { Combobox, ComboboxProps, Option, OptionGroup, OptionGroupProps, OptionProps } from '@fluentui/react-combobox';
-import {
-  PlaceholderIcon as CheckmarkCircle20Filled,
-  makeStyles,
-  shorthands,
-} from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as CheckmarkCircle20Filled } from '../util/PlaceholderIcon';
+import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { useId } from '@fluentui/react-utilities';
 
 const CustomOption = (props: OptionProps) => {

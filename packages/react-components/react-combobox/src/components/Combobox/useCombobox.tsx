@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { useActiveDescendant } from '@fluentui/react-aria';
 import { useFieldControlProps_unstable } from '@fluentui/react-field';
-import {
-  PlaceholderIcon as ChevronDownIcon,
-  PlaceholderIcon as DismissIcon,
-} from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as ChevronDownIcon, PlaceholderIcon as DismissIcon } from './PlaceholderIcon';
 import {
   getPartitionedNativeProps,
   mergeCallbacks,

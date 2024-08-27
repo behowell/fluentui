@@ -4,7 +4,7 @@ import {
   PlaceholderIcon as CheckmarkCircle12Filled,
   PlaceholderIcon as ErrorCircle12Filled,
   PlaceholderIcon as Warning12Filled,
-} from '@fluentui/react-platform-adapter-preview';
+} from './PlaceholderIcon';
 import { Label } from '@fluentui/react-label';
 import { getIntrinsicElementProps, useId, slot } from '@fluentui/react-utilities';
 import type { FieldProps, FieldState } from './Field.types';

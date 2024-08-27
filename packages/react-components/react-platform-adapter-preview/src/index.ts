@@ -11,6 +11,3 @@ export { isReactNative } from './utilities/isReactNative';
 // re-export some griffel types to have fluent use the griffel adapter instead of griffel directly
 export { makeStyles as makeStylesCore } from '@griffel/core';
 export { TextDirectionProvider, useRenderer_unstable } from '@griffel/react';
-
-// Icons
-export { PlaceholderIcon } from './icons/PlaceholderIcon';

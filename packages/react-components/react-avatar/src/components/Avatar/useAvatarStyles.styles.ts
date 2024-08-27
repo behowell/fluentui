@@ -72,8 +72,10 @@ const useIconInitialsClassName = makeResetStyles({
   boxSizing: 'border-box',
   top: 0,
   left: 0,
-  width: '100%',
-  height: '100%',
+  // width: '100%',
+  // height: '100%',
+  right: 0,
+  bottom: 0,
   lineHeight: '1',
   ...shorthands.border(tokens.strokeWidthThin, 'solid', tokens.colorTransparentStroke),
 

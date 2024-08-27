@@ -30,8 +30,8 @@ export const AccordionStories = () => (
     {/* <Story title="Heading Levels" story={<HeadingLevels />} /> */}
     <Story title="Inline" story={<Inline />} />
     <Story title="Disabled" story={<Disabled />} />
-    <Story title="Expand Icon" story={<ExpandIcon />} />
-    <Story title="Expand Icon Position" story={<ExpandIconPosition />} />
-    <Story title="With Icon" story={<WithIcon />} />
+    {/* <Story title="Expand Icon" story={<ExpandIcon />} /> */}
+    {/* <Story title="Expand Icon Position" story={<ExpandIconPosition />} />  */}
+    {/* <Story title="With Icon" story={<WithIcon />} /> */}
   </div>
 );

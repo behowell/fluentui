@@ -16,7 +16,7 @@ import {
   PlaceholderIcon as Square12Filled,
   PlaceholderIcon as Square16Filled,
   PlaceholderIcon as CircleFilled,
-} from '@fluentui/react-platform-adapter-preview';
+} from './PlaceholderIcon';
 import { Label } from '@fluentui/react-label';
 import { useFocusWithin } from '@fluentui/react-tabster';
 

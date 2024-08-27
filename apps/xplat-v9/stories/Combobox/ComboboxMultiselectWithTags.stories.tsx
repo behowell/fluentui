@@ -5,7 +5,8 @@ import * as React from 'react';
 
 import { Button } from '@fluentui/react-button';
 import { Combobox, ComboboxProps, Option } from '@fluentui/react-combobox';
-import { PlaceholderIcon as Dismiss12Regular, makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
+import { PlaceholderIcon as Dismiss12Regular } from '../util/PlaceholderIcon';
+import { makeStyles, shorthands } from '@fluentui/react-platform-adapter-preview';
 import { tokens } from '@fluentui/react-theme';
 import { useId } from '@fluentui/react-utilities';
 

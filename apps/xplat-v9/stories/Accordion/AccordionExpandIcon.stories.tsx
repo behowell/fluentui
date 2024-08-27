@@ -24,7 +24,7 @@ export const ExpandIcon = () => {
     <Accordion onToggle={handleToggle} openItems={openItem}>
       <AccordionItem value={1}>
         <AccordionHeader expandIcon={openItem === 1 ? <Subtract20Filled /> : <Add20Filled />}>
-          Accordion Header 1
+          <div>Accordion Header 1</div>
         </AccordionHeader>
         <AccordionPanel>
           <div>Accordion Panel 1</div>
