@@ -13,7 +13,6 @@ import {
   useIsomorphicLayoutEffect,
   useIsSSR,
   useMergedRefs,
-  useTimeout,
   getTriggerChild,
   mergeCallbacks,
   useEventCallback,
@@ -37,7 +36,6 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   const context = useTooltipVisibility();
   const isServerSideRender = useIsSSR();
   const { targetDocument } = useFluent();
-  const [setDelayTimeout, clearDelayTimeout] = useTimeout();
 
   const {
     appearance = 'normal',
@@ -52,19 +50,70 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
     mountNode,
   } = props;
 
-  const [visible, setVisibleInternal] = useControllableState({ state: props.visible, initialState: false });
+  type VisibleAfterDelayData = {
+    ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined;
+    visible: boolean;
+    targetTime: number;
+  };
+  const [visibleAfterDelay, setVisibleAfterDelayInternal] = React.useState<VisibleAfterDelayData | undefined>(
+    undefined,
+  );
+  const setVisibleAfterDelay = React.useCallback((data: VisibleAfterDelayData) => {
+    console.log(`setVisibleAfterDelay(visible = ${data.visible});`);
+    setVisibleAfterDelayInternal(prev => {
+      console.log(
+        `--> setVisibleAfterDelayInternal(visible = ${data.visible}, delay = ${data.targetTime - Date.now()});`,
+        prev ? ` // previous: (visible = ${prev.visible})` : '',
+      );
+      return data;
+    });
+  }, []);
+  // const cancelVisibleAfterDelay = React.useCallback(() =>  setVisibleAfterDelay(undefined), []);
+  const cancelVisibleAfterDelay = React.useCallback(() => {
+    console.log(`cancelVisibleAfterDelay();`);
+    setVisibleAfterDelayInternal(prev => {
+      if (prev) {
+        console.log(`--> setVisibleAfterDelayInternal(undefined); // previous: (visible = ${prev.visible})`);
+      }
+      return undefined;
+    });
+  }, []);
+
+  const [visible, setVisibleInternal] = useControllableState({
+    state: props.visible,
+    initialState: false,
+  });
   const setVisible = React.useCallback(
     (ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined, data: OnVisibleChangeData) => {
-      clearDelayTimeout();
+      console.log(`setVisible(visible = ${data.visible});`);
+      cancelVisibleAfterDelay();
+      console.log(`setVisibleInternal(visible = ${data.visible});`);
       setVisibleInternal(oldVisible => {
         if (data.visible !== oldVisible) {
+          console.log(`--> onVisibleChange(visible = ${data.visible});`);
           onVisibleChange?.(ev, data);
         }
         return data.visible;
       });
     },
-    [clearDelayTimeout, setVisibleInternal, onVisibleChange],
+    [cancelVisibleAfterDelay, setVisibleInternal, onVisibleChange],
   );
+
+  React.useEffect(() => {
+    if (visibleAfterDelay !== undefined) {
+      const win = targetDocument?.defaultView;
+      const delay = Math.max(0, visibleAfterDelay.targetTime - Date.now());
+      const timeoutId = win?.setTimeout(() => {
+        setVisible(visibleAfterDelay.ev, { visible: visibleAfterDelay.visible });
+      }, delay);
+
+      return () => {
+        win?.clearTimeout(timeoutId);
+      };
+    }
+  }, [visibleAfterDelay, targetDocument, setVisible]);
+
+  console.log(` **** Render tooltip: content = "${content}", visible = ${visible}`);
 
   const state: TooltipState = {
     withArrow,
@@ -167,14 +216,11 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
 
       // Show immediately if another tooltip is already visible
       const delay = context.visibleTooltip ? 0 : state.showDelay;
-
-      setDelayTimeout(() => {
-        setVisible(ev, { visible: true });
-      }, delay);
+      setVisibleAfterDelay({ ev, visible: true, targetTime: Date.now() + delay });
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
-    [setDelayTimeout, setVisible, state.showDelay, context],
+    [state.showDelay, context],
   );
 
   const isNavigatingWithKeyboard = useIsNavigatingWithKeyboard();
@@ -219,20 +265,24 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
         ignoreNextFocusEventRef.current = targetDocument?.activeElement === ev.target;
       }
 
-      setDelayTimeout(() => {
-        setVisible(ev, { visible: false });
-      }, delay);
+      setVisibleAfterDelay({ ev, visible: false, targetTime: Date.now() + delay });
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
-    [setDelayTimeout, setVisible, state.hideDelay, targetDocument],
+    [state.hideDelay, targetDocument],
   );
 
   // Cancel the hide timer when the mouse or focus enters the tooltip, and restart it when the mouse or focus leaves.
   // This keeps the tooltip visible when the mouse is moved over it, or it has focus within.
-  state.content.onPointerEnter = mergeCallbacks(state.content.onPointerEnter, clearDelayTimeout);
+  state.content.onPointerEnter = mergeCallbacks(state.content.onPointerEnter, () => {
+    console.log(`onPointerEnter: cancelVisibleAfterDelay();`);
+    cancelVisibleAfterDelay();
+  });
   state.content.onPointerLeave = mergeCallbacks(state.content.onPointerLeave, onLeaveTrigger);
-  state.content.onFocus = mergeCallbacks(state.content.onFocus, clearDelayTimeout);
+  state.content.onFocus = mergeCallbacks(state.content.onFocus, () => {
+    console.log(`onFocus: cancelVisibleAfterDelay();`);
+    cancelVisibleAfterDelay();
+  });
   state.content.onBlur = mergeCallbacks(state.content.onBlur, onLeaveTrigger);
 
   const child = getTriggerChild(children);
