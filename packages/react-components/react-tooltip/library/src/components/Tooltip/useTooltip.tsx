@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mergeArrowOffset, resolvePositioningShorthand, usePositioning } from '@fluentui/react-positioning';
+import { resolvePositioningShorthand } from '@fluentui/react-positioning';
 import {
   useTooltipVisibility_unstable as useTooltipVisibility,
   useFluent_unstable as useFluent,
@@ -8,20 +8,17 @@ import type { KeyborgFocusInEvent } from '@fluentui/react-tabster';
 import { KEYBORG_FOCUSIN, useIsNavigatingWithKeyboard } from '@fluentui/react-tabster';
 import {
   applyTriggerPropsToChildren,
-  useControllableState,
   useId,
-  useIsomorphicLayoutEffect,
   useIsSSR,
   useMergedRefs,
-  useTimeout,
   getTriggerChild,
   mergeCallbacks,
   useEventCallback,
   slot,
 } from '@fluentui/react-utilities';
-import type { TooltipProps, TooltipState, TooltipChildProps, OnVisibleChangeData } from './Tooltip.types';
-import { arrowHeight, tooltipBorderRadius } from './private/constants';
-import { Escape } from '@fluentui/keyboard-keys';
+import type { TooltipProps, TooltipState, TooltipChildProps } from './Tooltip.types';
+import { TooltipContentImperativeHandle } from '../TooltipContent/TooltipContent.types';
+import { TooltipContent } from '../TooltipContent/TooltipContent';
 
 /**
  * Create the state required to render Tooltip.
@@ -37,12 +34,10 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   const context = useTooltipVisibility();
   const isServerSideRender = useIsSSR();
   const { targetDocument } = useFluent();
-  const [setDelayTimeout, clearDelayTimeout] = useTimeout();
 
   const {
     appearance = 'normal',
     children,
-    content,
     withArrow = false,
     positioning = 'above',
     onVisibleChange,
@@ -52,19 +47,41 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
     mountNode,
   } = props;
 
-  const [visible, setVisibleInternal] = useControllableState({ state: props.visible, initialState: false });
-  const setVisible = React.useCallback(
-    (ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined, data: OnVisibleChangeData) => {
-      clearDelayTimeout();
-      setVisibleInternal(oldVisible => {
-        if (data.visible !== oldVisible) {
-          onVisibleChange?.(ev, data);
-        }
-        return data.visible;
-      });
+  const { targetRef, tooltipContentRef } = React.useMemo(() => {
+    type RefCallbackObject<T> = React.RefCallback<T> & React.MutableRefObject<T | undefined>;
+
+    const tooltipContentRef = (tooltipContent => {
+      tooltipContentRef.current = tooltipContent || undefined;
+      tooltipContentRef.current?.setTargetElement(targetRef.current);
+    }) as RefCallbackObject<TooltipContentImperativeHandle>;
+
+    const targetRef = (newTarget => {
+      targetRef.current = newTarget || undefined;
+      tooltipContentRef.current?.setTargetElement(targetRef.current);
+    }) as RefCallbackObject<HTMLElement>;
+
+    return {
+      targetRef,
+      tooltipContentRef,
+    };
+  }, []);
+
+  const content = slot.always(props.content, {
+    defaultProps: {
+      role: 'tooltip',
+      id: useId('tooltip-'),
+      imperativeHandle: tooltipContentRef,
+      appearance,
+      hideDelay,
+      mountNode,
+      onVisibleChange,
+      positioning,
+      showDelay,
+      visible: props.visible,
+      withArrow,
     },
-    [clearDelayTimeout, setVisibleInternal, onVisibleChange],
-  );
+    elementType: TooltipContent,
+  });
 
   const state: TooltipState = {
     withArrow,
@@ -72,88 +89,18 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
     showDelay,
     hideDelay,
     relationship,
-    visible,
-    shouldRenderTooltip: visible,
+    visible: false,
+    shouldRenderTooltip: true,
     appearance,
     mountNode,
     // Slots
     components: {
-      content: 'div',
+      content: TooltipContent,
     },
-    content: slot.always(content, {
-      defaultProps: {
-        role: 'tooltip',
-      },
-      elementType: 'div',
-    }),
+    content,
   };
 
-  state.content.id = useId('tooltip-', state.content.id);
-
-  const positioningOptions = {
-    enabled: state.visible,
-    arrowPadding: 2 * tooltipBorderRadius,
-    position: 'above' as const,
-    align: 'center' as const,
-    offset: 4,
-    ...resolvePositioningShorthand(state.positioning),
-  };
-
-  if (state.withArrow) {
-    positioningOptions.offset = mergeArrowOffset(positioningOptions.offset, arrowHeight);
-  }
-
-  const {
-    targetRef,
-    containerRef,
-    arrowRef,
-  }: {
-    targetRef: React.MutableRefObject<unknown>;
-    containerRef: React.MutableRefObject<HTMLDivElement>;
-    arrowRef: React.MutableRefObject<HTMLDivElement>;
-  } = usePositioning(positioningOptions);
-
-  state.content.ref = useMergedRefs(state.content.ref, containerRef);
-  state.arrowRef = arrowRef;
-
-  // When this tooltip is visible, hide any other tooltips, and register it
-  // as the visibleTooltip with the TooltipContext.
-  // Also add a listener on document to hide the tooltip if Escape is pressed
-  useIsomorphicLayoutEffect(() => {
-    if (visible) {
-      const thisTooltip = {
-        hide: (ev?: KeyboardEvent) => setVisible(undefined, { visible: false, documentKeyboardEvent: ev }),
-      };
-
-      context.visibleTooltip?.hide();
-      context.visibleTooltip = thisTooltip;
-
-      const onDocumentKeyDown = (ev: KeyboardEvent) => {
-        if (ev.key === Escape && !ev.defaultPrevented) {
-          thisTooltip.hide(ev);
-          // stop propagation to avoid conflicting with other elements that listen for `Escape`
-          // e,g: Dialog, Popover, Menu and Tooltip
-          ev.preventDefault();
-        }
-      };
-
-      targetDocument?.addEventListener('keydown', onDocumentKeyDown, {
-        // As this event is added at targeted document,
-        // we need to capture the event to be sure keydown handling from tooltip happens first
-        capture: true,
-      });
-
-      return () => {
-        if (context.visibleTooltip === thisTooltip) {
-          context.visibleTooltip = undefined;
-        }
-
-        targetDocument?.removeEventListener('keydown', onDocumentKeyDown, { capture: true });
-      };
-    }
-  }, [context, targetDocument, visible, setVisible]);
-
-  // Used to skip showing the tooltip  in certain situations when the trigger is focused.
+  // Used to skip showing the tooltip in certain situations when the trigger is focused.
   // See comments where this is set for more info.
   const ignoreNextFocusEventRef = React.useRef(false);
 
@@ -166,15 +113,12 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
       }
 
       // Show immediately if another tooltip is already visible
-      const delay = context.visibleTooltip ? 0 : state.showDelay;
-
-      setDelayTimeout(() => {
-        setVisible(ev, { visible: true });
-      }, delay);
+      const delay = context.visibleTooltip ? 0 : showDelay;
+      tooltipContentRef.current?.setDelayedVisible(ev, { visible: true }, delay);
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
-    [setDelayTimeout, setVisible, state.showDelay, context],
+    [tooltipContentRef, showDelay, context],
   );
 
   const isNavigatingWithKeyboard = useIsNavigatingWithKeyboard();
@@ -205,7 +149,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   // Listener for onPointerLeave and onBlur on the trigger element
   const onLeaveTrigger = React.useCallback(
     (ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement>) => {
-      let delay = state.hideDelay;
+      let delay = hideDelay;
 
       if (ev.type === 'blur') {
         // Hide immediately when losing focus
@@ -219,21 +163,12 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
         ignoreNextFocusEventRef.current = targetDocument?.activeElement === ev.target;
       }
 
-      setDelayTimeout(() => {
-        setVisible(ev, { visible: false });
-      }, delay);
+      tooltipContentRef.current?.setDelayedVisible(ev, { visible: false }, delay);
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
-    [setDelayTimeout, setVisible, state.hideDelay, targetDocument],
+    [tooltipContentRef, hideDelay, targetDocument],
   );
-
-  // Cancel the hide timer when the mouse or focus enters the tooltip, and restart it when the mouse or focus leaves.
-  // This keeps the tooltip visible when the mouse is moved over it, or it has focus within.
-  state.content.onPointerEnter = mergeCallbacks(state.content.onPointerEnter, clearDelayTimeout);
-  state.content.onPointerLeave = mergeCallbacks(state.content.onPointerLeave, onLeaveTrigger);
-  state.content.onFocus = mergeCallbacks(state.content.onFocus, clearDelayTimeout);
-  state.content.onBlur = mergeCallbacks(state.content.onBlur, onLeaveTrigger);
 
   const child = getTriggerChild(children);
 
@@ -247,12 +182,12 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
     } else {
       triggerAriaProps['aria-labelledby'] = state.content.id;
       // Always render the tooltip even if hidden, so that aria-labelledby refers to a valid element
-      state.shouldRenderTooltip = true;
+      state.content.alwaysRender = true;
     }
   } else if (relationship === 'description') {
     triggerAriaProps['aria-describedby'] = state.content.id;
     // Always render the tooltip even if hidden, so that aria-describedby refers to a valid element
-    state.shouldRenderTooltip = true;
+    state.content.alwaysRender = true;
   }
 
   // Case 1: Don't render the Tooltip in SSR to avoid hydration errors
@@ -269,7 +204,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
       child?.ref,
       keyborgListenerCallbackRef,
       // If the target prop is not provided, attach targetRef to the trigger element's ref prop
-      positioningOptions.target === undefined ? targetRef : undefined,
+      resolvePositioningShorthand(props.positioning).target === undefined ? targetRef : undefined,
     ),
     onPointerEnter: useEventCallback(mergeCallbacks(child?.props?.onPointerEnter, onEnterTrigger)),
     onPointerLeave: useEventCallback(mergeCallbacks(child?.props?.onPointerLeave, onLeaveTrigger)),

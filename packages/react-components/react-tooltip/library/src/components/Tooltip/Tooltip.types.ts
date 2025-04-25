@@ -2,6 +2,7 @@ import * as React from 'react';
 import type { PositioningShorthand } from '@fluentui/react-positioning';
 import type { ComponentProps, ComponentState, Slot, TriggerProps } from '@fluentui/react-utilities';
 import type { PortalProps } from '@fluentui/react-portal';
+import { TooltipContent } from '../TooltipContent/TooltipContent';
 
 /**
  * Slot properties for Tooltip
@@ -10,7 +11,7 @@ export type TooltipSlots = {
   /**
    * The text or JSX content of the tooltip.
    */
-  content: NonNullable<Slot<'div'>>;
+  content: NonNullable<Slot<typeof TooltipContent>>;
 };
 
 /**
@@ -127,7 +128,7 @@ export type TooltipProps = ComponentProps<TooltipSlots> &
  */
 export type TooltipState = ComponentState<TooltipSlots> &
   Pick<TooltipProps, 'mountNode' | 'relationship'> &
-  Required<Pick<TooltipProps, 'appearance' | 'hideDelay' | 'positioning' | 'showDelay' | 'visible' | 'withArrow'>> & {
+  Required<Pick<TooltipProps, 'appearance' | 'hideDelay' | 'positioning' | 'showDelay' | 'withArrow'>> & {
     children?: React.ReactElement | null;
 
     /**
@@ -142,6 +143,12 @@ export type TooltipState = ComponentState<TooltipSlots> &
 
     /**
      * CSS class for the arrow element
+     * @deprecated The arrow's style is controlled by TooltipContent. This is always undefined.
      */
     arrowClassName?: string;
+
+    /**
+     * @deprecated The tooltip's visibility is now controlled by TooltipContent. This is always false.
+     */
+    visible: boolean;
   };
