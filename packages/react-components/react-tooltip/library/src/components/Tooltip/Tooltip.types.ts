@@ -128,7 +128,7 @@ export type TooltipProps = ComponentProps<TooltipSlots> &
 export type TooltipState = ComponentState<TooltipSlots> &
   Pick<TooltipProps, 'mountNode' | 'relationship'> &
   Required<Pick<TooltipProps, 'appearance' | 'hideDelay' | 'positioning' | 'showDelay' | 'visible' | 'withArrow'>> & {
-    children?: React.ReactElement | null;
+    children?: React.ReactNode | null;
 
     /**
      * Whether the tooltip should be rendered to the DOM.

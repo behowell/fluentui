@@ -22,6 +22,59 @@ import type { TooltipProps, TooltipState, TooltipChildProps, OnVisibleChangeData
 import { arrowHeight, tooltipBorderRadius } from './private/constants';
 import { Escape } from '@fluentui/keyboard-keys';
 
+type TooltipVisibilityManagerImperativeHandle = {
+  setVisibleDelay: (
+    ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined,
+    data: OnVisibleChangeData,
+    delay: number,
+  ) => void;
+  cancelVisibleDelay: () => void;
+};
+
+type TooltipVisibilityManagerProps = {
+  componentRef: React.Ref<TooltipVisibilityManagerImperativeHandle>;
+  setVisible: (
+    ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined,
+    data: OnVisibleChangeData,
+  ) => void;
+};
+
+const TooltipVisibilityManager: React.FC<TooltipVisibilityManagerProps> = props => {
+  const { componentRef, setVisible } = props;
+  const targetWindow = useFluent().targetDocument?.defaultView;
+
+  type VisibleChange = {
+    ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined;
+    data: OnVisibleChangeData;
+    targetTime: number;
+  };
+
+  const [pendingVisibleChange, setPendingVisibleChange] = React.useState<VisibleChange | undefined>(undefined);
+
+  React.useEffect(() => {
+    if (pendingVisibleChange && targetWindow) {
+      const { ev, data, targetTime } = pendingVisibleChange;
+      const id = targetWindow.setTimeout(() => {
+        setVisible(ev, data);
+      }, Math.max(0, targetTime - Date.now()));
+      return () => {
+        targetWindow.clearTimeout(id);
+      };
+    }
+  }, [pendingVisibleChange, targetWindow, setVisible]);
+
+  React.useImperativeHandle(
+    componentRef,
+    () => ({
+      setVisibleDelay: (ev, data, delay) => setPendingVisibleChange({ ev, data, targetTime: Date.now() + delay }),
+      cancelVisibleDelay: () => setPendingVisibleChange(undefined),
+    }),
+    [],
+  );
+
+  return null;
+};
+
 /**
  * Create the state required to render Tooltip.
  *
@@ -50,34 +103,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
     mountNode,
   } = props;
 
-  type VisibleAfterDelayData = {
-    ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined;
-    visible: boolean;
-    targetTime: number;
-  };
-  const [visibleAfterDelay, setVisibleAfterDelayInternal] = React.useState<VisibleAfterDelayData | undefined>(
-    undefined,
-  );
-  const setVisibleAfterDelay = React.useCallback((data: VisibleAfterDelayData) => {
-    console.log(`setVisibleAfterDelay(visible = ${data.visible});`);
-    setVisibleAfterDelayInternal(prev => {
-      console.log(
-        `--> setVisibleAfterDelayInternal(visible = ${data.visible}, delay = ${data.targetTime - Date.now()});`,
-        prev ? ` // previous: (visible = ${prev.visible})` : '',
-      );
-      return data;
-    });
-  }, []);
-  // const cancelVisibleAfterDelay = React.useCallback(() =>  setVisibleAfterDelay(undefined), []);
-  const cancelVisibleAfterDelay = React.useCallback(() => {
-    console.log(`cancelVisibleAfterDelay();`);
-    setVisibleAfterDelayInternal(prev => {
-      if (prev) {
-        console.log(`--> setVisibleAfterDelayInternal(undefined); // previous: (visible = ${prev.visible})`);
-      }
-      return undefined;
-    });
-  }, []);
+  const visibilityManagerRef = React.useRef<TooltipVisibilityManagerImperativeHandle>(null);
 
   const [visible, setVisibleInternal] = useControllableState({
     state: props.visible,
@@ -86,7 +112,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   const setVisible = React.useCallback(
     (ev: React.PointerEvent<HTMLElement> | React.FocusEvent<HTMLElement> | undefined, data: OnVisibleChangeData) => {
       console.log(`setVisible(visible = ${data.visible});`);
-      cancelVisibleAfterDelay();
+      visibilityManagerRef.current?.cancelVisibleDelay();
       console.log(`setVisibleInternal(visible = ${data.visible});`);
       setVisibleInternal(oldVisible => {
         if (data.visible !== oldVisible) {
@@ -96,25 +122,8 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
         return data.visible;
       });
     },
-    [cancelVisibleAfterDelay, setVisibleInternal, onVisibleChange],
+    [setVisibleInternal, onVisibleChange],
   );
-
-  React.useEffect(() => {
-    if (visibleAfterDelay !== undefined) {
-      const win = targetDocument?.defaultView;
-      const delay = Math.max(0, visibleAfterDelay.targetTime - Date.now());
-      const timeoutId = win?.setTimeout(() => {
-        setVisible(visibleAfterDelay.ev, { visible: visibleAfterDelay.visible });
-      }, delay);
-
-      return () => {
-        win?.clearTimeout(timeoutId);
-      };
-    }
-  }, [visibleAfterDelay, targetDocument, setVisible]);
-
-  console.log(` **** Render tooltip: content = "${content}", visible = ${visible}`);
-
   const state: TooltipState = {
     withArrow,
     positioning,
@@ -216,7 +225,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
 
       // Show immediately if another tooltip is already visible
       const delay = context.visibleTooltip ? 0 : state.showDelay;
-      setVisibleAfterDelay({ ev, visible: true, targetTime: Date.now() + delay });
+      visibilityManagerRef.current?.setVisibleDelay(ev, { visible: true }, delay);
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
@@ -265,7 +274,7 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
         ignoreNextFocusEventRef.current = targetDocument?.activeElement === ev.target;
       }
 
-      setVisibleAfterDelay({ ev, visible: false, targetTime: Date.now() + delay });
+      visibilityManagerRef.current?.setVisibleDelay(ev, { visible: false }, delay);
 
       ev.persist(); // Persist the event since the setVisible call will happen asynchronously
     },
@@ -275,13 +284,11 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   // Cancel the hide timer when the mouse or focus enters the tooltip, and restart it when the mouse or focus leaves.
   // This keeps the tooltip visible when the mouse is moved over it, or it has focus within.
   state.content.onPointerEnter = mergeCallbacks(state.content.onPointerEnter, () => {
-    console.log(`onPointerEnter: cancelVisibleAfterDelay();`);
-    cancelVisibleAfterDelay();
+    visibilityManagerRef.current?.cancelVisibleDelay();
   });
   state.content.onPointerLeave = mergeCallbacks(state.content.onPointerLeave, onLeaveTrigger);
   state.content.onFocus = mergeCallbacks(state.content.onFocus, () => {
-    console.log(`onFocus: cancelVisibleAfterDelay();`);
-    cancelVisibleAfterDelay();
+    visibilityManagerRef.current?.cancelVisibleDelay();
   });
   state.content.onBlur = mergeCallbacks(state.content.onBlur, onLeaveTrigger);
 
@@ -312,20 +319,23 @@ export const useTooltip_unstable = (props: TooltipProps): TooltipState => {
   }
 
   // Apply the trigger props to the child, either by calling the render function, or cloning with the new props
-  state.children = applyTriggerPropsToChildren(children, {
-    ...triggerAriaProps,
-    ...child?.props,
-    ref: useMergedRefs(
-      child?.ref,
-      keyborgListenerCallbackRef,
-      // If the target prop is not provided, attach targetRef to the trigger element's ref prop
-      positioningOptions.target === undefined ? targetRef : undefined,
-    ),
-    onPointerEnter: useEventCallback(mergeCallbacks(child?.props?.onPointerEnter, onEnterTrigger)),
-    onPointerLeave: useEventCallback(mergeCallbacks(child?.props?.onPointerLeave, onLeaveTrigger)),
-    onFocus: useEventCallback(mergeCallbacks(child?.props?.onFocus, onEnterTrigger)),
-    onBlur: useEventCallback(mergeCallbacks(child?.props?.onBlur, onLeaveTrigger)),
-  });
+  state.children = [
+    applyTriggerPropsToChildren(children, {
+      ...triggerAriaProps,
+      ...child?.props,
+      ref: useMergedRefs(
+        child?.ref,
+        keyborgListenerCallbackRef,
+        // If the target prop is not provided, attach targetRef to the trigger element's ref prop
+        positioningOptions.target === undefined ? targetRef : undefined,
+      ),
+      onPointerEnter: useEventCallback(mergeCallbacks(child?.props?.onPointerEnter, onEnterTrigger)),
+      onPointerLeave: useEventCallback(mergeCallbacks(child?.props?.onPointerLeave, onLeaveTrigger)),
+      onFocus: useEventCallback(mergeCallbacks(child?.props?.onFocus, onEnterTrigger)),
+      onBlur: useEventCallback(mergeCallbacks(child?.props?.onBlur, onLeaveTrigger)),
+    }),
+    <TooltipVisibilityManager componentRef={visibilityManagerRef} setVisible={setVisible} />,
+  ];
 
   return state;
 };
