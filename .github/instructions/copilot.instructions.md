@@ -13,7 +13,7 @@ applyTo: '**'
 
 ## Validated setup and commands
 
-- Always run `yarn install --frozen-lockfile` before build or test commands. This command is validated in this repo.
+- Run `yarn install --frozen-lockfile` during initial setup and after dependency changes. This command is validated in this repo.
 - Always run project tasks through Nx:
   - `yarn nx run <project>:build`
   - `yarn nx run <project>:test`
@@ -36,7 +36,7 @@ applyTo: '**'
   3. `render<Component>_unstable()`
 - Use Griffel `makeStyles` and `mergeClasses`.
 - Preserve the user `className` last in `mergeClasses(...)`.
-- Never hardcode colors, spacing, typography, border radius, or shadows. Use tokens from `@fluentui/react-theme`.
+- Never hardcode colors, spacing, typography, border radius, or shadows. Use the `tokens` export from `@fluentui/react-theme`.
 - Never access `window`, `document`, or `navigator` directly. Use `useFluent_unstable().targetDocument` in components or `canUseDOM()` in utilities.
 - Never add dependencies between component packages. Move shared logic to `react-utilities` or `react-shared-contexts`.
 
@@ -67,5 +67,5 @@ applyTo: '**'
 
 - Prefer existing generators or scaffolding for new v9 packages/components.
 - Follow the closest local README, spec, and test patterns instead of copying legacy v8 code.
-- If you change `.github/workflows`, `package.json`, or `yarn.lock`, also read `.github/instructions/dependabot-security-fixes.instructions.md`.
+- If you change `.github/workflows`, `package.json`, or `yarn.lock` as part of dependency or automation work, also read `.github/instructions/dependabot-security-fixes.instructions.md`.
 - Keep changes surgical and avoid unrelated fixes.
