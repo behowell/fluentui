@@ -76,6 +76,12 @@
       "@fluentui/react-drawer-stories": ["packages/react-components/react-drawer/stories/src/index.ts"],
       "@fluentui/react-field": ["packages/react-components/react-field/library/src/index.ts"],
       "@fluentui/react-field-stories": ["packages/react-components/react-field/stories/src/index.ts"],
+      "@fluentui/react-file-upload-preview": [
+        "packages/react-components/react-file-upload-preview/library/src/index.ts"
+      ],
+      "@fluentui/react-file-upload-preview-stories": [
+        "packages/react-components/react-file-upload-preview/stories/src/index.ts"
+      ],
       "@fluentui/react-focus-management": ["packages/react-focus-management/src/index.ts"],
       "@fluentui/react-headless-components-preview-stories": [
         "packages/react-components/react-headless-components-preview/stories/src/index.ts"
